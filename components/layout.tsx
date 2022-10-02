@@ -1,5 +1,5 @@
 import Link from "next/link"
-
+import Footer from "components/layout/footer/"
 import { PreviewAlert } from "components/preview-alert"
 
 export function Layout({ children }) {
@@ -22,6 +22,7 @@ export function Layout({ children }) {
           </div>
         </header>
         <main className="container py-10 mx-auto">{children}</main>
+        <Footer />
       </div>
     </>
   )
