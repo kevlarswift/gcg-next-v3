@@ -1,11 +1,12 @@
+import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
-import BackgroundImage from "/components/layout/BackgroundImage";
+
+import BackgroundImage from "../BackgroundImage";
 import styles from "./Social.module.scss";
 
 export default function StayConnected({ menu1, menu2, facebook, instagram, youtube }) {

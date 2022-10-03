@@ -1,0 +1,51 @@
+.outer {
+  position:relative;
+  background-color: #072747;
+  .inner {
+    position: relative;
+    z-index: 2;
+    padding: 68px 20px 80px;
+    h4 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 26px;
+    }
+    p {
+      color: #fff;
+      text-align: center;
+      padding-left: 35px;
+      padding-right: 35px;
+      margin-bottom: 25px;
+    }
+    .ctas {
+      display: flex;
+      justify-content: center;
+      /*
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      } */
+    }
+    /*
+    .cta:hover,
+    .cta:focus {
+      a {
+        color: #000000;
+      }
+    } */
+  }
+}
+
+@media (min-width: 768px) {
+  .outer {
+    .inner {
+      padding: 100px 40px 100px;
+      h4 {
+        margin-bottom: 32px;
+      }
+      p {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
