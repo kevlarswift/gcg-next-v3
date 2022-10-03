@@ -63,7 +63,7 @@ export default function Header({ data }) {
           </button>
         </div>
       </nav>
-      {/** 
+      
       <Collapse in={openMenu}>
         <div id="collapse-menu">
           <div className={styles.megaMenu}>
@@ -86,6 +86,7 @@ export default function Header({ data }) {
                   Why Join <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
+              {/**
               {menu[0].items.map((item) => {
                 return (
                   <div
@@ -99,6 +100,7 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
+            */}
             </div>
 
             <div className={styles.section}>
@@ -121,6 +123,7 @@ export default function Header({ data }) {
                   Careers <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
+              {/**
               {menu[1].items.map((item) => {
                 return (
                   <div
@@ -134,6 +137,7 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
+            */}
             </div>
 
             <div className={styles.section}>
@@ -156,6 +160,7 @@ export default function Header({ data }) {
                   About <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
+              {/**
               {menu[2].items.map((item) => {
                 return (
                   <div
@@ -169,7 +174,9 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
+            */}
             </div>
+
 
             <div className={styles.section}>
               <div
@@ -191,6 +198,7 @@ export default function Header({ data }) {
                   Joining <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
+              {/**
               {menu[3].items.map((item) => {
                 return (
                   <div
@@ -204,11 +212,12 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
+               */}
             </div>
           </div>
         </div>
       </Collapse>
-      */}
+      
     </header>
   );
 }
