@@ -1,0 +1,20 @@
+.logo {
+  .desktop {
+    display: none;
+    height: 43px;
+  }
+  .mobile {
+    display: block;
+    height: 52px;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+}

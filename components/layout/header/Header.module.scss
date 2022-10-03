@@ -1,0 +1,239 @@
+@import url("https://use.typekit.net/sxh7tqy.css");
+
+.header {
+  font-family: "proxima-nova", sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #072747;
+    height: 80px;
+    font-family: "proxima-nova", sans-serif;
+    button {
+      height: 30px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: white;
+      font-weight: 900;
+      font-size: 0.8125rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      .iconBorder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #ffffff;
+        border-radius: 9999px;
+      }
+      .iconText {
+        color: #ffffff;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-weight: 900;
+        display: none;
+      }
+    }
+    button.navigate .iconText {
+      margin-left: 9px;
+      .fa-bars {
+        display: block;
+      }
+    }
+    button.navigate[data-state="open"] {
+      .fa-bars {
+        display: hidden;
+      }
+      .fa-times {
+        display: block;
+      }
+    }
+    button:hover .iconText,
+    button:focus .iconText {
+      color: #e1251b;
+    }
+    button:hover .iconBorder,
+    button:focus .iconBorder {
+      color: #e1251b;
+      border-color: #e1251b;
+    }
+    .menuChat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 142px;
+    }
+    .connectSearch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .divider {
+      width: 2px;
+      height: 28px;
+      background-color: #fff;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    nav {
+      height: 100px;
+      button {
+        height: 38px;
+        .iconBorder {
+          width: 38px;
+          height: 38px;
+        }
+      }
+      button.navigate {
+        .iconText {
+          font-size: 1.125rem;
+          display: block;
+          margin-left: 21px;
+        }
+      }
+      button.connect {
+        padding-right: 18px;
+        .iconBorder {
+          display: none;
+        }
+        .iconText {
+          font-size: 1.125rem;
+          display: block;
+          margin-left: 21px;
+        }
+      }
+      .connectSearch {
+        height: 40px;
+      }
+      .menuChat {
+        width: auto;
+        .mobileChat,
+        .divider {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.megaMenu {
+  max-height: 75vh;
+  overflow: scroll;
+  display: block;
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+  padding: 24px 36px 36px;
+  text-align: center;
+  font-family: "proxima-nova", sans-serif;
+  .section {
+    margin-top: 10px;
+    .imageWrapper {
+      cursor: pointer;
+      .image {
+        display: none;
+      }
+    }
+    .subtitle {
+      font-size: 1.375rem;
+      line-height: 1.625;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+      text-decoration: none;
+      a {
+        color: #072747;
+        text-decoration: none;
+      }
+      .icon {
+        margin: 0 2px;
+      }
+      .icon.white {
+        color: #fff;
+      }
+      &:hover,
+      &:focus {
+        color: #e1251b;
+        cursor: pointer;
+        .icon {
+          margin-left: 4px;
+        }
+      }
+    }
+    .subpageLink {
+      display: block;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-decoration: none;
+    }
+    .subpageLink {
+      color: #072747;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        color: #e1251b;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .megaMenu {
+    .section {
+      .subpageLink {
+        font-size: 1.15rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .megaMenu {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 4fr));
+    gap: 1rem;
+    padding: 50px;
+    .section {
+      .imageWrapper {
+        .image {
+          display: block;
+          margin-bottom: 22px;
+        }
+      }  
+      .subtitle {
+        font-size: 1.375rem;
+      }
+      .subtitle:hover,
+      .subtitle:focus {
+        .icon {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .megaMenu {
+    .section {
+      .subtitle {
+        font-size: 1.625rem;
+      }
+    }
+  }
+}

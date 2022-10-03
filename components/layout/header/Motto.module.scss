@@ -1,0 +1,16 @@
+.motto {
+  background-color: #e1251b;
+  font-family: "proxima-nova", sans-serif;
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    font-size: 0.688rem;
+    line-height: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
