@@ -1,17 +1,18 @@
+import { PreviewAlert } from "components/preview-alert"
+import ChatBtn from "components/layout/ChatBtn";
 import Header from "components/layout/header/Header"
 import Footer from "components/layout/footer/Footer"
-import { PreviewAlert } from "components/preview-alert"
 import LayoutData from "data/LayoutData"
 
 export function Layout({ children }) {
   return (
     <>
       <PreviewAlert />
-      <div className="">
+        <ChatBtn />
         <Header data={LayoutData.header} />
-        <main className="">{children}</main>
+        <main className="page">{children}</main>
         <Footer data={LayoutData.footer} />
-      </div>
+      
     </>
   )
 }
