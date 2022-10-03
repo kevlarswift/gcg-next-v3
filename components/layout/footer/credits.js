@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import styles from "./Credits.module.scss";
 
 export default function Credits({ author }) {

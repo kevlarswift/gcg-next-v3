@@ -16,7 +16,7 @@ import styles from "./Header.module.scss";
 
 export default function Header({ motto }) {
   const router = useRouter();
-  
+
   const [openMenu, setOpenMenu] = useState(false);
   const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
