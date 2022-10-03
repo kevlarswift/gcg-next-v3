@@ -6,14 +6,14 @@ import Credits from "./Credits";
 import MenuData1 from "/data/MenuData1";
 import MenuData2 from "/data/MenuData2";
 
-export default function Footer({ benefitsTitle, benefitsBody, benefitsLink, benefitsLinkText, mission, facebook, instagram, youtube, author }) {
+export default function Footer({ data }) {
   return (
     <footer>
-      <Benefits title={benefitsTitle} body={benefitsBody} link={benefitsLink} linkText={benefitsLinkText} />
+      <Benefits title={data.benefits.title} body={data.benefits.body} link={data.benefits.link} linkText={data.benefits.linkText} />
       <Actions />
-      <Mission mission={mission} />
-      <Social facebook={facebook} instagram={instagram} youtube={youtube} menu1={MenuData1} menu2={MenuData2} />
-      <Credits author={author} />
+      <Mission mission={data.mission} />
+      <Social facebook={data.social.facebook} instagram={data.social.instagram} youtube={data.social.youtube} menu1={MenuData1} menu2={MenuData2} />
+      <Credits author={data.author} />
     </footer>
   );
 }

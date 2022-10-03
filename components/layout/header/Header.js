@@ -14,7 +14,7 @@ import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
 
-export default function Header({ motto }) {
+export default function Header({ data }) {
   const router = useRouter();
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -27,7 +27,7 @@ export default function Header({ motto }) {
 
   return (
     <header className={styles.header}>
-      <Motto motto={motto} />
+      <Motto motto={data.motto} />
       <nav>
         <div className={styles.menuChat}>
           <button
