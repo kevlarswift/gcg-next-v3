@@ -19,6 +19,7 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
     "framer-motion": "^6.3.3",
+    "html-react-parser": "^3.0.4",
     "next": "^12.2.3",
     "next-drupal": "^1.4.0",
     "react": "^17.0.2",
