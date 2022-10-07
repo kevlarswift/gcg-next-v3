@@ -16,7 +16,6 @@ export function NodeBasicPage({ node, ...props }: NodeBasicPageProps) {
   }
   return (
     <article {...props}>
-
       <Banner
         title={node.title}
         subtitle={node.field_subtitle}
@@ -27,10 +26,9 @@ export function NodeBasicPage({ node, ...props }: NodeBasicPageProps) {
         short={false}
       />
       <Container className="container-inner">
-        <pre>{JSON.stringify(node, null, 2)}</pre>
         {node.field_paragraphs &&
-          node.field_paragraphs.map((paragraph) => {
-            return <Paragraph content={paragraph} />;
+          node.field_paragraphs.map((paragraph, idx) => {
+            return <Paragraph content={paragraph} key={idx} />;
           })
         }
       </Container>
