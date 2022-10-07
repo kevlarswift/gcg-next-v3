@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
-import BackgroundImage from "../BackgroundImage";
+import BackgroundImage from "../layout/BackgroundImage";
 import styles from "./Social.module.scss";
 
 export default function StayConnected({ menu1, menu2, facebook, instagram, youtube }) {
