@@ -1,10 +1,10 @@
-import Benefits from "components/layout/footer/Benefits";
-import Actions from "components/layout/footer/Actions";
-import Mission from "components/layout/footer/Mission";
-import Social from "components/layout/footer/Social";
-import Credits from "components/layout/footer/Credits";
-import MenuData1 from "data/MenuData1";
-import MenuData2 from "data/MenuData2";
+import Benefits from "./Benefits";
+import Actions from "./Actions";
+import Mission from "./Mission";
+import Social from "./Social";
+import Credits from "./Credits";
+import MenuData1 from "/data/MenuData1";
+import MenuData2 from "/data/MenuData2";
 
 export default function Footer({ data }) {
   return (
