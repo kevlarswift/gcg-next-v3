@@ -4,11 +4,10 @@ import Head from "next/head"
 import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
 import { NodeTop } from "components/node--top"
-import { NodeArticle } from "components/node--article"
 import { NodeBasicPage } from "components/node--basic-page"
 import { Layout } from "components/layout"
 
-const RESOURCE_TYPES = ["node--page", "node--top", "node--article"]
+const RESOURCE_TYPES = ["node--page", "node--top"]
 
 interface NodePageProps {
   resource: DrupalNode
@@ -25,7 +24,6 @@ export default function NodePage({ resource }: NodePageProps) {
       </Head>
       {resource.type === "node--top" && <NodeTop node={resource} />}
       {resource.type === "node--page" && <NodeBasicPage node={resource} />}
-      {resource.type === "node--article" && <NodeArticle node={resource} />}
     </Layout>
   )
 }
@@ -51,18 +49,19 @@ export async function getStaticProps(
   const type = path.jsonapi.resourceName
 
   let params = {}
+  /*
   if (type === "node--article") {
     params = {
       include: "field_image, uid",
     }
   }
-
+  */
   if (type === "node--page" || type === "node--officer_program" || type === "node--officer_career") {
     params = {
       include: "field_banner, field_paragraphs",
     };
   }
-  
+
   const resource = await drupal.getResourceFromContext<DrupalNode>(
     path,
     context,
