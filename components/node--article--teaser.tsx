@@ -25,18 +25,6 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
         ) : null}
         <span> - {formatDate(node.created)}</span>
       </div>
-      {node.field_image && (
-        <figure className="my-4">
-          <Image
-            src={absoluteUrl(node.field_image.uri.url)}
-            width={768}
-            height={480}
-            layout="responsive"
-            objectFit="cover"
-            alt={node.field_image.resourceIdObjMeta.alt}
-          />
-        </figure>
-      )}
       <Link href={node.path.alias} passHref>
         <a className="">
           Read article
