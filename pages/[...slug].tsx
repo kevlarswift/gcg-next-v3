@@ -2,7 +2,6 @@ import * as React from "react"
 import { GetStaticPathsResult, GetStaticPropsResult } from "next"
 import Head from "next/head"
 import { DrupalNode } from "next-drupal"
-
 import { drupal } from "lib/drupal"
 import { NodeTop } from "components/node--top"
 import { NodeArticle } from "components/node--article"

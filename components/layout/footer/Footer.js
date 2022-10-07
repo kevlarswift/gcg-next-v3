@@ -1,8 +1,8 @@
-import Benefits from "components/footer/Benefits";
-import Actions from "components/footer/Actions";
-import Mission from "components/footer/Mission";
-import Social from "components/footer/Social";
-import Credits from "components/footer/Credits";
+import Benefits from "components/layout/footer/Benefits";
+import Actions from "components/layout/footer/Actions";
+import Mission from "components/layout/footer/Mission";
+import Social from "components/layout/footer/Social";
+import Credits from "components/layout/footer/Credits";
 import MenuData1 from "data/MenuData1";
 import MenuData2 from "data/MenuData2";
 

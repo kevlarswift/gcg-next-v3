@@ -8,11 +8,10 @@ export function Layout({ children }) {
   return (
     <>
       <PreviewAlert />
-        <ChatBtn />
-        <Header data={LayoutData.header} />
-        <main className="page">{children}</main>
-        <Footer data={LayoutData.footer} />
-      
+      <ChatBtn />
+      <Header data={LayoutData.header} />
+      <main className="page">{children}</main>
+      <Footer data={LayoutData.footer} />
     </>
   )
 }
