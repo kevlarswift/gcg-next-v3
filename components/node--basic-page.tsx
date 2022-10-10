@@ -24,7 +24,7 @@ export function NodeBasicPage({ node, ...props }: NodeBasicPageProps) {
         ctaLink={null}
         ctaText={null}
         short={false}
-        alt={node.field_banner.resourceIdObjMeta.alt}
+        bgImageAlt={node.field_banner.resourceIdObjMeta.alt}
       />
       <Container className="container-inner">
         {node.field_paragraphs &&

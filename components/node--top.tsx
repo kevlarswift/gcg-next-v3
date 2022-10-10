@@ -20,18 +20,17 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
         title={node.title}
         subtitle={node.field_subtitle}
         bgImage={bgImageSrc}
+        bgImageAlt={node.field_banner.resourceIdObjMeta.alt}
         cta={null}
         ctaLink={null}
         ctaText={null}
-        short={false}
-        alt={node.field_banner.resourceIdObjMeta.alt}
+        short={false} 
       />
       <Container>
         {node.field_paragraphs &&
           node.field_paragraphs.map((paragraph: any, idx: any) => {
             return <Paragraph content={paragraph} key={idx} />;
           })}
-        <pre>{JSON.stringify(node, null, 2)}</pre>
       </Container>
     </article>
   );
