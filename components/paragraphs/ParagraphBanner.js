@@ -1,4 +1,4 @@
-import Banner from "/components/blocks/Banner";
+import Banner from "/components/blocks/banner";
 
 export default function ParagraphBanner({ content }) {
   return (
