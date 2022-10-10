@@ -7,13 +7,13 @@ import { Container } from "react-bootstrap";
 import TitleAdornments from "/components/blocks/TitleAdornments";
 import styles from "./Banner.module.scss";
 
-function Banner({ title, subtitle, bgImage, cta, ctaLink, ctaText, short = false }) {
+function Banner({ title, subtitle, bgImage, cta, ctaLink, ctaText, short = false, alt }) {
 
   return (
     <div className={styles.banner}>
       {bgImage && (
         <div className={styles.background}>
-          <Image src={`${bgImage}`} layout="fill" objectFit="cover" />
+          <Image src={`${bgImage}`} layout="fill" objectFit="cover" alt={alt} />
         </div>
       )}
       <Container

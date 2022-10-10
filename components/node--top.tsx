@@ -24,10 +24,11 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
         ctaLink={null}
         ctaText={null}
         short={false}
+        alt={node.field_banner.resourceIdObjMeta.alt}
       />
       <Container>
         {node.field_paragraphs &&
-          node.field_paragraphs.map((paragraph, idx) => {
+          node.field_paragraphs.map((paragraph: any, idx: any) => {
             return <Paragraph content={paragraph} key={idx} />;
           })}
       </Container>
