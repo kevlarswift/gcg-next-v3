@@ -58,7 +58,7 @@ export async function getStaticProps(
   */
   if (type === "node--page" || type === "node--top" || type === "node--officer_program" || type === "node--officer_career") {
     params = {
-      include: "field_banner, field_paragraphs",
+      include: "field_banner, field_paragraphs, field_paragraphs.field_banner_bg",
     };
   }
 

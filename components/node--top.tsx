@@ -1,5 +1,4 @@
 import { DrupalNode } from "next-drupal";
-import { Container } from "react-bootstrap";
 import Banner from "components/blocks/banner";
 import Paragraph from "components/paragraphs/Paragraph";
 
@@ -16,6 +15,7 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
   }
   return (
     <article {...props}>
+      <pre>{JSON.stringify(node, null, 2)}</pre>
       <Banner
         title={node.title}
         subtitle={node.field_subtitle}
@@ -24,14 +24,12 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
         cta={null}
         ctaLink={null}
         ctaText={null}
-        short={false} 
+        short={false}
       />
-      <Container>
-        {node.field_paragraphs &&
-          node.field_paragraphs.map((paragraph: any, idx: any) => {
-            return <Paragraph content={paragraph} key={idx} />;
-          })}
-      </Container>
+      {node.field_paragraphs &&
+        node.field_paragraphs.map((paragraph: any, idx: any) => {
+          return <Paragraph content={paragraph} key={idx} />;
+        })}
     </article>
   );
 }
