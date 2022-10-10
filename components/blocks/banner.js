@@ -47,7 +47,7 @@ export const BannerTitle = ({ title }) => {
     } else {
       animation.start({ opacity: .66, scale: 1.125, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
   return (
     <div ref={ref}>
       <motion.h1 animate={animation} initial={{ opacity: .66, scale: 1.125, transition: { duration: 0.5 } }}>
@@ -66,7 +66,7 @@ export const BannerSubtitle = ({ subtitle }) => {
     } else {
       animation.start({ opacity: .66, scale: 0.875, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
   return (
     <div ref={ref}>
       <motion.p animate={animation} initial={{ opacity: .66, scale: 0.875, transition: { duration: 0.5 } }} role="heading">
