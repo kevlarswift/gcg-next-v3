@@ -19,7 +19,7 @@ export default function ParagraphBody({ content }) {
     } else {
       animation.start(initial);
     }
-  }, [inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>

@@ -31,6 +31,7 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
           node.field_paragraphs.map((paragraph: any, idx: any) => {
             return <Paragraph content={paragraph} key={idx} />;
           })}
+        <pre>{JSON.stringify(node, null, 2)}</pre>
       </Container>
     </article>
   );
