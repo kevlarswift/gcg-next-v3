@@ -111,8 +111,8 @@ export default function FindRecruiter({ nodes }) {
               <ul>
                 {nearbyOffices.map((office, index) => {
                   return (
-                    <li>
-                      <Link href={office.path.alias} key={index}>
+                    <li key={index}>
+                      <Link href={office.path.alias}>
                         <a>
                           {office.title}: {office.distance} miles
                         </a>
