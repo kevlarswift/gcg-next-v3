@@ -54,7 +54,7 @@ export function NodeRate({ node, rates, ...props }) {
 
               {node.field_paragraph_skills.length > 0 ? (
                 <Accordion.Item eventKey="1">
-                  <Accordion.Header>Skills You'll Learn</Accordion.Header>
+                  <Accordion.Header>Skills You&apos;ll Learn</Accordion.Header>
                   <Accordion.Body>
                     {skills.map((skill, index) => {
                       return (
@@ -80,7 +80,7 @@ export function NodeRate({ node, rates, ...props }) {
 
               {node.field_rate_training?.processed ? (
                 <Accordion.Item eventKey="2">
-                  <Accordion.Header>Training You'll Get</Accordion.Header>
+                  <Accordion.Header>Training You&apos;ll Get</Accordion.Header>
                   <Accordion.Body>
                     <div dangerouslySetInnerHTML={{ __html: node.field_rate_training?.processed }} />
                   </Accordion.Body>
