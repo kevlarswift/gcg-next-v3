@@ -1,0 +1,26 @@
+2a252c7 Minor case issue
+6aaeec9 Paragraph: Banner continue working
+8d4643b Minor refactoring
+6112e83 Restore Paragraph: Video
+773f79c Banner: resolve missing 'animation' dependency error
+908f15e Top Page: Banner with Image Alt Text
+5e2c845 Top-Level page: restore Banner and Paragraphs
+509865b Article content type: comment out field_image
+b4e1d44 temporarily restore node--article--teaser
+36c8700 Remove NodeArticle
+92743fc Update Footer component paths
+012c66c Change paths in Footer
+bc1d4b3 Attempt to resolve build errors
+df3b114 Adjust paths in Footer.js
+a735650 Update packages. Remove breaking types issue with _app.tsx
+e7f7e70 Resolve missing key error on node--basic-page
+405074e Continue working on Basic Page content type.
+d619ec6 Add Chat Button
+e11d616 Header hide/show working
+843c7f0 Override document
+b43d048 Reorganize data file
+f767524 Correctly add Bootstrap and React Bootstrap. Remove PostCSS. Add public assets such as fonts, video
+5505d2e Begin adding Header
+1605cb2 Remove TailwindCSS. Modifications to Footer
+549f15c Migrate Footer from earlier version
+af48538 Initial commit from Create Next App
