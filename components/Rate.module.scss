@@ -1,0 +1,67 @@
+.rating {
+  .bannerLower {
+    position: relative;
+    background-color: #00376e;
+    color: #fff;
+    .bannerContent {
+      padding: 40px 20px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 45px;
+      .bannerVideo {
+        position: relative;
+        padding-top: 56.25%;
+        .bannerVideoInner {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    h2,
+    .bodyContent {
+      text-align: left;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  .skill {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .5rem;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #e1251b;
+      border-radius: 9999px;
+      width: 48px;
+      height: 48px;
+      margin-right: 1rem;
+    }
+    .title {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .rating {
+    .bannerLower {
+      .bannerContent {
+        padding: 100px 47px;
+        gap: 74px;
+        grid-template-columns: repeat(2, minmax(0, 2fr));
+      }
+      h2,
+      .body-content {
+        text-align: left;
+      }
+    }
+  }
+}

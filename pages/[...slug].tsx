@@ -5,6 +5,7 @@ import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
 import { NodeTop } from "components/node--top"
 import { NodeBasicPage } from "components/node--basic-page"
+import { NodeRate } from "components/node--rate"
 import { NodeRecruiter } from "components/node--recruiter"
 import { Layout } from "components/layout"
 
@@ -25,6 +26,7 @@ export default function NodePage({ resource }: NodePageProps) {
       </Head>
       {resource.type === "node--top" && <NodeTop node={resource} />}
       {resource.type === "node--page" && <NodeBasicPage node={resource} />}
+      {resource.type === "node--rate" && <NodeRate node={resource} rates={null} />}
       {resource.type === "node--recruiter" && <NodeRecruiter node={resource} />}
     </Layout>
   )
