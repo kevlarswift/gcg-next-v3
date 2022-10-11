@@ -5,7 +5,7 @@ import MapOffice from "./mapOffice"
 export default function MapWrapper({ office, center, zoom }) {
   
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyBB4CvVPT2yxac4JWz2DsaguUnMh8wxKcI',
+    googleMapsApiKey: [process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY],
     libraries: ["places"],
   })
   if (!isLoaded) return (
