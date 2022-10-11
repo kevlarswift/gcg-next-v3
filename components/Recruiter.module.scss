@@ -1,0 +1,37 @@
+.office {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 40px;
+    .card {
+      background-color: #ffffff;
+      border: 5px solid transparent;
+      outline: 1px solid #c5c5c5;
+      text-decoration: none;
+      color: #000000;
+      padding: 23px 40px;
+      a svg {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .office {
+    .grid {
+      .card {
+        padding: 29px 46px;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .office {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 2fr));
+      margin-bottom: 60px;
+    }
+  }
+}

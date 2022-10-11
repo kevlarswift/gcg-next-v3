@@ -15,7 +15,6 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
   }
   return (
     <article {...props}>
-      <pre>{JSON.stringify(node, null, 2)}</pre>
       <Banner
         title={node.title}
         subtitle={node.field_subtitle}
