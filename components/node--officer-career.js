@@ -45,8 +45,8 @@ export function NodeOfficerCareer({ node }) {
       <article>
         <Container className="container-inner">
           {node.field_paragraphs &&
-            node.field_paragraphs.map((paragraph) => {
-              return <Paragraph content={paragraph} />;
+            node.field_paragraphs.map((paragraph, idx) => {
+              return <Paragraph content={paragraph} key={idx} />;
             })}
           {/**{ctaTitle && <CTA intro={ctaIntro} title={ctaTitle} url={ctaLink} />}*/}
         </Container>
