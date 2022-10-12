@@ -9,7 +9,15 @@ import styles from "./Recruiter.module.scss";
 export function NodeRecruiter({ node, ...props }) {
   return (
     <div {...props}>
-      <Banner title={node.title} subtitle="U.S. Coast Guard Recruiting Office" /* bgImage={bgImage} */ />
+      <Banner 
+        title={node.title} 
+        subtitle="U.S. Coast Guard Recruiting Office"
+        bgImage={bgImageSrc}
+        bgImageAlt={node.field_banner.resourceIdObjMeta.alt}
+        ctaLink={null}
+        ctaText={null}
+        short={false} 
+      />
       <Container className="container-inner">
         <article className={`${styles.office} page-content`}>
           <div className={styles.grid}>

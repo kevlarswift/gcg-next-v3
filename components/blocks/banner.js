@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import TitleAdornments from "/components/blocks/TitleAdornments";
 import styles from "./Banner.module.scss";
 
-function Banner({ title, subtitle, bgImage,  bgImageAlt, cta, ctaLink, ctaText, short = false }) {
+function Banner({ title, subtitle, bgImage,  bgImageAlt, ctaLink, ctaText, short = false }) {
 
   return (
     <div className={styles.banner}>
@@ -25,9 +25,9 @@ function Banner({ title, subtitle, bgImage,  bgImageAlt, cta, ctaLink, ctaText, 
           <BannerSubtitle subtitle={subtitle} />
         </div>
 
-        {cta && (
+        {ctaLink && (
           <div className="page-ctas">
-            <Link href={ctaLink}>
+            <Link href={ctaLink.replace("internal:", "")}>
               <a className="btn-cta">{ctaText}</a>
             </Link>
           </div>

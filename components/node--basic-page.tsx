@@ -20,7 +20,6 @@ export function NodeBasicPage({ node, ...props }: NodeBasicPageProps) {
         title={node.title}
         subtitle={node.field_subtitle}
         bgImage={bgImageSrc}
-        cta={null}
         ctaLink={null}
         ctaText={null}
         short={false}

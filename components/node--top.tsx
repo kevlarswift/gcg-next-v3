@@ -15,12 +15,12 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
   }
   return (
     <article {...props}>
+      {/**<pre>{JSON.stringify(node, null, 2)}</pre>*/}
       <Banner
         title={node.title}
         subtitle={node.field_subtitle}
         bgImage={bgImageSrc}
         bgImageAlt={node.field_banner.resourceIdObjMeta.alt}
-        cta={null}
         ctaLink={null}
         ctaText={null}
         short={false}
