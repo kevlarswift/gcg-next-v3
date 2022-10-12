@@ -1,0 +1,159 @@
+/* Careers Overview (Enlisted Ratings & Officer Programs) */
+.careers {
+  padding-bottom: 40px;
+  .dropdown {
+    display: block;
+    padding: 20px 0;
+  }
+  .buttons {
+    display: none;
+    .btnRow {
+      display: flex;
+      justify-content: flex-start;
+      padding-bottom: 20px;
+      .btn {
+        font-weight: 700;
+        font-size: 0.875rem;
+        color: rgb(0 0 0);
+        text-transform: uppercase;
+        margin: 0 1rem 1rem 0;
+        border: 2px solid #c5c5c5;
+        padding: 5px 12px;
+        font-family: "proxima-nova", sans-serif;
+        /* xl:text-[1rem] xl:px-[26px] xl:py-[10px]  */
+        &:hover,
+        &:focus {
+          color: #005cb9;
+          border-color: #005cb9;
+        }
+      }
+    }
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-content: space-between;
+    gap: 1.25rem;
+    .career {
+      background-color: #fff;
+      border: 5px solid transparent;
+      border-radius: 0;
+      outline: 1px solid #c5c5c5;
+      color: #000;
+      text-decoration-line: none;
+      padding: 23px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:hover,
+      &:focus {
+        border-color: #e1251b;
+        outline-color: transparent;
+        box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.25);
+        .details {
+          color: #e1251b;
+        }
+      }
+      h3 {
+        color: #000;
+        text-align: center;
+      }
+      .hero {
+        padding-bottom: 20px;
+      }
+      .activeReserve {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding-bottom: 5px;
+        column-gap: 10px;
+        line-height: 1.7;
+        .component {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          &.disabled {
+            color: #c5c5c5;
+          }
+          .icon {
+            width: 20px;
+          }
+          .divider {
+            display: block;
+          }
+        }
+      }
+      .description {
+        padding-bottom: 10px;
+        text-align: center;
+        .email {
+          font-size: 1rem;
+        }
+      }
+
+      .details {
+        font-weight: 700;
+        text-align: center;
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .careers {
+    .dropdown {
+      display: none;
+    }
+    .buttons {
+      display: block;
+    }
+    .items {
+      grid-template-columns: repeat(2, minmax(0, 2fr));
+      .career {
+        padding: 23px 29px;
+        h3 {
+          text-align: left;
+        }
+        .activeReserve {
+          flex-direction: column;
+          padding-bottom: 20px;
+          color: #000;
+          .component {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          }
+          .divider {
+            display: none;
+          }
+        }
+        .description {
+          text-align: left;
+        }
+        .details {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .careers {
+    .buttons {
+      .btn-row {
+        .btn {
+          font-size: 1rem;
+          padding: 10px 26px;
+        }
+      }
+    }
+    .items {
+      grid-template-columns: repeat(3, minmax(0, 3fr));
+      gap: 2.5rem;
+    }
+  }
+}
