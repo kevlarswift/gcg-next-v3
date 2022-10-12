@@ -4,6 +4,11 @@ import { DrupalNode } from "next-drupal"
 
 import { drupal } from "lib/drupal"
 import { Layout } from "components/layout"
+//import VideoBG from "/components/blocks/VideoBG";
+//import Serving from "/components/blocks/Serving";
+//import Life from "/components/blocks/Life";
+import Benefits from "components/blocks/Benefits";
+
 import { NodeArticleTeaser } from "components/node--article--teaser"
 
 interface IndexPageProps {
@@ -13,13 +18,7 @@ interface IndexPageProps {
 export default function IndexPage({ nodes }: IndexPageProps) {
   return (
     <Layout>
-      <Head>
-        <title>Next.js for Drupal</title>
-        <meta
-          name="description"
-          content="A Next.js site powered by a Drupal backend."
-        />
-      </Head>
+      {/**
       <div>
         <h1 className="">Latest Articles.</h1>
         {nodes?.length ? (
@@ -33,6 +32,8 @@ export default function IndexPage({ nodes }: IndexPageProps) {
           <p className="">No nodes found</p>
         )}
       </div>
+       */}
+      <Benefits />
     </Layout>
   )
 }
