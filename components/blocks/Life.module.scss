@@ -1,0 +1,45 @@
+.life {
+  padding: 44px 20px 70px;
+  text-align: center;
+  .inner {
+    display: flex;
+    justify-content: center;
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.17;
+      font-weight: 800;
+      color: #005cb9;
+    }
+    p {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin: 15px 0 55px;
+    }
+    .video {
+      width: 100%;
+      background-color: #005cb9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ctas {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .selector {
+    margin: 0 0 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .life {
+    padding: 100px 32px 120px;
+    .inner {
+      h3 {
+        font-size: 2rem;
+        line-height: 1.25;
+      }
+    }
+  }
+}

@@ -6,10 +6,9 @@ import { drupal } from "lib/drupal";
 import { Layout } from "components/layout";
 import VideoBG from "components/blocks/VideoBG";
 import Serving from "components/blocks/Serving";
-//import Life from "/components/blocks/Life";
+import Life from "components/blocks/Life";
 import Benefits from "components/blocks/Benefits";
-
-import { NodeArticleTeaser } from "components/node--article--teaser";
+//import { NodeArticleTeaser } from "components/node--article--teaser";
 
 interface IndexPageProps {
   nodes: DrupalNode[];
@@ -35,6 +34,7 @@ export default function IndexPage({ nodes }: IndexPageProps) {
        */}
       <VideoBG />
       <Serving />
+      <Life />
       <Benefits />
     </Layout>
   );
