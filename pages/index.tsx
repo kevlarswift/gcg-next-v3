@@ -5,7 +5,7 @@ import { DrupalNode } from "next-drupal";
 import { drupal } from "lib/drupal";
 import { Layout } from "components/layout";
 import VideoBG from "components/blocks/VideoBG";
-//import Serving from "/components/blocks/Serving";
+import Serving from "components/blocks/Serving";
 //import Life from "/components/blocks/Life";
 import Benefits from "components/blocks/Benefits";
 
@@ -34,6 +34,7 @@ export default function IndexPage({ nodes }: IndexPageProps) {
       </div>
        */}
       <VideoBG />
+      <Serving />
       <Benefits />
     </Layout>
   );
