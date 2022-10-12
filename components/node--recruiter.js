@@ -12,8 +12,8 @@ export function NodeRecruiter({ node, ...props }) {
       <Banner 
         title={node.title} 
         subtitle="U.S. Coast Guard Recruiting Office"
-        bgImage={bgImageSrc}
-        bgImageAlt={node.field_banner.resourceIdObjMeta.alt}
+        bgImage={null}
+        bgImageAlt={null}
         ctaLink={null}
         ctaText={null}
         short={false} 
