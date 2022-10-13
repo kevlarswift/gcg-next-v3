@@ -7,9 +7,16 @@ import Credits from "./Credits";
 export default function Footer({ data, menus }) {
   return (
     <footer>
-      <Benefits title={data.benefits.title} body={data.benefits.body} link={data.benefits.link} linkText={data.benefits.linkText} />
+      <Benefits 
+        title={data.benefits.title} 
+        body={data.benefits.body} 
+        link={data.benefits.link} 
+        linkText={data.benefits.linkText} 
+      />
       <Actions />
-      <Mission mission={data.mission} />
+      <Mission 
+        mission={data.mission} 
+      />
       <Social
         facebook={data.social.facebook} 
         instagram={data.social.instagram} 
@@ -17,7 +24,9 @@ export default function Footer({ data, menus }) {
         menu1={menus.footer1.tree} 
         menu2={menus.footer2.tree}  
       />
-      <Credits author={data.author} />
+      <Credits 
+        author={data.author} 
+      />
     </footer>
   );
 }

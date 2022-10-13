@@ -9,7 +9,7 @@ export function Layout({ children, menus }) {
     <>
       <PreviewAlert />
       <ChatBtn />
-      <Header data={LayoutData.header} />
+      <Header data={LayoutData.header} menu={menus.main.tree} />
       <main className="page">{children}</main>
       <Footer data={LayoutData.footer} menus={menus} />
     </>

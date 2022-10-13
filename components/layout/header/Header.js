@@ -14,7 +14,7 @@ import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
 
-export default function Header({ data }) {
+export default function Header({ data, menu }) {
   const router = useRouter();
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -63,7 +63,7 @@ export default function Header({ data }) {
           </button>
         </div>
       </nav>
-      
+
       <Collapse in={openMenu}>
         <div id="collapse-menu">
           <div className={styles.megaMenu}>
@@ -74,7 +74,7 @@ export default function Header({ data }) {
                   handleOpenMenu();
                   router.push("/why-join");
                 }}>
-                  <img src="/images/header/menu/why-join.jpg" className={styles.image} alt="Why Join" width={"100%"} />
+                <img src="/images/header/menu/why-join.jpg" className={styles.image} alt="Why Join" width={"100%"} />
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -86,7 +86,7 @@ export default function Header({ data }) {
                   Why Join <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
-              {/**
+
               {menu[0].items.map((item) => {
                 return (
                   <div
@@ -100,7 +100,7 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
-            */}
+
             </div>
 
             <div className={styles.section}>
@@ -112,7 +112,6 @@ export default function Header({ data }) {
                 }}>
                 <img src="/images/header/menu/serve.jpg" className={styles.image} alt="Careers" width={"100%"} />
               </div>
-
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
@@ -122,8 +121,7 @@ export default function Header({ data }) {
                   <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
                   Careers <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
-              </div>
-              {/**
+              </div>  
               {menu[1].items.map((item) => {
                 return (
                   <div
@@ -137,7 +135,6 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
-            */}
             </div>
 
             <div className={styles.section}>
@@ -149,7 +146,6 @@ export default function Header({ data }) {
                 }}>
                 <img src="/images/header/menu/about.jpg" className={styles.image} alt="About" width={"100%"} />
               </div>
-
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
@@ -160,7 +156,6 @@ export default function Header({ data }) {
                   About <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
-              {/**
               {menu[2].items.map((item) => {
                 return (
                   <div
@@ -174,9 +169,7 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
-            */}
             </div>
-
 
             <div className={styles.section}>
               <div
@@ -198,7 +191,6 @@ export default function Header({ data }) {
                   Joining <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
-              {/**
               {menu[3].items.map((item) => {
                 return (
                   <div
@@ -212,12 +204,10 @@ export default function Header({ data }) {
                   </div>
                 );
               })}
-               */}
             </div>
           </div>
         </div>
       </Collapse>
-      
     </header>
   );
 }

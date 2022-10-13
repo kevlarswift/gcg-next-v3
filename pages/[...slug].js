@@ -82,6 +82,7 @@ export async function getStaticProps(context) {
     props: {
       resource,
       menus: {
+        main: await drupal.getMenu("main"),
         footer1: await drupal.getMenu("footer"),
         footer2: await drupal.getMenu("footer-menu-2")
       }
