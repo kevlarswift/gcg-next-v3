@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { drupal } from "lib/drupal";
-import { getResource, getResourceCollectionFromContext, getMenu } from "next-drupal";
+import { getResource, getResourceCollectionFromContext } from "next-drupal";
 import { Container } from "react-bootstrap";
 import { Layout } from "/components/layout";
 import Banner from "/components/blocks/banner";
@@ -8,7 +8,7 @@ import Paragraph from "/components/paragraphs/Paragraph";
 import EnlistedRatings from "/components/careers/EnlistedRatings";
 import EnlistedRatingsMenu from "/components/careers/EnlistedRatingsMenu";
 
-export default function EnlistedCareersPage({ node, nodes, menus }) {
+export default function EnlistedCareersPage({ node, nodes, menus, global }) {
   let bgImageSrc = null;
   {
     node.field_banner?.image_style_uri?.banner
@@ -20,7 +20,7 @@ export default function EnlistedCareersPage({ node, nodes, menus }) {
       <Head>
         <title>{node.title} | United States Coast Guard</title>
       </Head>
-      <Layout menus={menus}>
+      <Layout menus={menus} global={global}>
         <Banner title="Enlisted" subtitle="Find a career that fits you." bgImage={bgImageSrc} />
         <Container className="container-inner">
           {node.field_paragraphs &&
@@ -63,7 +63,8 @@ export async function getStaticProps(context) {
         main: await drupal.getMenu("main"),
         footer1: await drupal.getMenu("footer"),
         footer2: await drupal.getMenu("footer-menu-2")
-      }
+      },
+      global: await drupal.getResourceCollection("node--global")
     },
     revalidate: 900,
   };

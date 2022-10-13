@@ -8,13 +8,13 @@ import { NodeRecruiter } from "components/node--recruiter"
 import { NodeOfficerCareer } from "components/node--officer-career"
 import { Layout } from "components/layout"
 
-const RESOURCE_TYPES = [ "node--top", "node--page", "node--rate", "node--recruiter", "node--officer_career"]
+const RESOURCE_TYPES = [ "node--global", "node--top", "node--page", "node--rate", "node--recruiter", "node--officer_career"]
 
-export default function NodePage({ resource, menus }) {
+export default function NodePage({ resource, menus, global }) {
   if (!resource) return null
 
   return (
-    <Layout menus={menus}>
+    <Layout menus={menus} global={global}>
       <Head>
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
@@ -84,8 +84,9 @@ export async function getStaticProps(context) {
       menus: {
         main: await drupal.getMenu("main"),
         footer1: await drupal.getMenu("footer"),
-        footer2: await drupal.getMenu("footer-menu-2")
-      }
+        footer2: await drupal.getMenu("footer-menu-2"),
+      },
+      global: await drupal.getResourceCollection("node--global")
     },
   }
 }

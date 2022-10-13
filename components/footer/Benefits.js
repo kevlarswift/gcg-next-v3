@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import BackgroundImage from "../layout/BackgroundImage";
+import Body from "components/Body";
 import styles from "./Benefits.module.scss";
 
 export default function Benefits({ title, body, link, linkText }) {
@@ -52,7 +53,7 @@ export const BenefitsBody = ({ body }) => {
 
   return (
     <div ref={ref}>
-      <motion.p animate={animation}>{body}</motion.p>
+      <motion.p animate={animation}><Body value={body} /></motion.p>
     </div>
   );
 };
@@ -71,7 +72,7 @@ export const BenefitsAction = ({ link, text }) => {
   return (
     <div ref={ref}>
       <motion.div className={styles.ctas} animate={animation}>
-        <Link href={link}>
+        <Link href={link.replace("internal:", "")}>
           <a className="btn-cta">{text}</a>
         </Link>
       </motion.div>

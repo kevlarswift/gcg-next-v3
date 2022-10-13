@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./Mission.module.scss";
+import Body from "components/Body";
 
 export default function Mission({ mission }) {
   return (
@@ -49,7 +50,7 @@ export const MissionBody = ({ mission }) => {
   }, [inView]);
   return (
     <div ref={ref}>
-      <motion.p animate={animation}>{mission}</motion.p>
+      <motion.div animate={animation}><Body value={mission} /></motion.div>
     </div>
   );
 };

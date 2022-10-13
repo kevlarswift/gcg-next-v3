@@ -4,28 +4,28 @@ import Mission from "./Mission";
 import Social from "./Social";
 import Credits from "./Credits";
 
-export default function Footer({ data, menus }) {
+export default function Footer({ facebook, instagram, youtube, benefitsTitle, benefitsBody, benefitsLink, menus, author, mission }) {
   return (
     <footer>
       <Benefits 
-        title={data.benefits.title} 
-        body={data.benefits.body} 
-        link={data.benefits.link} 
-        linkText={data.benefits.linkText} 
+        title={benefitsTitle} 
+        body={benefitsBody} 
+        link={benefitsLink.uri} 
+        linkText={benefitsLink.title} 
       />
       <Actions />
       <Mission 
-        mission={data.mission} 
+        mission={mission} 
       />
       <Social
-        facebook={data.social.facebook} 
-        instagram={data.social.instagram} 
-        youtube={data.social.youtube} 
+        facebook={facebook.uri} 
+        instagram={instagram.uri} 
+        youtube={youtube.uri} 
         menu1={menus.footer1.tree} 
         menu2={menus.footer2.tree}  
       />
       <Credits 
-        author={data.author} 
+        author={author} 
       />
     </footer>
   );
