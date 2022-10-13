@@ -7,9 +7,9 @@ import Player from "../video/Player";
 import styles from "./Life.module.scss";
 
 export default function Life() {
-  const title = "There`&apos;`s no such thing as an average day when in the Coast Guard";
+  const title = "There &apos;s no such thing as an average day when in the Coast Guard";
   const subtitle =
-    "Every day, you`&apos;`ll work on exciting missions and gain in-demand career skills all while making lifelong friends and having life-changing experiences. Just ask our servicemembers. They’ll tell you that adventure is part of their job—and making a difference is their priority.";
+    "Every day, you&apos;ll work on exciting missions and gain in-demand career skills all while making lifelong friends and having life-changing experiences. Just ask our servicemembers. They&apos;ll tell you that adventure is part of their job—and making a difference is their priority.";
 
   const videos = [
     { url: "https://www.youtube.com/watch?v=4r8KrBDPozE", title: "Ariel Medlin" },
@@ -39,8 +39,8 @@ export default function Life() {
           <LifeSubtitle subtitle={subtitle} />
         </div>
       </div>
-      <LifePlayer video={video} videos={videos}  setVideo={setVideo} />
-      <LifeAction  />
+      <LifePlayer video={video} videos={videos} setVideo={setVideo} />
+      <LifeAction />
     </Container>
   );
 }
@@ -103,7 +103,7 @@ export const LifePlayer = ({ video, videos, setVideo }) => {
           <Form>
             <Form.Group controlId="formVideoSelect">
               <Form.Select aria-label="Choose another Video" onChange={handleSelect}>
-                <option value="/careers/enlisted"> - Explore `&apos;`A Coast Guard Life`&apos;` video series - </option>
+                <option value="/careers/enlisted"> - Explore &apos;A Coast Guard Life&apos; video series - </option>
                 {videos.map((vid, idx) => (
                   <option value={vid.url} key={idx}>
                     {vid.title}
@@ -132,7 +132,9 @@ export const LifeAction = () => {
   return (
     <div ref={ref}>
       <motion.div className="ctas" animate={animation}>
-        
+        <Link href="/stories">
+          <a className="btn-cta">Watch More Stories</a>
+        </Link>
       </motion.div>
     </div>
   );
