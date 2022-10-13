@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { drupal } from "lib/drupal";
 import { getResource, getResourceCollectionFromContext, getMenu } from "next-drupal";
 import { Container } from "react-bootstrap";
 import { Layout } from "/components/layout";
@@ -7,7 +8,7 @@ import Paragraph from "/components/paragraphs/Paragraph";
 import EnlistedRatings from "/components/careers/EnlistedRatings";
 import EnlistedRatingsMenu from "/components/careers/EnlistedRatingsMenu";
 
-export default function EnlistedCareersPage({ node, nodes, menu }) {
+export default function EnlistedCareersPage({ node, nodes, menus }) {
   let bgImageSrc = null;
   {
     node.field_banner?.image_style_uri?.banner
@@ -19,7 +20,7 @@ export default function EnlistedCareersPage({ node, nodes, menu }) {
       <Head>
         <title>{node.title} | United States Coast Guard</title>
       </Head>
-      <Layout menu={menu}>
+      <Layout menus={menus}>
         <Banner title="Enlisted" subtitle="Find a career that fits you." bgImage={bgImageSrc} />
         <Container className="container-inner">
           {node.field_paragraphs &&
@@ -53,15 +54,14 @@ export async function getStaticProps(context) {
     },
   });
 
-  // Fetch menu tree
-  const { tree } = await getMenu("main");
-
   // Provide Props to Page
   return {
     props: {
       node,
       nodes,
-      menu: tree,
+      menus: {
+        footer: await drupal.getMenu("footer"),
+      }
     },
     revalidate: 900,
   };

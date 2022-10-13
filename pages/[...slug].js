@@ -10,11 +10,11 @@ import { Layout } from "components/layout"
 
 const RESOURCE_TYPES = [ "node--top", "node--page", "node--rate", "node--recruiter", "node--officer_career"]
 
-export default function NodePage({ resource, menu }) {
+export default function NodePage({ resource, menus }) {
   if (!resource) return null
 
   return (
-    <Layout menu={menu}>
+    <Layout menus={menus}>
       <Head>
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
@@ -61,8 +61,6 @@ export async function getStaticProps(context) {
       params,
     }
   )
-  
-  const { menu, tree } = await drupal.getMenu("footer")
 
   // At this point, we know the path exists and it points to a resource.
   // If we receive an error, it means something went wrong on Drupal.
@@ -83,7 +81,9 @@ export async function getStaticProps(context) {
   return {
     props: {
       resource,
-      menu: tree
+      menus: {
+        footer: await drupal.getMenu("footer")
+      }
     },
     
   }

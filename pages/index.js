@@ -5,9 +5,9 @@ import Serving from "components/blocks/Serving";
 import Life from "components/blocks/Life";
 import Benefits from "components/blocks/Benefits";
 
-export default function IndexPage({ menu }) {
+export default function IndexPage({ menus }) {
   return (
-    <Layout menu={menu}>
+    <Layout menus={menus}>
       {/**
       <div>
         <h1 className="">Latest Articles.</h1>
@@ -32,7 +32,6 @@ export default function IndexPage({ menu }) {
 }
 
 export async function getStaticProps(context) {
-  const { menu, tree } = await drupal.getMenu("footer")
   /*
   const nodes = await drupal.getResourceCollectionFromContext("node--article", context, {
     params: {
@@ -45,7 +44,9 @@ export async function getStaticProps(context) {
 */
   return {
     props: {
-      menu: tree,
+      menus: {
+        footer: await drupal.getMenu("footer"),
+      }
     },
   };
 }
