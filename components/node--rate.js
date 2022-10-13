@@ -73,9 +73,7 @@ export function NodeRate({ node, rates, ...props }) {
                           {skill.field_rate_skill_icon && (
                             <div className={styles.icon}>
                               <img
-                                src={
-                                  `https://test-gcg-drupal-next.pantheonsite.io/` + skill.field_rate_skill_icon.uri.url
-                                }
+                                src={NEXT_PUBLIC_DRUPAL_BASE_URL + skill.field_rate_skill_icon.uri.url}
                                 width={32}
                                 height={32}
                               />

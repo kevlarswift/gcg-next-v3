@@ -86,7 +86,7 @@ export async function getStaticProps(context) {
         footer1: await drupal.getMenu("footer"),
         footer2: await drupal.getMenu("footer-menu-2"),
       },
-      global: await drupal.getResourceCollection("node--global")
+      global: await drupal.getResourceCollection("node--global"),
     },
   }
 }

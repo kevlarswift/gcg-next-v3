@@ -10,7 +10,6 @@ import { useInView } from "react-intersection-observer";
 import TitleAdornments from "./TitleAdornments";
 import BenefitsData from "/data/Benefits.js";
 import { Container } from "react-bootstrap";
-
 import styles from "./Benefits.module.scss";
 
 function SampleNextArrow({ className, style, onClick }) {
@@ -21,10 +20,11 @@ function SamplePrevArrow({ className, style, onClick }) {
   return <div className={className} style={{ ...style }} onClick={onClick} />;
 }
 
-export default function Benefits() {
+export default function Benefits(benefits) {
   // Animation
   const { ref, inView } = useInView({ threshold: 0.05 });
   const animation = useAnimation();
+
   useEffect(() => {
     if (inView) {
       animation.start({ opacity: 1, transition: { duration: 0.35 } });
@@ -59,7 +59,7 @@ export default function Benefits() {
       },
     ],
   };
-  const items = shuffle(BenefitsData.items);
+  //const items = shuffle(BenefitsData.items);
 
   return (
     <div ref={ref}>
@@ -70,8 +70,12 @@ export default function Benefits() {
           <h3>Great reasons to join</h3>
           <div className={styles.grid}>
             <Slider {...settings}>
-              {items.map((item, index) => {
-                return <Benefit title={item.title} subhead={item.subhead} icon={item.icon} key={index} />;
+              {benefits.benefits.map((benefit, index) => {
+                let iconImage = benefit?.field_icon?.uri?.url;
+                if (iconImage) {
+                  iconImage = process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + iconImage
+                }
+                return <Benefit title={benefit.title} icon={iconImage} key={index} />;
               })}
             </Slider>
           </div>
@@ -81,7 +85,7 @@ export default function Benefits() {
   );
 }
 
-export const Benefit = ({ title, subhead, icon }) => {
+export const Benefit = ({ title, icon }) => {
   return (
     <div className={styles.benefit}>
       <div className={styles.iconWrapper}>
@@ -92,11 +96,6 @@ export const Benefit = ({ title, subhead, icon }) => {
       <div className={styles.titleWrapper}>
         <h4 className={styles.title}>{title}</h4>
       </div>
-      {/**
-      <div className={styles.description}>
-        <p>{subhead}</p>
-      </div>
-       */}
     </div>
   );
 };
