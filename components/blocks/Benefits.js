@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TitleAdornments from "./TitleAdornments";
-import BenefitsData from "/data/Benefits.js";
 import { Container } from "react-bootstrap";
 import styles from "./Benefits.module.scss";
 
