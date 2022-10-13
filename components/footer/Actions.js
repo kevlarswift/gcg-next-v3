@@ -13,7 +13,7 @@ export default function Actions() {
     <Container className={styles.startAdventure}>
       <StartAdventureTitle />
       <StartAdventureSubtitle
-        subtitle="Have questions about how to join? Need more information? We’re here to help."
+        subtitle="Have any questions about how to join? Need more information? We’re here to help."
       />
       <div className={styles.ctas}>
         <StartAdventureLink title="Chat Now" link="/chat-now" icon={faMapMarkerAlt} />
