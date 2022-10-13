@@ -11,7 +11,6 @@ export function Layout({ children, menus, global }) {
       <Header menu={menus.main.tree} motto={global[0].field_motto.processed} />
       <main className="page">{children}</main>
       <Footer 
-        data={LayoutData.footer} 
         facebook={global[0].field_social_facebook} 
         instagram={global[0].field_social_instagram} 
         youtube={global[0].field_social_youtube} 
