@@ -7,9 +7,9 @@ import Player from "../video/Player";
 import styles from "./Life.module.scss";
 
 export default function Life() {
-  const title = "There’s no such thing as an average day when in the Coast Guard";
+  const title = "There`&apos;`s no such thing as an average day when in the Coast Guard";
   const subtitle =
-    "Every day, you’ll work on exciting missions and gain in-demand career skills all while making lifelong friends and having life-changing experiences. Just ask our servicemembers. They’ll tell you that adventure is part of their job—and making a difference is their priority.";
+    "Every day, you`&apos;`ll work on exciting missions and gain in-demand career skills all while making lifelong friends and having life-changing experiences. Just ask our servicemembers. They’ll tell you that adventure is part of their job—and making a difference is their priority.";
 
   const videos = [
     { url: "https://www.youtube.com/watch?v=4r8KrBDPozE", title: "Ariel Medlin" },
@@ -25,7 +25,7 @@ export default function Life() {
     { url: "https://www.youtube.com/watch?v=IO_uI7Tu7ng", title: "Lindsey Arcangel" },
     { url: "https://www.youtube.com/watch?v=n_0cT8WvkvQ", title: "Leanne Lusk" },
     { url: "https://www.youtube.com/watch?v=fKLAb1YEks4", title: "Earl Jackson" },
-    { url: "https://www.youtube.com/watch?v=uxa_qdonLjk", title: "Megan O'Connor" },
+    { url: "https://www.youtube.com/watch?v=uxa_qdonLjk", title: "Megan O`&apos;`Connor" },
     { url: "https://www.youtube.com/watch?v=DvuFsg-ffcE", title: "Tom Brown" },
     { url: "https://www.youtube.com/watch?v=AP48HFhG1e0", title: "Kimberley Miller" },
   ];
@@ -39,8 +39,8 @@ export default function Life() {
           <LifeSubtitle subtitle={subtitle} />
         </div>
       </div>
-      <LifePlayer video={video} videos={videos} />
-      <LifeAction />
+      <LifePlayer video={video} videos={videos}  setVideo={setVideo} />
+      <LifeAction  />
     </Container>
   );
 }
@@ -81,7 +81,7 @@ export const LifeSubtitle = ({ subtitle }) => {
   );
 };
 
-export const LifePlayer = ({ video, videos }) => {
+export const LifePlayer = ({ video, videos, setVideo }) => {
   const { ref, inView } = useInView({ threshold: 0.15 });
   const animation = useAnimation();
   useEffect(() => {
@@ -103,7 +103,7 @@ export const LifePlayer = ({ video, videos }) => {
           <Form>
             <Form.Group controlId="formVideoSelect">
               <Form.Select aria-label="Choose another Video" onChange={handleSelect}>
-                <option value="/careers/enlisted"> - Explore 'A Coast Guard Life' video series - </option>
+                <option value="/careers/enlisted"> - Explore `&apos;`A Coast Guard Life`&apos;` video series - </option>
                 {videos.map((vid, idx) => (
                   <option value={vid.url} key={idx}>
                     {vid.title}
@@ -132,9 +132,7 @@ export const LifeAction = () => {
   return (
     <div ref={ref}>
       <motion.div className="ctas" animate={animation}>
-        <Link href="/stories">
-          <a className="btn-cta">Watch More Stories</a>
-        </Link>
+        
       </motion.div>
     </div>
   );
