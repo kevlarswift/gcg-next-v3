@@ -9,7 +9,7 @@ import { faFacebookF, faInstagram, faYoutube } from "@fortawesome/free-brands-sv
 import BackgroundImage from "../layout/BackgroundImage";
 import styles from "./Social.module.scss";
 
-export default function StayConnected({ menu1, menu2, facebook, instagram, youtube }) {
+export default function StayConnected({ menu, menu1, menu2, facebook, instagram, youtube }) {
   const { ref, inView } = useInView({ threshold: 0.05 });
   const animation = useAnimation();
   useEffect(() => {
@@ -45,12 +45,13 @@ export default function StayConnected({ menu1, menu2, facebook, instagram, youtu
               <h4>Additional Links</h4>
               <div className={styles.listWrapper}>
                 <ul>
-                  {menu1 &&
-                    menu1.edges.map((edge, index) => (
+                  {menu &&
+                    menu.map((item, index) => (
                       <li key={index} className="mb-2">
-                        <a href={edge.node.url}>{edge.node.title}</a>
+                        <a href={item.url}>{item.title}</a>
                       </li>
                     ))}
+                     
                 </ul>
                 <ul>
                   {menu2 &&

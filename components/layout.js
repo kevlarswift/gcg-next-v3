@@ -4,14 +4,14 @@ import Header from "components/layout/header/Header"
 import Footer from "components/footer/Footer"
 import LayoutData from "data/LayoutData"
 
-export function Layout({ children }) {
+export function Layout({ children, menu }) {
   return (
     <>
       <PreviewAlert />
       <ChatBtn />
       <Header data={LayoutData.header} />
       <main className="page">{children}</main>
-      <Footer data={LayoutData.footer} />
+      <Footer data={LayoutData.footer} menu={menu} />
     </>
   )
 }

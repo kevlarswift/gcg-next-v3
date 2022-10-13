@@ -1,7 +1,5 @@
 import * as React from "react"
-import { GetStaticPathsResult, GetStaticPropsResult } from "next"
 import Head from "next/head"
-import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
 import { NodeTop } from "components/node--top"
 import { NodeBasicPage } from "components/node--basic-page"
@@ -10,17 +8,13 @@ import { NodeRecruiter } from "components/node--recruiter"
 import { NodeOfficerCareer } from "components/node--officer-career"
 import { Layout } from "components/layout"
 
-const RESOURCE_TYPES = ["node--page", "node--top"]
+const RESOURCE_TYPES = [ "node--top", "node--page", "node--rate", "node--recruiter", "node--officer_career"]
 
-interface NodePageProps {
-  resource: DrupalNode
-}
-
-export default function NodePage({ resource }: NodePageProps) {
+export default function NodePage({ resource, menu }) {
   if (!resource) return null
 
   return (
-    <Layout>
+    <Layout menu={menu}>
       <Head>
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
@@ -34,16 +28,14 @@ export default function NodePage({ resource }: NodePageProps) {
   )
 }
 
-export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
+export async function getStaticPaths(context) {
   return {
     paths: await drupal.getStaticPathsFromContext(RESOURCE_TYPES, context),
     fallback: "blocking",
   }
 }
 
-export async function getStaticProps(
-  context
-): Promise<GetStaticPropsResult<NodePageProps>> {
+export async function getStaticProps(context) {
   const path = await drupal.translatePathFromContext(context)
 
   if (!path) {
@@ -55,26 +47,22 @@ export async function getStaticProps(
   const type = path.jsonapi.resourceName
 
   let params = {}
-  /*
-  if (type === "node--article") {
-    params = {
-      include: "field_image, uid",
-    }
-  }
-  */
+  
   if (type === "node--page" || type === "node--top" || type === "node--officer_program" || type === "node--officer_career") {
     params = {
       include: "field_banner, field_paragraphs, field_paragraphs.field_banner_bg",
     };
   }
 
-  const resource = await drupal.getResourceFromContext<DrupalNode>(
+  const resource = await drupal.getResourceFromContext(
     path,
     context,
     {
       params,
     }
   )
+  
+  const { menu, tree } = await drupal.getMenu("footer")
 
   // At this point, we know the path exists and it points to a resource.
   // If we receive an error, it means something went wrong on Drupal.
@@ -95,6 +83,8 @@ export async function getStaticProps(
   return {
     props: {
       resource,
+      menu: tree
     },
+    
   }
 }
