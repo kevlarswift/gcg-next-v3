@@ -60,7 +60,8 @@ export async function getStaticProps(context) {
       node,
       nodes,
       menus: {
-        footer: await drupal.getMenu("footer"),
+        footer1: await drupal.getMenu("footer"),
+        footer2: await drupal.getMenu("footer-menu-2")
       }
     },
     revalidate: 900,

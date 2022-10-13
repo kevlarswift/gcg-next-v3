@@ -11,7 +11,7 @@ export function Layout({ children, menus }) {
       <ChatBtn />
       <Header data={LayoutData.header} />
       <main className="page">{children}</main>
-      <Footer data={LayoutData.footer} menu={menus.footer.tree} />
+      <Footer data={LayoutData.footer} menus={menus} />
     </>
   )
 }
