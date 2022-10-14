@@ -8,7 +8,14 @@ import { NodeRecruiter } from "components/node--recruiter"
 import { NodeOfficerCareer } from "components/node--officer-career"
 import { Layout } from "components/layout"
 
-const RESOURCE_TYPES = [ "node--global", "node--top", "node--page", "node--rate", "node--recruiter", "node--officer_career"]
+const RESOURCE_TYPES = [ 
+  "node--global", 
+  "node--top", 
+  "node--page", 
+  "node--rate", 
+  "node--recruiter", 
+  "node--officer_career"
+]
 
 export default function NodePage({ resource, menus, global }) {
   if (!resource) return null
@@ -51,6 +58,12 @@ export async function getStaticProps(context) {
   if (type === "node--page" || type === "node--top" || type === "node--officer_program" || type === "node--officer_career") {
     params = {
       include: "field_banner, field_paragraphs, field_paragraphs.field_banner_bg",
+    };
+  }
+
+  if (type === "node--rate") {
+    params = {
+      include: "field_banner, field_paragraph_skills, field_paragraph_skills.field_rate_skill_icon",
     };
   }
 
