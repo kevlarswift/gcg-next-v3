@@ -22,7 +22,7 @@ export default function EnlistedCareersPage({ node, nodes, menus, global }) {
         <title>{node.title} | United States Coast Guard</title>
       </Head>
       <Layout menus={menus} global={global}>
-        <Banner title={node.title} subtitle={node.subtitle} bgImage={bgImageSrc} />
+        <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
         <Container className="container-inner">
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {
