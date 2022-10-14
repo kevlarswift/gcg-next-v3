@@ -8,21 +8,6 @@ import Benefits from "components/blocks/Benefits";
 export default function IndexPage({ menus, global, benefits }) {
   return (
     <Layout menus={menus} global={global}>
-      {/**
-      <div>
-        <h1 className="">Latest Articles.</h1>
-        {nodes?.length ? (
-          nodes.map((node) => (
-            <div key={node.id}>
-              <NodeArticleTeaser node={node} />
-              <hr className="" />
-            </div>
-          ))
-        ) : (
-          <p className="">No nodes found</p>
-        )}
-      </div>
-       */}
       <VideoBG />
       <Serving />
       <Life />
@@ -32,16 +17,7 @@ export default function IndexPage({ menus, global, benefits }) {
 }
 
 export async function getStaticProps(context) {
-  /*
-  const nodes = await drupal.getResourceCollectionFromContext("node--article", context, {
-    params: {
-      "filter[status]": 1,
-      "fields[node--article]": "title,path,uid,created",
-      include: "uid",
-      sort: "-created",
-    },
-  });
-*/
+
   const benefits = await drupal.getResourceCollectionFromContext("node--benefit", context, { 
     params: { 
       include: "field_icon" 

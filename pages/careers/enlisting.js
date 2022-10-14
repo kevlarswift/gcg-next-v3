@@ -7,7 +7,7 @@ import Paragraph from "/components/paragraphs/Paragraph";
 import EnlistedRatings from "/components/careers/EnlistedRatings";
 import EnlistedRatingsMenu from "/components/careers/EnlistedRatingsMenu";
 
-export default function EnlistedCareersPage({ node, nodes, menus, global }) {
+export default function EnlistedCareersPage({ node, rates, menus, global }) {
   let bgImageSrc = null;
   {/**
   {
@@ -28,8 +28,8 @@ export default function EnlistedCareersPage({ node, nodes, menus, global }) {
             node.field_paragraphs.map((paragraph) => {
               return <Paragraph content={paragraph} key={paragraph.id} />;
             })}
-          <EnlistedRatings data={nodes} />
-          <EnlistedRatingsMenu data={nodes} />
+          <EnlistedRatings data={rates} />
+          <EnlistedRatingsMenu data={rates} />
         </Container>
       </Layout>
 
@@ -46,7 +46,7 @@ export async function getStaticProps(context) {
   });
 
   // Fetch Enlisted Rates
-  const nodes = await drupal.getResourceCollectionFromContext("node--rate", context, {
+  const rates = await drupal.getResourceCollectionFromContext("node--rate", context, {
     params: {
       "filter[status]": 1,
       "fields[node--rate]":
@@ -60,7 +60,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       node,
-      nodes,
+      rates,
       menus: {
         main: await drupal.getMenu("main"),
         footer1: await drupal.getMenu("footer"),
@@ -68,6 +68,6 @@ export async function getStaticProps(context) {
       },
       global: await drupal.getResourceCollection("node--global")
     },
-    revalidate: 60,
+    revalidate: 900,
   };
 }
