@@ -22,7 +22,7 @@ export default function NodePage({ resource, menus, rates, global, specials }) {
 
   return (
     <Layout menus={menus} global={global}>
-      {/**<pre>{JSON.stringify(specials, null, 2)}</pre>*/}
+      {/** <pre>{JSON.stringify(specials, null, 2)}</pre>*/}
       <Head>
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
