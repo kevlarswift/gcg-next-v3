@@ -22,12 +22,13 @@ export default function NodePage({ resource, menus, rates, global }) {
 
   return (
     <Layout menus={menus} global={global}>
+      <pre>{JSON.stringify(resource, null, 2)}</pre>
       <Head>
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
       </Head>
       {resource.type === "node--top" && <NodeTop node={resource} />}
-      {resource.type === "node--page" && <NodeBasicPage node={resource} />}
+      {resource.type === "node--page" && resource.path?.alias !== '/careers/enlisting/' && <NodeBasicPage node={resource} />}
       {resource.type === "node--rate" && <NodeRate node={resource} rates={rates} />}
       {resource.type === "node--recruiter" && <NodeRecruiter node={resource} />}
       {resource.type === "node--officer_career" && <NodeOfficerCareer node={resource} />}
@@ -110,5 +111,6 @@ export async function getStaticProps(context) {
       rates,
       global: await drupal.getResourceCollection("node--global"),
     },
+    revalidate: 60
   }
 }
