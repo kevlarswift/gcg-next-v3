@@ -1,0 +1,22 @@
+{
+  [
+    { "label": "I agree to the terms of the Privacy Act", "field":: formValues1.terms_privacy, "type": "boolean" },
+    { "label": "I agree to the terms of the Paperwork Reduction Act", "field":: formValues1.terms_paperwork, "type": "boolean" },
+    { "label": "First Name", "field":: formValues1.name_first, "type": "text" },
+    { "label": "Middle Name", "field":: formValues1.name_middle, "type": "text" },
+    { "label": "Last Name", "field":: formValues1.name_last, "type": "text" },
+    { "label": "Suffix", "field":: formValues1.name_suffix, "type": "select" },
+    { "label": "Maiden Name", "field":: formValues1.name_maiden, "type": "text" },
+    { "label": "Country", "field":: formValues1.country, "type": "select" },
+    { "label": "Street", "field":: formValues1.street, "type": "text" },
+    { "label": "City", "field":: formValues1.city, "type": "text" },
+    { "label": "State", "field":: formValues1.state, "type": "select" },
+    { "label": "Zip", "field":: formValues1.zip, "type": "text" },
+    { "label": "County", "field":: formValues1.county, "type": "text" },
+    { "label": "Email", "field":: formValues1.email, "type": "text" },
+    { "label": "Phone Number", "field":: formValues1.phone_home, "type": "text" },
+    { "label": "How did you first hear about us", "field":: formValues1.media_id, "type": "select" },
+    { "label": "Program of Interest", "field":: formValues1.program_of_interest, "type": "select" },
+    { "label": "Component", "field":: formValues1.component, "type": "select" }
+  ]
+} 

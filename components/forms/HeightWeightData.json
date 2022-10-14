@@ -1,0 +1,28 @@
+{
+  "bodyFat": [
+    { "label": "4' 10\"", "height": 58, "min": 91, "max": 131 },
+    { "label": "4' 11\"", "height": 59, "min": 94, "max": 136 },
+    { "label": "5' 0\"", "height": 60, "min": 97, "max": 141 },
+    { "label": "5' 1\"", "height": 61, "min": 100, "max": 145 },
+    { "label": "5' 2\"", "height": 62, "min": 104, "max": 150 },
+    { "label": "5' 3\"", "height": 63, "min": 107, "max": 155 },
+    { "label": "5' 4\"", "height": 64, "min": 110, "max": 160 },
+    { "label": "5' 5\"", "height": 65, "min": 114, "max": 165  },
+    { "label": "5' 6\"", "height": 66, "min": 117, "max": 170 },
+    { "label": "5' 7\"", "height": 67, "min": 121, "max": 175 },
+    { "label": "5' 8\"", "height": 68, "min": 125, "max": 180 },
+    { "label": "5' 9\"", "height": 69, "min": 128, "max": 186 },
+    { "label": "5' 10\"", "height": 70, "min": 132, "max": 191 },
+    { "label": "5' 11\"", "height": 71, "min": 136, "max": 197 },
+    { "label": "6' 0\"", "height": 72, "min": 140, "max": 202 },
+    { "label": "6' 1\"", "height": 73, "min": 144, "max": 208 },
+    { "label": "6' 2\"", "height": 74, "min": 148, "max": 214 },
+    { "label": "6' 3\"", "height": 75, "min": 152, "max": 220  },
+    { "label": "6' 4\"", "height": 76, "min": 156, "max": 225 },
+    { "label": "6' 5\"", "height": 77, "min": 160, "max": 231 },
+    { "label": "6' 6\"", "height": 78, "min": 164, "max": 237 },
+    { "label": "6' 7\"", "height": 79, "min": 168, "max": 244 },
+    { "label": "6' 8\"", "height": 80, "min": 173, "max": 250 }
+  ]
+}
+  
