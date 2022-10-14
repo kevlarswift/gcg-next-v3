@@ -17,22 +17,23 @@ const RESOURCE_TYPES = [
   "node--officer_career"
 ]
 
-export default function NodePage({ resource, menus, rates, global }) {
+export default function NodePage({ resource, menus, rates, global, specials }) {
   if (!resource) return null
 
   return (
     <Layout menus={menus} global={global}>
-      {/** <pre>{JSON.stringify(resource, null, 2)}</pre> */}
+      <pre>{JSON.stringify(specials, null, 2)}</pre>
       <Head>
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
       </Head>
-      {/**  */}
+      
       {resource.type === "node--top" && <NodeTop node={resource} />}
-      {(resource.type === "node--page" && resource.path?.alias !== '/careers/enlisting') &&  <NodeBasicPage node={resource} />}
+      {resource.type === "node--page" && <NodeBasicPage node={resource} />}
       {resource.type === "node--rate" && <NodeRate node={resource} rates={rates} />}
       {resource.type === "node--recruiter" && <NodeRecruiter node={resource} />}
       {resource.type === "node--officer_career" && <NodeOfficerCareer node={resource} />}
+      {resource.path.alias === '/careers/enlisting' }
     </Layout>
   )
 }
@@ -77,6 +78,14 @@ export async function getStaticProps(context) {
     },
   });
 
+  const specials = await drupal.getResourceCollection("node--special", {
+    params: {
+      "filter[status]": 1,
+      sort: "title",
+      "fields[node--rate]": "title,field_subtitle,path",
+    },
+  });
+
   const resource = await drupal.getResourceFromContext(
     path,
     context,
@@ -110,8 +119,9 @@ export async function getStaticProps(context) {
         footer2: await drupal.getMenu("footer-menu-2"),
       },
       rates,
+      specials,
       global: await drupal.getResourceCollection("node--global"),
     },
-    revalidate: 60
+    revalidate: 900
   }
 }

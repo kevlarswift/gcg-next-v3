@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { drupal } from "lib/drupal";
-import { getResource, getResourceCollectionFromContext } from "next-drupal";
 import { Container } from "react-bootstrap";
 import { Layout } from "/components/layout";
 import Banner from "/components/blocks/banner";
@@ -10,11 +9,13 @@ import EnlistedRatingsMenu from "/components/careers/EnlistedRatingsMenu";
 
 export default function EnlistedCareersPage({ node, nodes, menus, global }) {
   let bgImageSrc = null;
+  {/**
   {
     node.field_banner?.image_style_uri?.banner
       ? (bgImageSrc = `${node.field_banner.image_style_uri.banner}`)
       : (bgImageSrc = "/images/backgrounds/waves.webp");
   }
+   */}
   return (
     <>
       <Head>
@@ -31,20 +32,21 @@ export default function EnlistedCareersPage({ node, nodes, menus, global }) {
           <EnlistedRatingsMenu data={nodes} />
         </Container>
       </Layout>
+
     </>
   );
 }
 
 export async function getStaticProps(context) {
   // Fetch page content
-  const node = await getResource("node--page", "7908e1d6-b408-4a39-9883-a97566c758ea", {
+  const node = await drupal.getResource("node--special", "4b47ef91-d57b-4806-98c5-0eb9b1541518", {
     params: {
-      include: "field_paragraphs, field_paragraph_cta, field_banner",
+      include: "field_paragraphs, field_banner",
     },
   });
 
   // Fetch Enlisted Rates
-  const nodes = await getResourceCollectionFromContext("node--rate", context, {
+  const nodes = await drupal.getResourceCollectionFromContext("node--rate", context, {
     params: {
       "filter[status]": 1,
       "fields[node--rate]":
