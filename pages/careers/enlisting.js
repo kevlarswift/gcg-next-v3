@@ -68,6 +68,6 @@ export async function getStaticProps(context) {
       },
       global: await drupal.getResourceCollection("node--global")
     },
-    revalidate: 900,
+    revalidate: 60,
   };
 }
