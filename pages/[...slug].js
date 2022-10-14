@@ -17,7 +17,7 @@ const RESOURCE_TYPES = [
   "node--officer_career"
 ]
 
-export default function NodePage({ resource, menus, global }) {
+export default function NodePage({ resource, menus, rates, global }) {
   if (!resource) return null
 
   return (
@@ -28,7 +28,7 @@ export default function NodePage({ resource, menus, global }) {
       </Head>
       {resource.type === "node--top" && <NodeTop node={resource} />}
       {resource.type === "node--page" && <NodeBasicPage node={resource} />}
-      {resource.type === "node--rate" && <NodeRate node={resource} rates={null} />}
+      {resource.type === "node--rate" && <NodeRate node={resource} rates={rates} />}
       {resource.type === "node--recruiter" && <NodeRecruiter node={resource} />}
       {resource.type === "node--officer_career" && <NodeOfficerCareer node={resource} />}
     </Layout>
@@ -67,6 +67,14 @@ export async function getStaticProps(context) {
     };
   }
 
+  const rates = await drupal.getResourceCollection("node--rate", {
+    params: {
+      "filter[status]": 1,
+      sort: "title",
+      "fields[node--rate]": "title,field_subtitle,path",
+    },
+  });
+
   const resource = await drupal.getResourceFromContext(
     path,
     context,
@@ -99,6 +107,7 @@ export async function getStaticProps(context) {
         footer1: await drupal.getMenu("footer"),
         footer2: await drupal.getMenu("footer-menu-2"),
       },
+      rates,
       global: await drupal.getResourceCollection("node--global"),
     },
   }

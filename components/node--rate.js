@@ -4,7 +4,7 @@ import { Accordion, Container } from "react-bootstrap";
 import Body from "/components/Body";
 import Banner from "/components/blocks/banner";
 import BackgroundImage from "/components/BackgroundImage";
-//import EnlistedRatingsMenu from "../careers/EnlistedRatingsMenu";
+import EnlistedRatingsMenu from "/components/careers/EnlistedRatingsMenu";
 import styles from "./Rate.module.scss";
 
 export function NodeRate({ node, rates, ...props }) {
@@ -107,7 +107,7 @@ export function NodeRate({ node, rates, ...props }) {
             </Accordion>
 
             <div className="page-ctas">
-              {/**<EnlistedRatingsMenu data={rates} />*/}
+              <EnlistedRatingsMenu data={rates} />
               <span className="divider">OR</span>
               <Link href="/find-recruiter">
                 <a className="btn-cta">Find a Recruiter</a>
