@@ -27,7 +27,8 @@ export default function SimplePage() {
       body: JSON.stringify({
         params: {
           fields: {
-            "node--page": "id,title,subtitle,created",
+            "node--page": "id,title,subtitle,created,path,field_paragraphs",
+            
           },
           filter: {
             fulltext: event.target.keywords.value,
@@ -113,9 +114,11 @@ export default function SimplePage() {
                       </div>
                     )}
                     <div className="col-span-2">
-                      <h4 className="mt-0">{node.title}</h4>
+                      <h4 className="mt-0"><Link href={node.path.alias}>{node.title}</Link></h4>
+
+                      {/**<pre>{JSON.stringify(node, null, 2)}</pre>*/}
                       <p className="mb-0">
-                        <small>{formatDate(node.created)}</small>
+                        {node.field_subtitle}
                       </p>
                     </div>
                   </article>
