@@ -24,7 +24,7 @@ export default function NodePage({ resource, menus, rates, global, specials }) {
     <Layout menus={menus} global={global}>
       {/** <pre>{JSON.stringify(specials, null, 2)}</pre>*/}
       <Head>
-        <title>{resource.title}</title>
+        <title>{resource.title} | United States Coast Guard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         {/**<meta name="description" content="A Next.js site powered by Drupal." />*/}
       </Head>  
