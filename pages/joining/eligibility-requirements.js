@@ -19,6 +19,7 @@ export default function EligibilityRequirementsPage({ node, menus, global, progr
     <>
       <Head>
         <title>{node.title} | United States Coast Guard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />

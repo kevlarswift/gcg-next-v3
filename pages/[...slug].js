@@ -25,9 +25,9 @@ export default function NodePage({ resource, menus, rates, global, specials }) {
       {/** <pre>{JSON.stringify(specials, null, 2)}</pre>*/}
       <Head>
         <title>{resource.title}</title>
-        <meta name="description" content="A Next.js site powered by Drupal." />
-      </Head>
-      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        {/**<meta name="description" content="A Next.js site powered by Drupal." />*/}
+      </Head>  
       {resource.type === "node--top" && <NodeTop node={resource} />}
       {resource.type === "node--page" && <NodeBasicPage node={resource} />}
       {resource.type === "node--rate" && <NodeRate node={resource} rates={rates} />}
