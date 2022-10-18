@@ -1,21 +1,13 @@
-import * as React from "react"
-import Head from "next/head"
+import { useState } from "react";
+import { drupal } from "lib/drupal";
 import Link from "next/link"
 import Image from "next/image"
-import { DrupalNode } from "next-drupal"
+import { Container } from "react-bootstrap";
+import { Layout } from "components/layout";
 
-function formatDate(input: string): string {
-  const date = new Date(input)
-  return date.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  })
-}
-
-export default function SimplePage() {
-  const [status, setStatus] = React.useState<"error" | "success" | "loading">()
-  const [results, setResults] = React.useState<DrupalNode[]>([])
+export default function SearchPage({ menus, global }) {
+  const [status, setStatus] = useState()
+  const [results, setResults] = useState([])
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -28,7 +20,7 @@ export default function SimplePage() {
         params: {
           fields: {
             "node--page": "id,title,subtitle,created,path,field_paragraphs",
-            
+
           },
           filter: {
             fulltext: event.target.keywords.value,
@@ -36,37 +28,24 @@ export default function SimplePage() {
         },
       }),
     })
-    
+
     if (!response.ok) {
       return setStatus("error")
     }
-
     setStatus("success")
-
     const results = await response.json()
-
     setResults(results)
   }
 
   return (
-    <>
-      <Head>
-        <title>Next.js for Drupal | Search API Example</title>
-      </Head>
-      <div className="container max-w-2xl px-6 py-10 mx-auto">
-        <article className="prose lg:prose-xl">
-          <h1>Next.js for Drupal</h1>
-          <h2>Search API Example - Simple</h2>
-          <p>
-            A simple full text search implemented using Search API and JSON:API
-            Search API.
-          </p>
-          <p>Use the form below to search for article nodes.</p>
+    <Layout menus={menus} global={global}>
+      <Container className="container-inner">
+        <article>
           <form onSubmit={handleSubmit} className="mb-4">
-            <div className="items-center gap-4 sm:grid sm:grid-cols-7">
+            <div>
               <input
                 type="search"
-                placeholder="Search articles..."
+                placeholder="Search website..."
                 name="keywords"
                 required
                 className="relative block w-full col-span-5 px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md appearance-none focus:outline-none focus:ring-black focus:border-black focus:z-10 sm:text-sm"
@@ -81,19 +60,18 @@ export default function SimplePage() {
             </div>
           </form>
           {status === "error" ? (
-            <div className="px-4 py-2 text-sm text-red-600 bg-red-100 border-red-200 rounded-md">
+            <div>
               An error occured. Please try again.
             </div>
-            
+
           ) : null}
           {!results.length ? (
-            <p className="text-sm" data-cy="search-no-results">
-              No results found. Try searching for <strong>static</strong> or{" "}
-              <strong>preview</strong>.
+            <p data-cy="search-no-results">
+              No results found.
             </p>
           ) : (
-            <div className="pt-4">
-              <h3 className="mt-0" data-cy="search-results">
+            <div>
+              <h3 data-cy="search-results">
                 Found {results.length} result(s).
               </h3>
               {results.map((node) => (
@@ -113,26 +91,31 @@ export default function SimplePage() {
                         />
                       </div>
                     )}
-                    <div className="col-span-2">
-                      <h4 className="mt-0"><Link href={node.path.alias}>{node.title}</Link></h4>
-
+                    <div>
+                      <h4><Link href={node.path.alias}>{node.title}</Link></h4>
                       {/**<pre>{JSON.stringify(node, null, 2)}</pre>*/}
-                      <p className="mb-0">
-                        {node.field_subtitle}
-                      </p>
+                      <p>{node.field_subtitle}</p>
                     </div>
                   </article>
                 </div>
               ))}
             </div>
           )}
-          <p>
-            <Link href="/" passHref>
-              <a>Go back</a>
-            </Link>
-          </p>
         </article>
-      </div>
-    </>
+      </Container>
+    </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      menus: {
+        main: await drupal.getMenu("main"),
+        footer1: await drupal.getMenu("footer"),
+        footer2: await drupal.getMenu("footer-menu-2")
+      },
+      global: await drupal.getResourceCollection("node--global"),
+    },
+  };
 }
