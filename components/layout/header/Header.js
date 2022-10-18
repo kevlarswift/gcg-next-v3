@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { Collapse } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -74,7 +75,7 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/why-join");
                 }}>
-                <img src="/images/header/menu/why-join.jpg" className={styles.image} alt="Why Join" width={"100%"} />
+                <Image src="/images/header/menu/why-join.jpg" className={styles.image} width={"100%"} alt="Why Join" />
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -110,7 +111,7 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/careers");
                 }}>
-                <img src="/images/header/menu/serve.jpg" className={styles.image} alt="Careers" width={"100%"} />
+                <Image src="/images/header/menu/serve.jpg" className={styles.image} width={'100%'} alt="Serve" />
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -144,7 +145,7 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/about");
                 }}>
-                <img src="/images/header/menu/about.jpg" className={styles.image} alt="About" width={"100%"} />
+                <Image src="/images/header/menu/about.jpg" className={styles.image} width={"100%"} alt="About" />
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -178,7 +179,7 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/joining");
                 }}>
-                <img src="/images/header/menu/joining.jpg" className={styles.image} alt="Joining" width={"100%"} />
+                <Image src="/images/header/menu/joining.jpg" className={styles.image} width={"100%"} alt="Joining" />
               </div>
 
               <div className={styles.subtitle}>
