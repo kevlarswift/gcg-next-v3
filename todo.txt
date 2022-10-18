@@ -1,5 +1,10 @@
 basic page and special page cta field (or move to paragraphs)
 check all ctas
 508 top menu
-better images
-head section
+Improve image quality/speed
+meta Description
+Parallax scrolling
+Chat Now
+Scrollto
+SEARCH
+https://www.chapterthree.com/blog/search-api-excerpts-nextjs
