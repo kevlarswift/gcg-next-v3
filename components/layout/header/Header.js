@@ -14,6 +14,7 @@ import {
 import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
+import { fill } from "lodash";
 
 export default function Header({ menu, motto }) {
   const router = useRouter();
@@ -75,7 +76,10 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/why-join");
                 }}>
-                <Image src="/images/header/menu/why-join.jpg" className={styles.image} width={"100%"} alt="Why Join" />
+                <div className={styles.image}>
+                  <img src="/images/header/menu/why-join.jpg" alt="Why Join" width={"100%"} />
+                </div>
+                {/**<Image src="/images/header/menu/why-join.jpg" className={styles.image} width={313} height={171} alt="Why Join" />*/}
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -111,7 +115,9 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/careers");
                 }}>
-                <Image src="/images/header/menu/serve.jpg" className={styles.image} width={'100%'} alt="Serve" />
+                <div className={styles.image}>
+                  <Image src="/images/header/menu/serve.jpg" width={313} height={171} alt="Serve" />
+                </div>
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -122,7 +128,7 @@ export default function Header({ menu, motto }) {
                   <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
                   Careers <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
-              </div>  
+              </div>
               {menu[1].items.map((item) => {
                 return (
                   <div
@@ -145,7 +151,9 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/about");
                 }}>
-                <Image src="/images/header/menu/about.jpg" className={styles.image} width={"100%"} alt="About" />
+                <div className={styles.image} >
+                  <Image src="/images/header/menu/about.jpg" width={313} height={171} alt="About" />
+                </div>
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -179,7 +187,9 @@ export default function Header({ menu, motto }) {
                   handleOpenMenu();
                   router.push("/joining");
                 }}>
-                <Image src="/images/header/menu/joining.jpg" className={styles.image} width={"100%"} alt="Joining" />
+                <div className={styles.image} >
+                  <Image src="/images/header/menu/joining.jpg" width={313} height={171} alt="Joining" />
+                </div>
               </div>
 
               <div className={styles.subtitle}>
