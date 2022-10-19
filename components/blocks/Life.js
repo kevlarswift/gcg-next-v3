@@ -54,7 +54,7 @@ export const LifeTitle = ({ title }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   return (
     <div ref={ref}>
@@ -72,7 +72,7 @@ export const LifeSubtitle = ({ subtitle }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   return (
     <div ref={ref}>
@@ -90,7 +90,7 @@ export const LifePlayer = ({ video, videos, setVideo }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   const handleSelect = (event) => {
     setVideo(event.target.value);
@@ -127,7 +127,7 @@ export const LifeAction = () => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   return (
     <div ref={ref}>

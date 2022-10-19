@@ -62,7 +62,7 @@ export const ServingTitle = ({ title }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
   return (
     <div ref={ref}>
       <motion.h2 animate={animation}>{title}</motion.h2>
@@ -79,7 +79,7 @@ export const ServingSubtitle = ({ subtitle }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
   return (
     <div ref={ref}>
       <motion.p animate={animation}>{subtitle}</motion.p>
