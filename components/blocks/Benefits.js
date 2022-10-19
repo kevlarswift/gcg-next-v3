@@ -74,7 +74,7 @@ export default function Benefits(benefits) {
                 if (iconImage) {
                   iconImage = process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + iconImage
                 }
-                return <Benefit title={benefit.title} icon={iconImage} key={index} />;
+                return <Benefit title={benefit.title} icon={iconImage} alt={benefit.field_icon_alt} key={index} />;
               })}
             </Slider>
           </div>
@@ -84,12 +84,12 @@ export default function Benefits(benefits) {
   );
 }
 
-export const Benefit = ({ title, icon }) => {
+export const Benefit = ({ title, icon, alt }) => {
   return (
     <div className={styles.benefit}>
       <div className={styles.iconWrapper}>
         <div className={styles.icon}>
-          <Image src={icon} width={75} height={75} />
+          <Image src={icon} width={75} height={75} alt={alt} />
         </div>
       </div>
       <div className={styles.titleWrapper}>

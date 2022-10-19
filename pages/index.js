@@ -17,6 +17,7 @@ export default function IndexPage({ menus, global, benefits }) {
         <VideoBG />
         <Serving />
         <Life />
+        {/**<pre>{JSON.stringify(benefits, null, 2)}</pre>*/}
         <Benefits benefits={benefits} />
       </Layout>
     </>
