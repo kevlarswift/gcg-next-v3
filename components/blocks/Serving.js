@@ -14,7 +14,7 @@ export default function Serving() {
 
   return (
     <div className={styles.serving}>
-      <BackgroundImage src="/images/backgrounds/ waves.webp" />
+      <BackgroundImage src="/images/backgrounds/waves.webp" alt="" />
       <Container className={styles.inner}>
         <TitleAdornments />
         <ServingTitle title={title} />
@@ -25,7 +25,7 @@ export default function Serving() {
             <a className={styles.item}>
               <div className={styles.itemInner}>
                 <div className={styles.btn}>Missions</div>
-                <BackgroundImage src="/images/serving/missions.webp" />
+                <BackgroundImage src="/images/serving/missions.webp" alt="Mission" />
               </div>
             </a>
           </Link>
@@ -34,7 +34,7 @@ export default function Serving() {
             <a className={styles.item}>
               <div className={styles.itemInner}>
                 <div className={styles.btn}>Enlisted</div>
-                <BackgroundImage src="/images/serving/careers.webp" />
+                <BackgroundImage src="/images/serving/careers.webp" alt="Enlisted Careers" />
               </div>
             </a>
           </Link>
@@ -43,7 +43,7 @@ export default function Serving() {
             <a className={styles.item}>
               <div className={styles.itemInner}>
                 <div className={styles.btn}>Officer</div>
-                <BackgroundImage src="/images/serving/officers.webp" />
+                <BackgroundImage src="/images/serving/officers.webp" alt="Officer Careers" />
               </div>
             </a>
           </Link>

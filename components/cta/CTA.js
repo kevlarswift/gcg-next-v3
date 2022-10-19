@@ -13,7 +13,7 @@ export default function CTA({ intro, url, title }) {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   return (
     <div ref={ref}>

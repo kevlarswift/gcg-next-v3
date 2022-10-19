@@ -63,7 +63,7 @@ export default function Benefits(benefits) {
   return (
     <div ref={ref}>
       <motion.div className={styles.benefits} animate={animation}>
-        <BackgroundImage src="/images/backgrounds/benefits.webp" />
+        <BackgroundImage src="/images/backgrounds/benefits.webp" alt="" />
         <Container className={styles.inner}>
           <TitleAdornments />
           <h3>Great reasons to join</h3>
