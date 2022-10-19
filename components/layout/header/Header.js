@@ -14,10 +14,10 @@ import {
 import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
-import imgWhyJoin from "/public/images/header/menu/WhyJoin.png";
-import imgServe from "/public/images/header/menu/Careers.jpeg";
-import imgAbout from "/public/images/header/menu/About.png";
-import imgJoining from "/public/images/header/menu/Joining.jpg";
+import imgWhyJoin from "public/images/header/why-join.png";
+import imgServe from "public/images/header/careers.jpeg";
+import imgAbout from "public/images/header/about.png";
+import imgJoining from "public/images/header/joining.jpg";
 
 export default function Header({ menu, motto }) {
   const router = useRouter();
@@ -82,7 +82,7 @@ export default function Header({ menu, motto }) {
                   router.push("/why-join");
                 }}>
                 <div className={styles.image}>
-                  <Image src={imgWhyJoin} className={styles.image} width={313} height={171} placeholder="blur" alt="Why Join" />
+                  <Image src={imgWhyJoin} className={styles.image} width={320} height={180} placeholder="blur" alt="Why Join" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -120,7 +120,7 @@ export default function Header({ menu, motto }) {
                   router.push("/careers");
                 }}>
                 <div className={styles.image}>
-                  <Image src={imgServe} width={313} height={171} alt="Serve" />
+                  <Image src={imgServe} width={320} height={180} alt="Serve" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -194,7 +194,7 @@ export default function Header({ menu, motto }) {
                   router.push("/joining");
                 }}>
                 <div className={styles.image} >
-                  <Image src={imgJoining} width={313} height={171} alt="Joining" />
+                  <Image src={imgJoining} width={320} height={180} alt="Joining" />
                 </div>
               </div>
 
