@@ -28,11 +28,11 @@ export const MissionLogo = () => {
     } else {
       animation.start({ opacity: 0, scale: 1.125, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
   return (
     <div className={styles.logoWrapper} ref={ref}>
       <motion.div animate={animation}>
-        <Image src="/images/footer/logo.svg" className={styles.logo} width={400} height={60} />
+        <Image src="/images/footer/logo.svg" alt="Logo of the United States Coast Guard" className={styles.logo} width={400} height={60} />
       </motion.div>
     </div>
   );

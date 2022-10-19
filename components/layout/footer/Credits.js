@@ -27,7 +27,7 @@ export const CreditsCopyright = ({ author }) => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { ease: "easeInOut", duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
   return (
     <div className={styles.copyright} ref={ref}>
       <motion.p role="heading" animate={animation}>
@@ -46,11 +46,11 @@ export const CreditsDHS = () => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { ease: "easeInOut", duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
   return (
     <div ref={ref}>
       <motion.div className={styles.dhs} animate={animation}>
-        <Image src="/images/footer/dhs.png" alt="Department of Homeland Security logo" width={200} height={60} />
+        <Image src="/public/images/footer/dhs.png" alt="Department of Homeland Security logo" width={200} height={60} />
       </motion.div>
     </div>
   );
