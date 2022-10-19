@@ -33,7 +33,7 @@ export const StartAdventureTitle = () => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   return (
     <div ref={ref}>
@@ -56,7 +56,7 @@ export const StartAdventureSubtitle = ({ subtitle }) => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   return (
     <div ref={ref}>
@@ -76,7 +76,7 @@ export const StartAdventureLink = ({ title, link, icon }) => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation,inView]);
 
   return (
     <div ref={ref}>
