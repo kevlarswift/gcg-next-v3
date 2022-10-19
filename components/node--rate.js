@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import ReactPlayer from "react-player/lazy";
 import { Accordion, Container } from "react-bootstrap";
 import Body from "/components/Body";
@@ -72,10 +73,11 @@ export function NodeRate({ node, rates, ...props }) {
                         <div className={styles.skill} key={index}>
                           {skill.field_rate_skill_icon && (
                             <div className={styles.icon}>
-                              <img
+                              <Image
                                 src={process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + skill.field_rate_skill_icon.uri.url}
                                 width={32}
                                 height={32}
+                                alt={""}
                               />
                             </div>
                           )}
