@@ -14,7 +14,10 @@ import {
 import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
-import { fill } from "lodash";
+import imgWhyJoin from "/public/images/header/menu/why-join.jpg";
+import imgServe from "/public/images/header/menu/serve.jpg";
+import imgAbout from "/public/images/header/menu/about.jpg";
+import imgJoining from "/public/images/header/menu/joining.jpg";
 
 export default function Header({ menu, motto }) {
   const router = useRouter();
@@ -69,6 +72,8 @@ export default function Header({ menu, motto }) {
       <Collapse in={openMenu}>
         <div id="collapse-menu">
           <div className={styles.megaMenu}>
+            
+            {/** WHY JOIN */}
             <div className={styles.section}>
               <div
                 className={styles.imageWrapper}
@@ -77,7 +82,7 @@ export default function Header({ menu, motto }) {
                   router.push("/why-join");
                 }}>
                 <div className={styles.image}>
-                  <Image src="/images/header/menu/why-join.jpg" className={styles.image} width={313} height={171} placeholder="blur" alt="Why Join" />
+                  <Image src={imgWhyJoin} className={styles.image} width={313} height={171} placeholder="blur" alt="Why Join" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -104,9 +109,9 @@ export default function Header({ menu, motto }) {
                   </div>
                 );
               })}
-
             </div>
 
+            {/** SERVE */}
             <div className={styles.section}>
               <div
                 className={styles.imageWrapper}
@@ -115,7 +120,7 @@ export default function Header({ menu, motto }) {
                   router.push("/careers");
                 }}>
                 <div className={styles.image}>
-                  <Image src="/images/header/menu/serve.jpg" width={313} height={171} placeholder="blur" alt="Serve" />
+                  <Image src={imgServe} width={313} height={171} alt="Serve" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -143,6 +148,7 @@ export default function Header({ menu, motto }) {
               })}
             </div>
 
+            {/** ABOUT */}
             <div className={styles.section}>
               <div
                 className={styles.imageWrapper}
@@ -151,7 +157,7 @@ export default function Header({ menu, motto }) {
                   router.push("/about");
                 }}>
                 <div className={styles.image} >
-                  <Image src="/images/header/menu/about.jpg" width={313} height={171} placeholder="blur" alt="About" />
+                  <Image src={imgAbout} width={313} height={171} alt="About" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -179,6 +185,7 @@ export default function Header({ menu, motto }) {
               })}
             </div>
 
+            {/** Joining */}
             <div className={styles.section}>
               <div
                 className={styles.imageWrapper}
@@ -187,7 +194,7 @@ export default function Header({ menu, motto }) {
                   router.push("/joining");
                 }}>
                 <div className={styles.image} >
-                  <Image src="/images/header/menu/joining.jpg" width={313} height={171} placeholder="blur" alt="Joining" />
+                  <Image src={imgJoining} width={313} height={171} alt="Joining" />
                 </div>
               </div>
 
