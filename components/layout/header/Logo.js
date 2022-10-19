@@ -12,7 +12,7 @@ export default function Logo() {
           <Image src={logoDesktop} width={350} height={44} alt="Shield of the United States Coast Guard" />
         </div>
         <div className={styles.mobile}>
-          <img src={logoMobile} width={85} height={52} alt="Shield of the United States Coast Guard" />
+          <Image src={logoMobile} width={85} height={52} alt="Shield of the United States Coast Guard" />
         </div>
       </a>
     </Link>
