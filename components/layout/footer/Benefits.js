@@ -31,7 +31,7 @@ export const BenefitsTitle = ({ title }) => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { ease: "easeInOut", duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
@@ -49,7 +49,7 @@ export const BenefitsBody = ({ body }) => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { ease: "easeInOut", duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
@@ -67,7 +67,7 @@ export const BenefitsAction = ({ link, text }) => {
     } else {
       animation.start({ opacity: 0, scale: 1.125, transition: { ease: "easeInOut", duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>

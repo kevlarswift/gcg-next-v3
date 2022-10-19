@@ -38,7 +38,7 @@ export const MissionLogo = () => {
           className={styles.logo}
           width={400}
           height={60}
-          placeholder={'blur'}
+          
           alt="Logo of the United States Coast Guard"
         />
       </motion.div>
@@ -55,7 +55,7 @@ export const MissionBody = ({ mission }) => {
     } else {
       animation.start({ opacity: 0, y: -10, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
   return (
     <div ref={ref}>
       <motion.div animate={animation}><Body value={mission} /></motion.div>
