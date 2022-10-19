@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -91,10 +92,11 @@ export default function EnlistedRatings({ data }) {
 
                 <div className={styles.hero}>
                   {!!node.field_image_card?.image_style_uri?.card ? (
-                    <img
+                    <Image
                       src={node.field_image_card.image_style_uri?.card}
-                      width="100%"
-                      alt={node.field_image_card.resourceIdObjMeta.alt}
+                      width={600}
+                      height={360}
+                      alt={node.field_image_card.resourceIdObjMeta?.alt}
                     />
                   ) : null}
                 </div>
