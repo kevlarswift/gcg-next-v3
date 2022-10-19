@@ -17,7 +17,7 @@ export default function StayConnected({ menu1, menu2, facebook, instagram, youtu
     } else {
       animation.start({ opacity: 0, transition: { duration: 0.35 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
   return (
     <div ref={ref}>
       <motion.div className={styles.connected} animate={animation}>

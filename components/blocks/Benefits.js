@@ -30,7 +30,7 @@ export default function Benefits(benefits) {
     } else {
       animation.start({ opacity: 0, transition: { duration: 0.35 } });
     }
-  }, [inView]);
+  }, [animation, inView]);
 
   const settings = {
     infinite: true,

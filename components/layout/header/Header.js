@@ -14,10 +14,10 @@ import {
 import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
-import imgWhyJoin from "/public/images/header/menu/why-join.jpg";
-import imgServe from "/public/images/header/menu/serve.jpg";
-import imgAbout from "/public/images/header/menu/about.jpg";
-import imgJoining from "/public/images/header/menu/joining.jpg";
+import imgWhyJoin from "/public/images/header/menu/WhyJoin.png";
+import imgServe from "/public/images/header/menu/Careers.jpeg";
+import imgAbout from "/public/images/header/menu/About.png";
+import imgJoining from "/public/images/header/menu/Joining.jpg";
 
 export default function Header({ menu, motto }) {
   const router = useRouter();
@@ -157,7 +157,7 @@ export default function Header({ menu, motto }) {
                   router.push("/about");
                 }}>
                 <div className={styles.image} >
-                  <Image src={imgAbout} width={313} height={171} alt="About" />
+                  <Image src={imgAbout} width={320} height={180} alt="About" />
                 </div>
               </div>
               <div className={styles.subtitle}>
