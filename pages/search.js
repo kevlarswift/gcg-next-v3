@@ -2,7 +2,6 @@ import { useState } from "react";
 import Head from "next/head";
 import { drupal } from "lib/drupal";
 import Link from "next/link"
-import Image from "next/image"
 import { Container } from "react-bootstrap";
 import { Layout } from "components/layout";
 
@@ -86,17 +85,6 @@ export default function SearchPage({ menus, global }) {
                       className="grid-cols-3 gap-4 sm:grid"
                       data-cy="search-result"
                     >
-                      {node.field_image?.uri && (
-                        <div className="col-span-1 mb-4 sm:mb-0">
-                          <Image
-                            src={`${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}${node.field_image.uri.url}`}
-                            width={200}
-                            height={110}
-                            layout="responsive"
-                            objectFit="cover"
-                          />
-                        </div>
-                      )}
                       <div>
                         <h4><Link href={node.path.alias}>{node.title}</Link></h4>
                         {/**<pre>{JSON.stringify(node, null, 2)}</pre>*/}
