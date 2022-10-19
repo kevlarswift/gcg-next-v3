@@ -82,7 +82,7 @@ export default function Header({ menu, motto }) {
                   router.push("/why-join");
                 }}>
                 <div className={styles.image}>
-                  <Image src={imgWhyJoin} className={styles.image} width={320} height={180} placeholder="blur" alt="Why Join" />
+                  <Image src={imgWhyJoin} width={320} height={180} placeholder="blur" alt="Why Join" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -120,7 +120,7 @@ export default function Header({ menu, motto }) {
                   router.push("/careers");
                 }}>
                 <div className={styles.image}>
-                  <Image src={imgServe} width={320} height={180} alt="Serve" />
+                  <Image src={imgServe} width={320} height={180} placeholder="blur" alt="Serve" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -157,7 +157,7 @@ export default function Header({ menu, motto }) {
                   router.push("/about");
                 }}>
                 <div className={styles.image} >
-                  <Image src={imgAbout} width={320} height={180} alt="About" />
+                  <Image src={imgAbout} width={320} height={180} placeholder="blur" alt="About" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -194,7 +194,7 @@ export default function Header({ menu, motto }) {
                   router.push("/joining");
                 }}>
                 <div className={styles.image} >
-                  <Image src={imgJoining} width={320} height={180} alt="Joining" />
+                  <Image src={imgJoining} width={320} height={180} placeholder="blur" alt="Joining" />
                 </div>
               </div>
 
