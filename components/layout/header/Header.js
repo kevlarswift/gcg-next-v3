@@ -77,9 +77,8 @@ export default function Header({ menu, motto }) {
                   router.push("/why-join");
                 }}>
                 <div className={styles.image}>
-                  <img src="/images/header/menu/why-join.jpg" alt="Why Join" width={"100%"} />
+                  <Image src="/images/header/menu/why-join.jpg" className={styles.image} width={313} height={171} placeholder="blur" alt="Why Join" />
                 </div>
-                {/**<Image src="/images/header/menu/why-join.jpg" className={styles.image} width={313} height={171} alt="Why Join" />*/}
               </div>
               <div className={styles.subtitle}>
                 <div
@@ -116,7 +115,7 @@ export default function Header({ menu, motto }) {
                   router.push("/careers");
                 }}>
                 <div className={styles.image}>
-                  <Image src="/images/header/menu/serve.jpg" width={313} height={171} alt="Serve" />
+                  <Image src="/images/header/menu/serve.jpg" width={313} height={171} placeholder="blur" alt="Serve" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -152,7 +151,7 @@ export default function Header({ menu, motto }) {
                   router.push("/about");
                 }}>
                 <div className={styles.image} >
-                  <Image src="/images/header/menu/about.jpg" width={313} height={171} alt="About" />
+                  <Image src="/images/header/menu/about.jpg" width={313} height={171} placeholder="blur" alt="About" />
                 </div>
               </div>
               <div className={styles.subtitle}>
@@ -188,7 +187,7 @@ export default function Header({ menu, motto }) {
                   router.push("/joining");
                 }}>
                 <div className={styles.image} >
-                  <Image src="/images/header/menu/joining.jpg" width={313} height={171} alt="Joining" />
+                  <Image src="/images/header/menu/joining.jpg" width={313} height={171} placeholder="blur" alt="Joining" />
                 </div>
               </div>
 
