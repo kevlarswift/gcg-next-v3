@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Container from "react-bootstrap/Container";
 import styles from "./Credits.module.scss";
+import imgDHS from "/public/images/footer/dhs.png";
 
 export default function Credits({ author }) {
   return (
@@ -50,7 +51,7 @@ export const CreditsDHS = () => {
   return (
     <div ref={ref}>
       <motion.div className={styles.dhs} animate={animation}>
-        <Image src="/public/images/footer/dhs.png" alt="Department of Homeland Security logo" width={200} height={60} />
+        <Image src={imgDHS} alt="Department of Homeland Security logo" width={200} height={60} placeholder={'blur'} />
       </motion.div>
     </div>
   );

@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./Mission.module.scss";
 import Body from "components/Body";
+import imgLogo from "/public/images/footer/logo.svg";
 
 export default function Mission({ mission }) {
   return (
@@ -32,7 +33,14 @@ export const MissionLogo = () => {
   return (
     <div className={styles.logoWrapper} ref={ref}>
       <motion.div animate={animation}>
-        <Image src="/images/footer/logo.svg" alt="Logo of the United States Coast Guard" className={styles.logo} width={400} height={60} />
+        <Image
+          src={imgLogo}
+          className={styles.logo}
+          width={400}
+          height={60}
+          placeholder={'blur'}
+          alt="Logo of the United States Coast Guard"
+        />
       </motion.div>
     </div>
   );
