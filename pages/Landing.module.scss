@@ -1,0 +1,65 @@
+.landing {
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    .content {
+      padding: 15px;
+    }
+    .form {
+      padding: 15px;
+      h2 {
+        text-transform: uppercase;
+      }
+      form {
+        border: 1px solid #c5c5c5;
+        border-top: 10px solid #005cb9;
+        background-color: #ffffff;
+        padding: 40px;
+        font-family: "proxima-nova", sans-serif;
+        font-size: 20px;
+        .form-control {
+          border: 1px solid #c5c5c5;
+        }
+        button {
+          background-color: #ffffff;
+          border: 2px solid #e1251b;
+          border-radius: 0;
+          width: 100%;
+          font-family: "proxima-nova", sans-serif;
+          font-weight: 700;
+          color: #005cb9;
+          font-size: 18px;
+          text-transform: uppercase;
+          &:hover,
+          &:focus {
+            background-color: #005cb9;
+            color: #ffffff;
+          }
+        }
+      }
+      p.privacy {
+        text-align: center;
+        font-size: 14px;
+        padding: 20px 0 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .landing {
+    .layout {
+      grid-template-columns: repeat(2, minmax(0, 2fr));
+      .content {
+        padding-right: 50px;
+      }
+      .form {
+        padding: 15px;
+        padding-left: 0;
+        .wrapper {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

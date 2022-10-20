@@ -14,6 +14,7 @@ export default function EnlistedCareersPage({ node, rates, menus, global }) {
       ? (bgImageSrc = `${node.field_banner.image_style_uri.banner}`)
       : (bgImageSrc = "/images/backgrounds/waves.webp");
   }
+
   return (
     <>
       <Head>
@@ -26,7 +27,8 @@ export default function EnlistedCareersPage({ node, rates, menus, global }) {
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {
               return <Paragraph content={paragraph} key={paragraph.id} />;
-            })}
+            })
+          }
           <EnlistedRatings data={rates} />
           <EnlistedRatingsMenu data={rates} />
         </Container>

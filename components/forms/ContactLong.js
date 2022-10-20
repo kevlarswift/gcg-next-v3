@@ -90,7 +90,7 @@ export default function Contact() {
           </Row>
 
           <Row className="form-group mb-3"><Button type="submit">Request Information</Button></Row>
-          <p className="privacy">We respect your privacy. <Link to="/privacy-policy">Read our policy.</Link></p>
+          <p className="privacy">We respect your privacy. <Link href="/privacy-policy">Read our policy.</Link></p>
         </Form>
       )}
     </Formik>

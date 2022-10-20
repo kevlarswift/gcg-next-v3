@@ -1,8 +1,12 @@
+Chat Now
+Home Page block shows special characters
 basic page and special page cta field (or move to paragraphs)
 check all ctas
 508 top menu
 meta Description
 Parallax scrolling
-Chat Now
+Paragraphs 
+Paragraphs build error
 Scrollto
+SEARCH
 https://www.chapterthree.com/blog/search-api-excerpts-nextjs
