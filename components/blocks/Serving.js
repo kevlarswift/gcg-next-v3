@@ -4,13 +4,14 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TitleAdornments from "./TitleAdornments";
+import Body from "/components/Body"
 import BackgroundImage from "/components/BackgroundImage";
 import styles from "./Serving.module.scss";
 
 export default function Serving() {
-  const title = "This is Coast Guard";
+  const title = "<h2>This is Coast Guard</h2>";
   const subtitle =
-    "When you join the U.S. Coast Guard, you'll work with passionate individuals who share your drive to save lives, serve others and your country, and shield our nation from threats. If you have a sincere desire to make the world a better place while setting yourself up for a bright future, Coast Guard service is for you";
+    "<p>When you join the U.S. Coast Guard, you'll work with passionate individuals who share your drive to save lives, serve others and your country, and shield our nation from threats. If you have a sincere desire to make the world a better place while setting yourself up for a bright future, Coast Guard service is for you</p>";
 
   return (
     <div className={styles.serving}>
@@ -65,7 +66,7 @@ export const ServingTitle = ({ title }) => {
   }, [animation,inView]);
   return (
     <div ref={ref}>
-      <motion.h2 animate={animation}>{title}</motion.h2>
+      <motion.div animate={animation}><Body value={title} /></motion.div>
     </div>
   );
 };
@@ -82,7 +83,7 @@ export const ServingSubtitle = ({ subtitle }) => {
   }, [animation,inView]);
   return (
     <div ref={ref}>
-      <motion.p animate={animation}>{subtitle}</motion.p>
+      <motion.div animate={animation}><Body value={subtitle} /></motion.div>
     </div>
   );
 };
