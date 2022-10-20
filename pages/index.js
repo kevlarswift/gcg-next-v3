@@ -6,7 +6,8 @@ import Serving from "components/blocks/Serving";
 import Life from "components/blocks/Life";
 import Benefits from "components/blocks/Benefits";
 
-export default function IndexPage({ menus, global, benefits, specials }) {
+export default function IndexPage({ menus, global, benefits/*, specials */ }) {
+  
   return (
     <>
       <Head>
@@ -32,6 +33,7 @@ export async function getStaticProps(context) {
     }
   });
   
+  /* 
   const specials = await drupal.getResourceCollection("node--special", {
     params: {
       filter: { "status": 1 },
@@ -40,17 +42,18 @@ export async function getStaticProps(context) {
       sort: "title",
     }
   });
+  */
 
   return {
     props: {
-      specials,
       menus: {
         main: await drupal.getMenu("main"),
         footer1: await drupal.getMenu("footer"),
         footer2: await drupal.getMenu("footer-menu-2")
       },
       global: await drupal.getResourceCollection("node--global"),
-      benefits: benefits
+      benefits: benefits,
+      /* specials: specials, */
     },
     revalidate: 60,
   };

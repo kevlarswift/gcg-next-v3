@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import { Container, Form } from "react-bootstrap";
+import Body from "/components/Body"
 import Player from "../video/Player";
 import styles from "./Life.module.scss";
 
@@ -58,7 +59,7 @@ export const LifeTitle = ({ title }) => {
 
   return (
     <div ref={ref}>
-      <motion.h3 animate={animation}>{title}</motion.h3>
+      <motion.h3 animate={animation}><Body value={title} /></motion.h3>
     </div>
   );
 };
@@ -76,7 +77,7 @@ export const LifeSubtitle = ({ subtitle }) => {
 
   return (
     <div ref={ref}>
-      <motion.p animate={animation}>{subtitle}</motion.p>
+      <motion.div animate={animation}><Body value={subtitle} /></motion.div>
     </div>
   );
 };
