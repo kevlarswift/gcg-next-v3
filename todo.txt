@@ -13,3 +13,4 @@ Paragraphs build error
 Scrollto
 SEARCH
 https://www.chapterthree.com/blog/search-api-excerpts-nextjs
+shuffle benefits

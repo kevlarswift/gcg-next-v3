@@ -7,14 +7,13 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faMapMarkerAlt, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "react-bootstrap";
 import styles from "./Actions.module.scss";
+import Body from "components/Body";
 
-export default function Actions() {
+export default function Actions({ body }) {
   return (
     <Container className={styles.startAdventure}>
       <StartAdventureTitle />
-      <StartAdventureSubtitle
-        subtitle="Have any questions about how to join? Need more information? We’re here to help."
-      />
+      <StartAdventureSubtitle subtitle={body} />
       <div className={styles.ctas}>
         <StartAdventureLink title="Chat Now" link="/chat-now" icon={faMapMarkerAlt} />
         <StartAdventureLink title="Find a Recruiter" link="/find-recruiter" icon={faLocationArrow} />
@@ -61,7 +60,7 @@ export const StartAdventureSubtitle = ({ subtitle }) => {
   return (
     <div ref={ref}>
       <motion.div animate={animation}>
-        <p role="heading">{subtitle}</p>
+        <div role="heading"><Body value={subtitle} /></div>
       </motion.div>
     </div>
   );

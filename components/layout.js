@@ -17,6 +17,7 @@ export function Layout({ children, menus, global }) {
         benefitsTitle={global.field_benefits_title.processed} 
         benefitsBody={global.field_benefits_body.processed} 
         benefitsLink={global.field_benefits_link} 
+        actionsBody={global.field_actions_body.processed}
         author={global.field_author.processed} 
         mission={global.field_mission.processed} 
         menus={menus} 

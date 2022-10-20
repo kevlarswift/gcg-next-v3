@@ -4,7 +4,7 @@ import Mission from "./Mission";
 import Social from "./Social";
 import Credits from "./Credits";
 
-export default function Footer({ facebook, instagram, youtube, benefitsTitle, benefitsBody, benefitsLink, menus, author, mission }) {
+export default function Footer({ facebook, instagram, youtube, benefitsTitle, benefitsBody, benefitsLink, actionsBody, menus, author, mission }) {
   return (
     <footer>
       <Benefits 
@@ -13,7 +13,7 @@ export default function Footer({ facebook, instagram, youtube, benefitsTitle, be
         link={benefitsLink.uri} 
         linkText={benefitsLink.title} 
       />
-      <Actions />
+      <Actions body={actionsBody} />
       <Mission 
         mission={mission} 
       />

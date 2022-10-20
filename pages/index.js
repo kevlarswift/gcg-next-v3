@@ -17,7 +17,7 @@ export default function IndexPage({ menus, global, benefits/*, specials */ }) {
       <Layout menus={menus} global={global}>
         {/**<pre>{JSON.stringify(specials, null, 2)}</pre>*/}
         <VideoBG />
-        <Serving />
+        <Serving title={`<h2>${global.field_serving_title.processed}</h2>`} body={global.field_serving_body.processed} />
         <Life title={global.field_life_title.processed} subtitle={global.field_life_body.processed} />
         <Benefits benefits={benefits} />
       </Layout>

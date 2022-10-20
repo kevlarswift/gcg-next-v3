@@ -8,18 +8,15 @@ import Body from "/components/Body"
 import BackgroundImage from "/components/BackgroundImage";
 import styles from "./Serving.module.scss";
 
-export default function Serving() {
-  const title = "<h2>This is Coast Guard</h2>";
-  const subtitle =
-    "<p>When you join the U.S. Coast Guard, you'll work with passionate individuals who share your drive to save lives, serve others and your country, and shield our nation from threats. If you have a sincere desire to make the world a better place while setting yourself up for a bright future, Coast Guard service is for you</p>";
-
+export default function Serving({ title, body }) {
+ 
   return (
     <div className={styles.serving}>
       <BackgroundImage src="/images/backgrounds/waves.webp" alt="" />
       <Container className={styles.inner}>
         <TitleAdornments />
         <ServingTitle title={title} />
-        <ServingSubtitle subtitle={subtitle} />
+        <ServingSubtitle subtitle={body} />
 
         <div className={styles.grid}>
           <Link href="/about/missions">

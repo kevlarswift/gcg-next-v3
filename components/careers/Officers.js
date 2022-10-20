@@ -118,7 +118,7 @@ const Officers = () => {
       />
 
       <div className="items">
-        {filteredItems.map((item, idx) => (
+        {filteredItems.map((item) => (
           <Link to={item.node.path.alias} key={item.node.id} className="career">
             <h3>
               {item.node.title}
