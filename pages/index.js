@@ -42,5 +42,6 @@ export async function getStaticProps(context) {
       global: await drupal.getResourceCollection("node--global"),
       benefits: benefits
     },
+    revalidate: 60,
   };
 }
