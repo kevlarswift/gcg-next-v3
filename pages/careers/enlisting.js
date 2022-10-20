@@ -46,10 +46,10 @@ export async function getStaticProps(context) {
   // Fetch Enlisted Rates
   const rates = await drupal.getResourceCollectionFromContext("node--rate", context, {
     params: {
-      "filter[status]": 1,
+      filter: { "status": 1 },
       "fields[node--rate]":
-        "title,field_subtitle,field_rate_abbr,field_rate_cat,field_rate_category,field_banner,field_image_card,field_rate_is_active,field_rate_is_reserve,path",
-      include: "field_banner, field_image_card",
+        "title,field_subtitle,field_rate_abbr,field_rate_cat,field_rate_category,field_image_card,field_rate_is_active,field_rate_is_reserve,path",
+      include: "field_image_card",
       sort: "title",
     },
   });
