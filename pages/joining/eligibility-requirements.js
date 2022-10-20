@@ -29,8 +29,8 @@ export default function EligibilityRequirementsPage({ node, menus, global, progr
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {
               return <Paragraph content={paragraph} key={paragraph.id} />;
-            })}
-
+            })
+          }
         </Container>
       </Layout>
     </>
@@ -46,16 +46,15 @@ export async function getStaticProps(context) {
   });
 
   // Fetch Programs
-  const programs = await drupal.getResourceCollectionFromContext("node--officer_program", context, {
+  const programs = await drupal.getResourceCollection("node--officer_program", {
     params: {
-      "filter[status]": 1,
+      filter: { "status]": 1 },
       "fields[node--officer_program]":
         "title,field_req_age,field_er_age,field_er_citizenship,field_er_dependents,field_er_education,field_er_military,field_er_gpa,field_er_medical,field_er_program,field_er_score",
       sort: "title",
     },
   });
 
-  // Provide Props to Page
   return {
     props: {
       node,

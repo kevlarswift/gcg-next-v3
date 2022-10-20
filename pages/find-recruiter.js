@@ -3,19 +3,31 @@ import { drupal } from "lib/drupal";
 import { Container } from "react-bootstrap";
 import { Layout } from "/components/layout";
 import Banner from "/components/blocks/banner";
+import Paragraph from "/components/paragraphs/Paragraph";
 import FindRecruiter from "/components/recruiters/FindRecruiter";
 
-export default function FindRecruiterPage({ recruiters, menus, global }) {
-  let bgImageSrc = "/images/backgrounds/waves.webp";
+export default function FindRecruiterPage({ node, recruiters, menus, global }) {
+  let bgImageSrc = null;
+  {
+    node.field_banner?.image_style_uri?.banner
+      ? (bgImageSrc = `${node.field_banner.image_style_uri.banner}`)
+      : (bgImageSrc = "/images/backgrounds/waves.webp");
+  }
+
   return (
     <>
       <Head>
-        <title>Find a Recruiter | GoCoastGuard.com</title>
+        <title>{node.title} | GoCoastGuard.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
-        <Banner title="Find a Recruiter" bgImage={bgImageSrc} short={false} />
+        <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
         <Container className="container-inner">
+          {node.field_paragraphs &&
+            node.field_paragraphs.map((paragraph) => {
+              return <Paragraph content={paragraph} key={paragraph.id} />;
+            })
+          }
           <FindRecruiter nodes={recruiters} />
         </Container>
       </Layout>
@@ -24,23 +36,30 @@ export default function FindRecruiterPage({ recruiters, menus, global }) {
 }
 
 export async function getStaticProps(context) {
-  
-  const recruiters = await drupal.getResourceCollectionFromContext("node--recruiter", context, {
+
+  const node = await drupal.getResource("node--special", "ad391cac-d6f5-4271-a249-2ef827aa8ad6", {
+    params: {
+      include: "field_paragraphs, field_banner",
+    },
+  });
+
+  const recruiters = await drupal.getResourceCollection("node--recruiter", {
     params: {
       filter: { "status]": 1 },
       sort: "title",
     },
   });
-  
+
   return {
     props: {
+      node,
+      recruiters: recruiters,
       menus: {
         main: await drupal.getMenu("main"),
         footer1: await drupal.getMenu("footer"),
         footer2: await drupal.getMenu("footer-menu-2")
       },
       global: await drupal.getResourceCollection("node--global"),
-      recruiters: recruiters
     },
     revalidate: 60,
   };
