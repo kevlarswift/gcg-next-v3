@@ -119,7 +119,7 @@ export async function getStaticProps(context) {
       },
       rates,
       specials,
-      global: await drupal.getResource("node--global", "8f70fe6f-fab6-4ae3-8b16-1c86822288bd"),
+      global: await drupal.getResource("node--global", "132de760-f931-4656-a5a9-9a13455d232f"),
     },
     revalidate: 900
   }
