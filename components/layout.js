@@ -8,17 +8,17 @@ export function Layout({ children, menus, global }) {
     <>
       <PreviewAlert />
       <ChatBtn />
-      <Header menu={menus.main.tree} motto={global[0].field_motto.processed} />
+      <Header menu={menus.main.tree} motto={global.field_motto.processed} />
       <main className="page">{children}</main>
       <Footer 
-        facebook={global[0].field_social_facebook} 
-        instagram={global[0].field_social_instagram} 
-        youtube={global[0].field_social_youtube} 
-        benefitsTitle={global[0].field_benefits_title.processed} 
-        benefitsBody={global[0].field_benefits_body.processed} 
-        benefitsLink={global[0].field_benefits_link} 
-        author={global[0].field_author.processed} 
-        mission={global[0].field_mission.processed} 
+        facebook={global.field_social_facebook} 
+        instagram={global.field_social_instagram} 
+        youtube={global.field_social_youtube} 
+        benefitsTitle={global.field_benefits_title.processed} 
+        benefitsBody={global.field_benefits_body.processed} 
+        benefitsLink={global.field_benefits_link} 
+        author={global.field_author.processed} 
+        mission={global.field_mission.processed} 
         menus={menus} 
       />
     </>

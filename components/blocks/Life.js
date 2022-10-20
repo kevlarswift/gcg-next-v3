@@ -7,10 +7,7 @@ import Body from "/components/Body"
 import Player from "../video/Player";
 import styles from "./Life.module.scss";
 
-export default function Life() {
-  const title = "There &apos;s no such thing as an average day when in the Coast Guard";
-  const subtitle =
-    "Every day, you&apos;ll work on exciting missions and gain in-demand career skills all while making lifelong friends and having life-changing experiences. Just ask our servicemembers. They&apos;ll tell you that adventure is part of their job—and making a difference is their priority.";
+export default function Life({ title, subtitle }) {
 
   const videos = [
     { url: "https://www.youtube.com/watch?v=4r8KrBDPozE", title: "Ariel Medlin" },
