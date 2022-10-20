@@ -22,6 +22,7 @@ export function Layout({ children, menus, global }) {
         mission={global.field_mission.processed} 
         menus={menus} 
       />
+      
     </>
   )
 }
