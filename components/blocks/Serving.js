@@ -8,15 +8,16 @@ import Body from "/components/Body"
 import BackgroundImage from "/components/BackgroundImage";
 import styles from "./Serving.module.scss";
 
-export default function Serving({ title, body }) {
+export default function Serving({ serving }) {
  
   return (
     <div className={styles.serving}>
       <BackgroundImage src="/images/backgrounds/waves.webp" alt="" />
       <Container className={styles.inner}>
+      
         <TitleAdornments />
-        <ServingTitle title={title} />
-        <ServingSubtitle subtitle={body} />
+        <ServingTitle title={`<h2>${serving.field_title.processed}</h2>`} />
+        <ServingSubtitle subtitle={serving.body.processed} />
 
         <div className={styles.grid}>
           <Link href="/about/missions">

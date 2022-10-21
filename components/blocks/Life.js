@@ -14,9 +14,10 @@ export default function Life({ youtube }) {
 
   return (
     <Container className={styles.life}>
+      {/**<pre>{JSON.stringify(youtube, null, 2)}</pre>*/}
       <div className={styles.inner}>
         <div>
-          <LifeTitle title={youtube.info} />
+          <LifeTitle title={youtube.field_title.processed} />
           <LifeSubtitle subtitle={youtube.body.processed} />
         </div>
       </div>
