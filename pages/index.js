@@ -6,7 +6,7 @@ import Serving from "components/blocks/Serving";
 import Life from "components/blocks/Life";
 import Benefits from "components/blocks/Benefits";
 
-export default function IndexPage({ menus, global, benefits/*, specials */ }) {
+export default function IndexPage({ menus, global, benefits, youtube/*, specials */ }) {
   
   return (
     <>
@@ -15,10 +15,10 @@ export default function IndexPage({ menus, global, benefits/*, specials */ }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
-        {/**<pre>{JSON.stringify(specials, null, 2)}</pre>*/}
+        {/**<pre>{JSON.stringify(youtube, null, 2)}</pre>*/}
         <VideoBG />
         <Serving title={`<h2>${global.field_serving_title.processed}</h2>`} body={global.field_serving_body.processed} />
-        <Life title={global.field_life_title.processed} subtitle={global.field_life_body.processed} />
+        <Life youtube={youtube} />
         <Benefits benefits={benefits} />
       </Layout>
     </>
@@ -32,6 +32,12 @@ export async function getStaticProps(context) {
       include: "field_icon"
     }
   });
+
+  const youtube = await drupal.getResource("block_content--youtube","d39486c6-e22e-4b96-9604-240fa2ef806e", {
+    params: {
+      include: "field_youtube_videos"
+    }
+  })
   
   /* 
   const specials = await drupal.getResourceCollection("node--special", {
@@ -53,6 +59,7 @@ export async function getStaticProps(context) {
       },
       global: await drupal.getResource("node--global", "132de760-f931-4656-a5a9-9a13455d232f"),
       benefits: benefits,
+      youtube: youtube,
       /* specials: specials, */
     },
     revalidate: 60,

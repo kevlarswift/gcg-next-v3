@@ -7,34 +7,17 @@ import Body from "/components/Body"
 import Player from "../video/Player";
 import styles from "./Life.module.scss";
 
-export default function Life({ title, subtitle }) {
+export default function Life({ youtube }) {
 
-  const videos = [
-    { url: "https://www.youtube.com/watch?v=4r8KrBDPozE", title: "Ariel Medlin" },
-    { url: "https://www.youtube.com/watch?v=IzRjlcDjXO8", title: "Duy Pham" },
-    { url: "https://www.youtube.com/watch?v=fsmrpiq20jY", title: "Afip Castillo" },
-    { url: "https://www.youtube.com/watch?v=Y4Z0C_uiO68", title: "Recruiting Office New York" },
-    { url: "https://www.youtube.com/watch?v=M0V4u3NUQpY", title: "MK2 Rachel Fultz" },
-    { url: "https://www.youtube.com/watch?v=Y0DUfDggxRw", title: "Jordan Gilbert" },
-    { url: "https://www.youtube.com/watch?v=OJCYJOHgjlQ", title: "Ava Frickey" },
-    { url: "https://www.youtube.com/watch?v=lB5p0bjl00s", title: "Gabriella Deza" },
-    { url: "https://www.youtube.com/watch?v=rj02SmuPOHI", title: "Beth and Scott Slade" },
-    { url: "https://www.youtube.com/watch?v=b81OWkuAbJk", title: "Cory Bretsch" },
-    { url: "https://www.youtube.com/watch?v=IO_uI7Tu7ng", title: "Lindsey Arcangel" },
-    { url: "https://www.youtube.com/watch?v=n_0cT8WvkvQ", title: "Leanne Lusk" },
-    { url: "https://www.youtube.com/watch?v=fKLAb1YEks4", title: "Earl Jackson" },
-    { url: "https://www.youtube.com/watch?v=uxa_qdonLjk", title: "Megan O`&apos;`Connor" },
-    { url: "https://www.youtube.com/watch?v=DvuFsg-ffcE", title: "Tom Brown" },
-    { url: "https://www.youtube.com/watch?v=AP48HFhG1e0", title: "Kimberley Miller" },
-  ];
-  const [video, setVideo] = useState(videos[0].url);
+  const videos = youtube.field_youtube_videos;
+  const [video, setVideo] = useState(videos[0].field_youtube_video.input);
 
   return (
     <Container className={styles.life}>
       <div className={styles.inner}>
         <div>
-          <LifeTitle title={title} />
-          <LifeSubtitle subtitle={subtitle} />
+          <LifeTitle title={youtube.info} />
+          <LifeSubtitle subtitle={youtube.body.processed} />
         </div>
       </div>
       <LifePlayer video={video} videos={videos} setVideo={setVideo} />
@@ -52,7 +35,7 @@ export const LifeTitle = ({ title }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
@@ -70,7 +53,7 @@ export const LifeSubtitle = ({ subtitle }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
@@ -88,7 +71,7 @@ export const LifePlayer = ({ video, videos, setVideo }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
 
   const handleSelect = (event) => {
     setVideo(event.target.value);
@@ -102,9 +85,9 @@ export const LifePlayer = ({ video, videos, setVideo }) => {
             <Form.Group controlId="formVideoSelect">
               <Form.Select aria-label="Choose another Video" onChange={handleSelect}>
                 <option value="/careers/enlisted"> - Explore &apos;A Coast Guard Life&apos; video series - </option>
-                {videos.map((vid, idx) => (
-                  <option value={vid.url} key={idx}>
-                    {vid.title}
+                {videos.map((video) => (
+                  <option value={video.field_youtube_video.input} key={video.id}>
+                    {video.field_title}
                   </option>
                 ))}
               </Form.Select>
@@ -125,7 +108,7 @@ export const LifeAction = () => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
