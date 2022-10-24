@@ -1,11 +1,8 @@
-import { NextApiRequest, NextApiResponse } from "next"
-
 export default async function handler(
-  request: NextApiRequest,
-  response: NextApiResponse
+  request, response
 ) {
-  let slug = request.query.slug as string
-  const secret = request.query.secret as string
+  let slug = request.query.slug
+  const secret = request.query.secret
 
   // Validate secret.
   if (secret !== process.env.DRUPAL_PREVIEW_SECRET) {
