@@ -34,32 +34,6 @@ export default function Serving({ serving }) {
               </a>
             </Link>
           ))}
-          <Link href="/about/missions">
-            <a className={styles.item}>
-              <div className={styles.itemInner}>
-                <div className={styles.btn}>Missions</div>
-                <BackgroundImage src="/images/serving/missions.webp" alt="Mission" />
-              </div>
-            </a>
-          </Link>
-
-          <Link href="/careers/enlisted">
-            <a className={styles.item}>
-              <div className={styles.itemInner}>
-                <div className={styles.btn}>Enlisted</div>
-                <BackgroundImage src="/images/serving/careers.webp" alt="Enlisted Careers" />
-              </div>
-            </a>
-          </Link>
-
-          <Link href="/careers/officer">
-            <a className={styles.item}>
-              <div className={styles.itemInner}>
-                <div className={styles.btn}>Officer</div>
-                <BackgroundImage src="/images/serving/officers.webp" alt="Officer Careers" />
-              </div>
-            </a>
-          </Link>
         </div>
       </Container>
     </div>
