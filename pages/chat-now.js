@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 import { drupal } from "/lib/drupal";
 import { Container } from "react-bootstrap";
 import { Layout } from "/components/layout";
@@ -20,7 +19,6 @@ export default function ChatNowPage({ node, menus, global }) {
         <title>{node.title} | United States Coast Guard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
-      <Script id="liveengage" src="/public/js/le.js"></Script>
       <Layout menus={menus} global={global}>
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
         <Container className="container-inner">
@@ -29,8 +27,6 @@ export default function ChatNowPage({ node, menus, global }) {
               return <Paragraph content={paragraph} key={paragraph.id} />;
             })
           }
-          <h3>Recruiting Chat</h3>
-          <button><div id="LP_DIV_1614023441824">&nbsp;</div></button>
         </Container>
       </Layout>
     </>
