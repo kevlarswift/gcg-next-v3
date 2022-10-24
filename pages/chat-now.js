@@ -21,6 +21,7 @@ export default function ChatNowPage({ node, menus, global }) {
       </Head>
       <Layout menus={menus} global={global}>
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
+        <button><div id="LP_DIV_1614023441824">&nbsp;</div></button>
         <Container className="container-inner">
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {

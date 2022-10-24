@@ -60,7 +60,7 @@ export const StartAdventureSubtitle = ({ subtitle }) => {
   return (
     <div ref={ref}>
       <motion.div animate={animation}>
-        <div role="heading"><Body value={subtitle} /></div>
+        <Body value={subtitle} />
       </motion.div>
     </div>
   );
