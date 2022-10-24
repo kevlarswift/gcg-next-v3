@@ -21,7 +21,7 @@ export default function ParagraphVideo({ content }) {
   return (
     <div ref={ref}>
       <Container className="container-inner">
-        <motion.div animate={animation} initial={initial}>
+        <motion.div animate={animation}>
           {content.field_alignment ? (
             <div className={styles.wrapper}>
               <div className={styles.inner}>

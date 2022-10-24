@@ -19,7 +19,7 @@ export default function ParagraphBody({ content }) {
   return (
     <div ref={ref}>
       <Container className="container-inner">
-        <motion.div animate={animation} initial={initial}>
+        <motion.div animate={animation}>
           {content.field_title && <h2>{content.field_title}</h2>}
           {content.field_body?.processed && <Body value={content.field_body.processed} />}
         </motion.div>
