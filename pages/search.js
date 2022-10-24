@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Head from "next/head";
-import { drupal } from "lib/drupal";
+import { drupal } from "/lib/drupal";
 import Link from "next/link"
 import { Container } from "react-bootstrap";
-import { Layout } from "components/layout";
+import { Layout } from "/components/layout";
 
 export default function SearchPage({ menus, global }) {
   const [status, setStatus] = useState()

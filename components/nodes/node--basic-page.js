@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
-import Banner from "components/blocks/banner";
-import Paragraph from "components/paragraphs/Paragraph";
+import Banner from "/components/blocks/banner";
+import Paragraph from "/components/paragraphs/Paragraph";
 
 export function NodeBasicPage({ node, ...props }) {
   let bgImageSrc = null;

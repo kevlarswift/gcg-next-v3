@@ -1,6 +1,5 @@
 import { useMemo, useCallback, useRef, useEffect } from "react"
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api"
-//import { navigate } from "gatsby"
 
 export default function Map({ allOffices, center, setCenter, zoom, setZoom, nearbyOffices, setNearbyOffices, findNearestOffice }) {
   

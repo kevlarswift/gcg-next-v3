@@ -1,10 +1,10 @@
-import { drupal } from "lib/drupal";
+import { drupal } from "/lib/drupal";
 import Head from "next/head";
-import { Layout } from "components/layout";
-import VideoBG from "components/blocks/VideoBG";
-import Serving from "components/blocks/Serving";
-import Life from "components/blocks/Life";
-import Benefits from "components/blocks/Benefits";
+import { Layout } from "/components/layout";
+import VideoBG from "/components/blocks/VideoBG";
+import Serving from "/components/blocks/Serving";
+import Life from "/components/blocks/Life";
+import Benefits from "/components/blocks/Benefits";
 
 export default function IndexPage({ menus, global, benefits, youtube, serving/*, specials */ }) {
   

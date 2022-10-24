@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import BackgroundImage from "components/BackgroundImage";
-import Body from "components/Body";
+import BackgroundImage from "/components/BackgroundImage";
+import Body from "/components/Body";
 import styles from "./Benefits.module.scss";
 
 export default function Benefits({ title, body, link, linkText }) {

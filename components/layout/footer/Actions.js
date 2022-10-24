@@ -7,7 +7,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faMapMarkerAlt, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "react-bootstrap";
 import styles from "./Actions.module.scss";
-import Body from "components/Body";
+import Body from "/components/Body";
 
 export default function Actions({ body }) {
   return (

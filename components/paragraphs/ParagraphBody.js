@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Container } from "react-bootstrap";
-import Body from "components/Body";
+import Body from "/components/Body";
 
 export default function ParagraphBody({ content }) {
   // Animation & intersection parameters

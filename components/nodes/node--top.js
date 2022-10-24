@@ -1,5 +1,5 @@
-import Banner from "components/blocks/banner";
-import Paragraph from "components/paragraphs/Paragraph";
+import Banner from "/components/blocks/banner";
+import Paragraph from "/components/paragraphs/Paragraph";
 
 export function NodeTop({ node, ...props }) {
   let bgImageSrc = null;

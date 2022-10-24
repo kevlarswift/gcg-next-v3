@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { drupal } from "lib/drupal";
+import { drupal } from "/lib/drupal";
 import { Container } from "react-bootstrap";
 import { Layout } from "/components/layout";
 import Banner from "/components/blocks/banner";

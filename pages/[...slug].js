@@ -1,12 +1,12 @@
 import * as React from "react"
 import Head from "next/head"
-import { drupal } from "lib/drupal"
-import { NodeTop } from "components/nodes/node--top"
-import { NodeBasicPage } from "components/nodes/node--basic-page"
-import { NodeRate } from "components/nodes/node--rate"
-import { NodeRecruiter } from "components/nodes/node--recruiter"
-import { NodeOfficerCareer } from "components/nodes/node--officer-career"
-import { Layout } from "components/layout"
+import { drupal } from "/lib/drupal"
+import { NodeTop } from "/components/nodes/node--top"
+import { NodeBasicPage } from "/components/nodes/node--basic-page"
+import { NodeRate } from "/components/nodes/node--rate"
+import { NodeRecruiter } from "/components/nodes/node--recruiter"
+import { NodeOfficerCareer } from "/components/nodes/node--officer-career"
+import { Layout } from "/components/layout"
 
 const RESOURCE_TYPES = [ 
   "node--global", 

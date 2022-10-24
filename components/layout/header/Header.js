@@ -14,10 +14,10 @@ import {
 import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
-import imgWhyJoin from "public/images/header/why-join.png";
-import imgServe from "public/images/header/careers.jpeg";
-import imgAbout from "public/images/header/about.png";
-import imgJoining from "public/images/header/joining.jpg";
+import imgWhyJoin from "/public/images/header/why-join.png";
+import imgServe from "/public/images/header/careers.jpeg";
+import imgAbout from "/public/images/header/about.png";
+import imgJoining from "/public/images/header/joining.jpg";
 
 export default function Header({ menu, motto }) {
   const router = useRouter();

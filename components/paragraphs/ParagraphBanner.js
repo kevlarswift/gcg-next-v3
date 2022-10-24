@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
-import TitleAdornments from "../blocks/TitleAdornments";
+import TitleAdornments from "/components/blocks/TitleAdornments";
 import styles from "./ParagraphBanner.module.scss";
 
 export default function SubpageBanner({ content }) {
