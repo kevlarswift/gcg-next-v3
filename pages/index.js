@@ -6,7 +6,7 @@ import Serving from "/components/blocks/Serving";
 import Life from "/components/blocks/Life";
 import Benefits from "/components/blocks/Benefits";
 
-export default function IndexPage({ menus, global, benefits, youtube, serving/*, specials */ }) {
+export default function IndexPage({ menus, global, benefits, youtube, serving }) {
   
   return (
     <>
@@ -15,7 +15,6 @@ export default function IndexPage({ menus, global, benefits, youtube, serving/*,
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
-        {/**<pre>{JSON.stringify(serving, null, 2)}</pre>*/}
         <VideoBG />
         <Serving serving={serving} />
         <Life youtube={youtube} />
@@ -45,16 +44,6 @@ export async function getStaticProps(context) {
     }
   })
   
-  /* 
-  const specials = await drupal.getResourceCollection("node--special", {
-    params: {
-      filter: { "status": 1 },
-      "fields[node--special]":
-        "title,id",
-      sort: "title",
-    }
-  });
-  */
 
   return {
     props: {
@@ -67,7 +56,6 @@ export async function getStaticProps(context) {
       benefits: benefits,
       youtube: youtube,
       serving: serving,
-      /* specials: specials, */
     },
     revalidate: 60,
   };
