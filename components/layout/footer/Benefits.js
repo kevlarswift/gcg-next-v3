@@ -53,7 +53,7 @@ export const BenefitsBody = ({ body }) => {
 
   return (
     <div ref={ref}>
-      <motion.p animate={animation}><Body value={body} /></motion.p>
+      <motion.div animate={animation}><Body value={body} /></motion.div>
     </div>
   );
 };
