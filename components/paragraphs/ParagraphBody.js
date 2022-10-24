@@ -5,21 +5,16 @@ import { Container } from "react-bootstrap";
 import Body from "/components/Body";
 
 export default function ParagraphBody({ content }) {
-  // Animation & intersection parameters
-  const initial = { opacity: 0, y: 20, transition: { duration: 0.5 } };
-  const complete = { opacity: 1, y: 0, transition: { duration: 0.5 } };
-  const intersection = { threshold: 0.1 };
-
   // Animate upon enter viewport
-  const { ref, inView } = useInView(intersection);
+  const { ref, inView } = useInView({ threshold: 0.1 });
   const animation = useAnimation();
   useEffect(() => {
     if (inView) {
-      animation.start(complete);
+      animation.start({ opacity: 1, y: 0, transition: { duration: 0.5 } });
     } else {
-      animation.start(initial);
+      animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [animation, initial, complete, inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>

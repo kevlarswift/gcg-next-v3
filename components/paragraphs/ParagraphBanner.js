@@ -5,19 +5,17 @@ import TitleAdornments from "/components/blocks/TitleAdornments";
 import styles from "./ParagraphBanner.module.scss";
 
 export default function SubpageBanner({ content }) {
-  let bgImage = null;
-  {
-    content?.field_banner_bg?.image_style_uri?.banner
-      ? (bgImage = `${content.field_banner_bg.image_style_uri.banner}`)
-      : (bgImage = "/images/backgrounds/benefits.webp");
-  }
 
   return (
     <div className={styles.subpageBanner}>
       <div className={styles.bgImage}>
-          <Image src={`${bgImage}`} layout="fill" objectFit="cover" />
-        </div>
-      
+        <Image 
+          src={content.field_banner_bg?.image_style_uri?.banner} 
+          alt={content.field_banner_bg?.resourceIdObjMeta?.alt}
+          layout="fill" 
+          objectFit="cover"  
+        />
+      </div>
       <Container className={styles.inner}>
         <div className={styles.box}>
           <div className={styles.border}>
@@ -25,7 +23,7 @@ export default function SubpageBanner({ content }) {
               <TitleAdornments />
               <div className={styles.text}>
                 <h2>{content.field_title}</h2>
-                {!!content.field_subtitle ? <p role="heading">{content.field_subtitle}</p> : null}
+                {!!content.field_subtitle ? <p>{content.field_subtitle}</p> : null}
                 {!!content.field_cta_link ? (
                   <p>
                     <Link href={content.field_cta_link.uri.replace("internal:", "")}>

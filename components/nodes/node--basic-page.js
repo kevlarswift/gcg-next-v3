@@ -3,18 +3,12 @@ import Banner from "/components/blocks/banner";
 import Paragraph from "/components/paragraphs/Paragraph";
 
 export function NodeBasicPage({ node, ...props }) {
-  let bgImageSrc = null;
-  {
-    node.field_banner?.image_style_uri?.banner
-      ? (bgImageSrc = `${node.field_banner.image_style_uri.banner}`)
-      : (bgImageSrc = null);
-  }
   return (
     <article {...props}>
       <Banner
         title={node.title}
         subtitle={node.field_subtitle}
-        bgImage={bgImageSrc}
+        bgImage={node.field_banner?.image_style_uri?.banner}
         ctaLink={null}
         ctaText={null}
         short={false}

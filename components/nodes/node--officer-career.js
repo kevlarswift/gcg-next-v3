@@ -3,17 +3,14 @@ import Banner from "/components/blocks/banner";
 import Paragraph from "/components/paragraphs/Paragraph";
 
 export function NodeOfficerCareer({ node }) {
-  
-  let bgImageSrc = null;
-  {
-    node.field_banner?.image_style_uri?.banner
-      ? (bgImageSrc = `${node.field_banner.image_style_uri.banner}`)
-      : (bgImageSrc = null);
-  }
-
   return (
     <>
-      <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
+      <Banner 
+        title={node.title} 
+        subtitle={node.field_subtitle} 
+        bgImage={node.field_banner?.image_style_uri?.banner} 
+        bgImageAlt={node.field_banner?.resourceIdObjMeta?.alt}
+      />
       <article>
         <Container className="container-inner">
           {node.field_paragraphs &&

@@ -9,6 +9,7 @@ import EnlistedRatingsMenu from "/components/careers/EnlistedRatingsMenu";
 import styles from "./Rate.module.scss";
 
 export function NodeRate({ node, rates, ...props }) {
+  /*
   let bgImageSrc = null;
   let bgImageAlt = null;
   if (node.field_banner?.image_style_uri?.banner) {
@@ -19,16 +20,17 @@ export function NodeRate({ node, rates, ...props }) {
     bgImageSrc = null; 
     bgImageAlt = null; 
   }
+  */
   const skills = node.field_paragraph_skills;
-
+  
   return (
     <>
       <div className={styles.rating} {...props}>
         <Banner
           title={node.title}
           subtitle={node.field_subtitle}
-          bgImage={bgImageSrc}
-          bgImageAlt={bgImageAlt}
+          bgImage={node.field_banner?.image_style_uri?.banner}
+          bgImageAlt={node.field_banner?.resourceIdObjMeta?.alt}
           ctaLink={null}
           ctaText={null}
           short={false}
