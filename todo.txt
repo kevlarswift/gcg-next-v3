@@ -1,8 +1,11 @@
+GTM
+GA
+Liveperson
+All tags
 Chat Now
 - Get login
 - Connect to button
 - Put module on new website
-Home Page block shows special characters
 basic page and special page cta field (or move to paragraphs)
 check all ctas
 508 top menu

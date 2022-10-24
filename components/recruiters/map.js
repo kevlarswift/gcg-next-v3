@@ -4,7 +4,7 @@ import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api"
 export default function Map({ allOffices, center, setCenter, zoom, setZoom, nearbyOffices, setNearbyOffices, findNearestOffice }) {
   
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyBB4CvVPT2yxac4JWz2DsaguUnMh8wxKcI',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
   })
 
