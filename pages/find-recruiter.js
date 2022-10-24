@@ -21,7 +21,7 @@ export default function FindRecruiterPage({ node, recruiters, menus, global }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
-        <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
+        <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} short={true} />
         <Container className="container-inner">
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {

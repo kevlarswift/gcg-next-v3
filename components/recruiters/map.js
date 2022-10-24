@@ -32,7 +32,7 @@ export default function Map({ allOffices, center, setCenter, zoom, setZoom, near
         findNearestOffice(position.coords.latitude, position.coords.longitude)    
       }) 
     } 
-  }, [])
+  }, [findNearestOffice])
   
   // Map Reference
   const mapRef = useRef()
