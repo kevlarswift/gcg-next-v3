@@ -21,11 +21,9 @@ export default function ParagraphVideo({ content }) {
 
   return (
     <div ref={ref}>
-      {/*
-      <pre>{JSON.stringify(content, null, 2)}</pre>
-      */}
+      {/**<pre>{JSON.stringify(content, null, 2)}</pre>*/}
       <Container className="container-inner">
-        <motion.div animate={animation} initial={initial}>
+        <motion.div animate={animation}>
           {content.field_alignment ? (
             <div className={styles.wrapper}>
               <div className={styles.inner}>
@@ -34,27 +32,24 @@ export default function ParagraphVideo({ content }) {
                   {content.field_body?.processed && <Body value={content.field_body.processed} />}
                 </div>
               </div>
-
               <div className={styles.image}>
-                {content.field_image?.image_style_uri?.card ? (
-                  <Image
-                    src={content.field_image?.image_style_uri?.card}
-                    width="100%"
-                    alt={content.field_image?.resourceIdObjMeta?.alt}
-                  />
-                ) : null}
+                <Image
+                  src={content.field_image?.image_style_uri?.large}
+                  alt={content.field_image?.resourceIdObjMeta?.alt}
+                  width={480}
+                  height={480}
+                />
               </div>
             </div>
           ) : (
             <div className={styles.wrapper}>
               <div className={styles.image}>
-                {content.field_image?.image_style_uri?.card ? (
-                  <Image
-                    src={content.field_image?.image_style_uri?.card}
-                    width="100%"
-                    alt={content.field_image?.resourceIdObjMeta?.alt}
-                  />
-                ) : null}
+                <Image
+                  src={content.field_image?.image_style_uri?.large}
+                  alt={content.field_image?.resourceIdObjMeta?.alt}
+                  width={480}
+                  height={480}
+                />
               </div>
               <div className={styles.inner}>
                 <div>
