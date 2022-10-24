@@ -15,6 +15,7 @@ export default function IndexPage({ menus, global, benefits, youtube, serving/*,
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
+        {/**<pre>{JSON.stringify(serving, null, 2)}</pre>*/}
         <VideoBG />
         <Serving serving={serving} />
         <Life youtube={youtube} />
@@ -40,7 +41,7 @@ export async function getStaticProps(context) {
 
   const serving = await drupal.getResource("block_content--serving", "9bc8fbd8-fafc-49b7-9ceb-af7d6ad817cf", {
     params: {
-      
+      include: "field_serving_links"
     }
   })
   

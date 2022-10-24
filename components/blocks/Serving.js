@@ -9,17 +9,31 @@ import BackgroundImage from "/components/BackgroundImage";
 import styles from "./Serving.module.scss";
 
 export default function Serving({ serving }) {
- 
+
   return (
     <div className={styles.serving}>
       <BackgroundImage src="/images/backgrounds/waves.webp" alt="" />
       <Container className={styles.inner}>
-      
+
         <TitleAdornments />
         <ServingTitle title={`<h2>${serving.field_title.processed}</h2>`} />
         <ServingSubtitle subtitle={serving.body.processed} />
-
+        {serving.field_serving_links.map((serving_link) => (
+          <option value={serving_link.field_serving_link.title} key={serving_link.field_serving_link.title}>
+            {serving_link.field_serving_link.title}
+          </option>
+        ))}
         <div className={styles.grid}>
+          {serving.field_serving_links.map((serving_link) => (
+            <Link href={serving_link.field_serving_link.uri.replace("internal:", "")}>
+              <a className={styles.item}>
+                <div className={styles.itemInner}>
+                  <div className={styles.btn}>{serving_link.field_serving_link.title}</div>
+                  <BackgroundImage src="/images/serving/missions.webp" alt="Mission" />
+                </div>
+              </a>
+            </Link>
+          ))}
           <Link href="/about/missions">
             <a className={styles.item}>
               <div className={styles.itemInner}>
@@ -61,7 +75,7 @@ export const ServingTitle = ({ title }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
   return (
     <div ref={ref}>
       <motion.div animate={animation}><Body value={title} /></motion.div>
@@ -78,7 +92,7 @@ export const ServingSubtitle = ({ subtitle }) => {
     } else {
       animation.start({ opacity: 0, y: 15, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
   return (
     <div ref={ref}>
       <motion.div animate={animation}><Body value={subtitle} /></motion.div>
