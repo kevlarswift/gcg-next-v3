@@ -7,7 +7,6 @@ export default function ChatBtn() {
   return (
     <div className={`${styles.chat} transition-default`}>
       <div className={`${styles.btn} transition-default`}>
-        <button><div id="LP_DIV_1614023441824">&nbsp;</div></button>
         <Link href="/chat-now">
           <a className={`${styles.btn} transition-default`}>
             <div className={styles.text}>Chat Now</div>
