@@ -1,14 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
-import { DrupalNode } from "next-drupal"
 
-import { absoluteUrl, formatDate } from "lib/utils"
-
-interface NodeArticleTeaserProps {
-  node: DrupalNode
-}
-
-export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
+export function NodeArticleTeaser({ node, ...props }) {
   return (
     <article {...props}>
       <Link href={node.path.alias} passHref>
@@ -23,12 +15,10 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
             <span className="">{node.uid?.display_name}</span>
           </span>
         ) : null}
-        <span> - {formatDate(node.created)}</span>
       </div>
       <Link href={node.path.alias} passHref>
         <a className="">
           Read article
-        
         </a>
       </Link>
     </article>

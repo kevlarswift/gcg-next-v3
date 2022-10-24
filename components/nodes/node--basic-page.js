@@ -1,13 +1,8 @@
-import { DrupalNode } from "next-drupal"
 import { Container } from "react-bootstrap";
 import Banner from "components/blocks/banner";
 import Paragraph from "components/paragraphs/Paragraph";
 
-interface NodeBasicPageProps {
-  node: DrupalNode
-}
-
-export function NodeBasicPage({ node, ...props }: NodeBasicPageProps) {
+export function NodeBasicPage({ node, ...props }) {
   let bgImageSrc = null;
   {
     node.field_banner?.image_style_uri?.banner

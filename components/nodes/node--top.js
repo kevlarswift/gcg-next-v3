@@ -1,12 +1,7 @@
-import { DrupalNode } from "next-drupal";
 import Banner from "components/blocks/banner";
 import Paragraph from "components/paragraphs/Paragraph";
 
-interface NodeTopProps {
-  node: DrupalNode;
-}
-
-export function NodeTop({ node, ...props }: NodeTopProps) {
+export function NodeTop({ node, ...props }) {
   let bgImageSrc = null;
   {
     node.field_banner?.image_style_uri?.banner
@@ -15,7 +10,6 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
   }
   return (
     <article {...props}>
-      {/**<pre>{JSON.stringify(node, null, 2)}</pre>*/}
       <Banner
         title={node.title}
         subtitle={node.field_subtitle}
@@ -26,7 +20,7 @@ export function NodeTop({ node, ...props }: NodeTopProps) {
         short={false}
       />
       {node.field_paragraphs &&
-        node.field_paragraphs.map((paragraph: any, idx: any) => {
+        node.field_paragraphs.map((paragraph, idx) => {
           return <Paragraph content={paragraph} key={idx} />;
         })}
     </article>

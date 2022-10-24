@@ -24,8 +24,8 @@ export default function Serving({ serving }) {
           </option>
         ))}
         <div className={styles.grid}>
-          {serving.field_serving_links.map((serving_link) => (
-            <Link href={serving_link.field_serving_link.uri.replace("internal:", "")}>
+          {serving.field_serving_links.map((serving_link, idx) => (
+            <Link href={serving_link.field_serving_link.uri.replace("internal:", "")} key={idx}>
               <a className={styles.item}>
                 <div className={styles.itemInner}>
                   <div className={styles.btn}>{serving_link.field_serving_link.title}</div>
