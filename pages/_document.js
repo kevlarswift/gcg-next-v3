@@ -24,6 +24,7 @@ class MyDocument extends Document {
             />
           </noscript>
           <Main />
+          <button><div id="LP_DIV_1614023441824">&nbsp;</div></button>
           <NextScript />
         </body>
       </Html>
