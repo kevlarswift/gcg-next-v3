@@ -10,7 +10,6 @@ export function Layout({ children, menus, global }) {
       <ChatBtn />
       <Header menu={menus.main.tree} motto={global.field_motto.processed} />
       <main className="page">{children}</main>
-      <div style={{ backgroundColor: 'red'}}><div id="LP_DIV_1614023441824"></div></div>
       <Footer 
         facebook={global.field_social_facebook} 
         instagram={global.field_social_instagram} 
