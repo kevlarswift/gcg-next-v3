@@ -10,6 +10,8 @@ export function Layout({ children, menus, global }) {
       <ChatBtn />
       <Header menu={menus.main.tree} motto={global.field_motto.processed} />
       <main className="page">{children}</main>
+      <h4>Chat Button</h4>
+      <div id="LP_DIV_1614023441824"></div>
       <Footer 
         facebook={global.field_social_facebook} 
         instagram={global.field_social_instagram} 
