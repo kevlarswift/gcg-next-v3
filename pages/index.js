@@ -6,7 +6,6 @@ import VideoBG from "/components/blocks/VideoBG";
 import Serving from "/components/blocks/Serving";
 import Life from "/components/blocks/Life";
 import Benefits from "/components/blocks/Benefits";
-import { JsonApiErrors } from "next-drupal";
 
 export default function IndexPage({ menus, global, benefits, youtube, serving }) {
   

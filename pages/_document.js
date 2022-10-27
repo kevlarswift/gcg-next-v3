@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
+import ChatBtn from "../components/layout/ChatBtn";
 import { GTM_ID } from '../lib/gtm'
 
 class MyDocument extends Document {
@@ -35,8 +36,9 @@ class MyDocument extends Document {
                 style={{ display: 'none', visibility: 'hidden' }}
               />
             </noscript>
+            
             <Main />
-            <h4>Chat Button</h4>
+            
             <div id="LP_DIV_1614023441824"></div>
             <NextScript />
           </body>
