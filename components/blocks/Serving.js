@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "react-bootstrap";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -14,22 +15,17 @@ export default function Serving({ serving }) {
     <div className={styles.serving}>
       <BackgroundImage src="/images/backgrounds/waves.webp" alt="" />
       <Container className={styles.inner}>
-
         <TitleAdornments />
         <ServingTitle title={`<h2>${serving.field_title.processed}</h2>`} />
         <ServingSubtitle subtitle={serving.body.processed} />
-        {serving.field_serving_links.map((serving_link) => (
-          <option value={serving_link.field_serving_link.title} key={serving_link.field_serving_link.title}>
-            {serving_link.field_serving_link.title}
-          </option>
-        ))}
+        {/**<pre style={{ color: 'white' }}>{JSON.stringify(serving.field_serving_links, null, 2)}</pre*/}
         <div className={styles.grid}>
           {serving.field_serving_links.map((serving_link, idx) => (
             <Link href={serving_link.field_serving_link.uri.replace("internal:", "")} key={idx}>
               <a className={styles.item}>
                 <div className={styles.itemInner}>
                   <div className={styles.btn}>{serving_link.field_serving_link.title}</div>
-                  <BackgroundImage src="/images/serving/missions.webp" alt="Mission" />
+                  <Image src={serving_link.field_serving_image.image_style_uri.large} layout="fill" objectFit="cover" />
                 </div>
               </a>
             </Link>

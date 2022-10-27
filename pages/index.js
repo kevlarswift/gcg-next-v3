@@ -44,7 +44,7 @@ export async function getStaticProps(context) {
 
   const serving = await drupal.getResource("block_content--serving", "9bc8fbd8-fafc-49b7-9ceb-af7d6ad817cf", {
     params: {
-      include: "field_serving_links"
+      include: "field_serving_links, field_serving_links.field_serving_image"
     }
   })
   
