@@ -1,11 +1,12 @@
+import { DrupalJsonApiParams } from "drupal-jsonapi-params"
 import { drupal } from "/lib/drupal";
 import Head from "next/head";
-import Link from "next/link";
 import { Layout } from "/components/layout";
 import VideoBG from "/components/blocks/VideoBG";
 import Serving from "/components/blocks/Serving";
 import Life from "/components/blocks/Life";
 import Benefits from "/components/blocks/Benefits";
+import { JsonApiErrors } from "next-drupal";
 
 export default function IndexPage({ menus, global, benefits, youtube, serving }) {
   
@@ -16,6 +17,7 @@ export default function IndexPage({ menus, global, benefits, youtube, serving })
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
+        <pre>{JSON.stringify(serving, null, 2)}</pre>
         <VideoBG />
         <Serving serving={serving} />
         <Life youtube={youtube} />
@@ -27,22 +29,31 @@ export default function IndexPage({ menus, global, benefits, youtube, serving })
 
 export async function getStaticProps(context) {
 
+  /* BENEFITS BLOCK */
+  const benefitsParams = new DrupalJsonApiParams()
+  benefitsParams.addFields("node--benefit", ["title", "id", "field_icon", "field_icon_alt"]);
+  benefitsParams.addInclude("field_icon");
+  
   const benefits = await drupal.getResourceCollection("node--benefit", {
-    params: {
-      include: "field_icon"
-    }
+    params: benefitsParams.getQueryObject()
   });
 
+  /* YOUTUBE BLOCK */
+  const youtubeParams = new DrupalJsonApiParams()
+  youtubeParams.addFields("paragraph--global_youtube", ["title", "id", "field_youtube_video"]);
+  youtubeParams.addInclude("field_youtube_videos");
+  
   const youtube = await drupal.getResource("block_content--youtube", "d39486c6-e22e-4b96-9604-240fa2ef806e", {
-    params: {
-      include: "field_youtube_videos"
-    }
+    params: youtubeParams.getQueryObject()
   });
 
+  /* SERVING BLOCK */
+  const servingParams = new DrupalJsonApiParams()
+  servingParams.addFields("paragraph--serving_card", ["id", "field_serving_link", "field_serving_image"]);
+  servingParams.addInclude("field_serving_links, field_serving_links.field_serving_image");
+  
   const serving = await drupal.getResource("block_content--serving", "9bc8fbd8-fafc-49b7-9ceb-af7d6ad817cf", {
-    params: {
-      include: "field_serving_links, field_serving_links.field_serving_image"
-    }
+    params: servingParams.getQueryObject()
   })
   
 
