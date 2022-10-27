@@ -13,7 +13,7 @@ export default function FindRecruiter({ nodes }) {
   //const [state, setState] = useState("");
   //const [stateOptions] = useState(query.state_options);
   const [allOffices] = useState(nodes);
-  const [currentRecruitingOffices, setCurrentRecruitingOffices] = useState(nodes);
+  const [currentRecruitingOffices, setCurrentRecruitingOffices] = useState(null);
   const [nearbyOffices, setNearbyOffices] = useState(null);
   const [center, setCenter] = useState({ lat: 38, lng: -96 });
   const [zoom, setZoom] = useState(4);
@@ -140,9 +140,10 @@ export default function FindRecruiter({ nodes }) {
         </Form.Group>
       </Form>
  */}
+      <pre>{JSON.stringify(nodes, null, 2)}</pre>
       <div className={careersStyles.careers}>
         <div className={careersStyles.items}>
-          {currentRecruitingOffices.map((office, index) => (
+          {currentRecruitingOffices?.map((office, index) => (
             <div to={office.path.alias} key={index} className={careersStyles.career}>
               <div>
                 <h3>

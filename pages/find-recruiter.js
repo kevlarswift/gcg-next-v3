@@ -45,15 +45,26 @@ export async function getStaticProps(context) {
 
   const recruiters = await drupal.getResourceCollection("node--recruiter", {
     params: {
-      filter: { "status]": 1 },
+      "filter[status]": "1",
       sort: "title",
     },
   });
 
+  // Chore: programmatically retrieve the >50 recruiters
+  const recruiters2 = await drupal.getResourceCollection("node--recruiter", {
+    params: {
+      "filter[status]": "1",
+      sort: "title",
+      page: {
+        offset: 50,
+      }
+    }
+  })
+
   return {
     props: {
       node,
-      recruiters: recruiters,
+      recruiters: recruiters.concat(recruiters2),
       menus: {
         main: await drupal.getMenu("main"),
         footer1: await drupal.getMenu("footer"),
