@@ -38,8 +38,7 @@ class MyDocument extends Document {
             </noscript>
             
             <Main />
-            
-            <div id="LP_DIV_1614023441824"></div>
+            <div style={{position: 'fixed', bottom: '50px', right: '50px', backgroundColor: 'white' }} id="LP_DIV_1614023441824"></div>
             <NextScript />
           </body>
         </Html>
