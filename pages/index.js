@@ -19,9 +19,6 @@ export default function IndexPage({ menus, global, benefits, youtube, serving })
         <VideoBG />
         <Serving serving={serving} />
         <Life youtube={youtube} />
-        <Link href="/chat-now">
-          <a>Chat Now</a>
-        </Link>
         <Benefits benefits={benefits} />
       </Layout>
     </>
