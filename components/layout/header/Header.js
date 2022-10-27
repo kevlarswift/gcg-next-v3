@@ -45,13 +45,16 @@ export default function Header({ menu, motto }) {
             </div>
             <span className={styles.iconText}>Navigate</span>
           </button>
+          {/**
           <div className={styles.divider} />
           <button onClick={() => router.push("/chat-now")} className={styles.mobileChat}>
             <div className={styles.iconBorder}>
               <FontAwesomeIcon icon={faCommentDots} />
             </div>
           </button>
+          */}
         </div>
+         
         <Logo />
         <div className={styles.connectSearch}>
           <button className={styles.connect} onClick={() => router.push("/find-recruiter")}>
