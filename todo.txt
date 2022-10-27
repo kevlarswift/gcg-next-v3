@@ -1,18 +1,13 @@
 Backup image (like Find a Recruiter)
 All tags
 Chat Now
-- Get login
-- Connect to button
-- Put module on new website
+- Style Button
 basic page and special page cta field (or move to paragraphs)
 check all ctas
 508 top menu
 meta Description
 Parallax scrolling
-Paragraphs 
-Paragraphs build error
 Scrollto
 SEARCH
 https://www.chapterthree.com/blog/search-api-excerpts-nextjs
-Recruiters: limited to 50?
 shuffle benefits

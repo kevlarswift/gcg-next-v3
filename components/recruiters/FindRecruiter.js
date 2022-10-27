@@ -140,7 +140,6 @@ export default function FindRecruiter({ nodes }) {
         </Form.Group>
       </Form>
  */}
-      <pre>{JSON.stringify(nodes, null, 2)}</pre>
       <div className={careersStyles.careers}>
         <div className={careersStyles.items}>
           {currentRecruitingOffices?.map((office, index) => (
