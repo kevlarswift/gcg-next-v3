@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
-import ChatBtn from "../components/layout/ChatBtn";
-import { GTM_ID } from '../lib/gtm'
+import { GTM_ID } from '../lib/gtm';
 
 class MyDocument extends Document {
   render() {
@@ -36,9 +35,30 @@ class MyDocument extends Document {
                 style={{ display: 'none', visibility: 'hidden' }}
               />
             </noscript>
-            
+
             <Main />
-            <div style={{position: 'fixed', bottom: '50px', right: '50px', backgroundColor: 'white' }} id="LP_DIV_1614023441824"></div>
+            <div style={{
+              position: 'fixed',
+              bottom: '50px',
+              right: '50px', 
+              zIndex: 500,
+              fontFamily: "'proxima-nova', sans-serif",
+              fontWeight: 700,
+            }}>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'white',
+                border: '3px solid #005cb9',
+                borderRadius: 9999,
+                height: 44,
+                padding: 20,
+                marginRight: 10
+              }}>
+                <div id="LP_DIV_1614023441824"></div>
+              </div>
+            </div>
             <NextScript />
           </body>
         </Html>

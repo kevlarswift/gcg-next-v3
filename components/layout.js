@@ -1,5 +1,4 @@
 import { PreviewAlert } from "/components/preview-alert"
-import ChatBtn from "/components/layout/ChatBtn";
 import Header from "/components/layout/header/Header"
 import Footer from "/components/layout/footer/Footer"
 
@@ -7,7 +6,7 @@ export function Layout({ children, menus, global }) {
   return (
     <>
       <PreviewAlert />
-      <ChatBtn />
+      {/** <ChatBtn /> */}
       <Header menu={menus.main.tree} motto={global.field_motto.processed} />
       <main className="page">{children}</main>
       <Footer 
