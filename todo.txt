@@ -1,13 +1,20 @@
-Backup image (like Find a Recruiter)
-All tags
-Chat Now
+- Backup image (like Find a Recruiter)
+
+CHAT NOW
 - Style Button
-basic page and special page cta field (or move to paragraphs)
-check all ctas
-508 top menu
-meta Description
-Parallax scrolling
-Scrollto
+
+ACCESSIBILITY 
+- top menu
+
+SCROLLING
+- Parallax scrolling
+- Scrollto
+
 SEARCH
-https://www.chapterthree.com/blog/search-api-excerpts-nextjs
-shuffle benefits
+- https://www.chapterthree.com/blog/search-api-excerpts-nextjs
+
+MISC
+- All tags
+- basic page and special page cta field (or move to paragraphs)
+- check all ctas
+- Meta Tags

@@ -58,7 +58,7 @@ export default function Benefits(benefits) {
       },
     ],
   };
-  //const items = shuffle(BenefitsData.items);
+  const benefitsShuffled = shuffle(benefits.benefits);
 
   return (
     <div ref={ref}>
@@ -69,7 +69,7 @@ export default function Benefits(benefits) {
           <h3>Great reasons to join</h3>
           <div className={styles.grid}>
             <Slider {...settings}>
-              {benefits.benefits.map((benefit, index) => {
+              {benefitsShuffled.map((benefit, index) => {
                 let iconImage = benefit?.field_icon?.uri?.url;
                 if (iconImage) {
                   iconImage = process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + iconImage
