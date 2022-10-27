@@ -1,3 +1,4 @@
+import { DrupalJsonApiParams } from "drupal-jsonapi-params"
 import Head from "next/head";
 import { drupal } from "/lib/drupal";
 import { Container } from "react-bootstrap";
@@ -20,7 +21,7 @@ export default function FindRecruiterPage({ node, recruiters, menus, global }) {
         <title>{node.title} | GoCoastGuard.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
-      <Layout menus={menus} global={global}>
+      <Layout menus={menus} global={global}> 
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} short={true} />
         <Container className="container-inner">
           {node.field_paragraphs &&
@@ -29,6 +30,7 @@ export default function FindRecruiterPage({ node, recruiters, menus, global }) {
             })
           }
           <FindRecruiter nodes={recruiters} />
+          {/**<pre>{JSON.stringify(recruiters, null, 2)}</pre>*/}
         </Container>
       </Layout>
     </>
@@ -43,11 +45,14 @@ export async function getStaticProps(context) {
     },
   });
 
+  /* BENEFITS BLOCK */
+  const recruitersParams = new DrupalJsonApiParams()
+  recruitersParams.addFilter("status", "1"),
+  recruitersParams.addSort("title", "ASC")
+  recruitersParams.addFields("node--recruiter", ["id", "title", "status", "path", "field_address", "field_email", "field_geolocation", "field_phone"]);
+  
   const recruiters = await drupal.getResourceCollection("node--recruiter", {
-    params: {
-      "filter[status]": "1",
-      sort: "title",
-    },
+    params: recruitersParams.getQueryObject(),
   });
 
   // Chore: programmatically retrieve the >50 recruiters

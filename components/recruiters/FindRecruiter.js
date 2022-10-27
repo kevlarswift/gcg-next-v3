@@ -13,8 +13,8 @@ export default function FindRecruiter({ nodes }) {
   //const [state, setState] = useState("");
   //const [stateOptions] = useState(query.state_options);
   const [allOffices] = useState(nodes);
-  const [currentRecruitingOffices, setCurrentRecruitingOffices] = useState(null);
-  const [nearbyOffices, setNearbyOffices] = useState(null);
+  const [currentRecruitingOffices, setCurrentRecruitingOffices] = useState(nodes);
+  const [nearbyOffices, setNearbyOffices] = useState(currentRecruitingOffices);
   const [center, setCenter] = useState({ lat: 38, lng: -96 });
   const [zoom, setZoom] = useState(4);
 
