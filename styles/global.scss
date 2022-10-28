@@ -411,58 +411,39 @@ a:focus.btn-cta {
   bottom: 50px;
   right: 50px;
   z-index: 100;
-  font-family: "proxima-nova", sans-serif;
-  font-weight: 700;
-
-  .text {
+  .lp-chat-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 9999px;
     height: 44px;
-    padding: 20px 10px 20px 20px;
+    padding: 20px 20px 20px 10px;
     background-color: #fff;
     border: 3px solid #005cb9;
+    border-radius: 9999px;
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.15));
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 75ms;
     color: #005cb9;
+    a {
+      font-family: "proxima-nova", sans-serif;
+      font-weight: 700;
+      color: #005cb9;
+      text-decoration: none;   
+    }
+    a:hover,
+    a:focus {
+      color: #e1251b;
+      text-decoration: underline;
+    }
+
     .icon {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 44px;
       height: 44px;
+
       svg {
         font-size: 1.25rem;
       }
-    }
-  }
-
-  .btn:hover,
-  .btn:focus {
-    .text {
-      color: #e1251b;
-      border-color: #e1251b;
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 75ms;
-      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-    }
-    svg {
-      font-size: 1.5rem;
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 75ms;
-    }
-  }
-  .btn:active {
-    .text {
-      background-color: #e1251b;
-      border-color: #fff;
-      color: #fff;
-      filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
     }
   }
 }

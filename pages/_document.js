@@ -40,8 +40,7 @@ class MyDocument extends Document {
 
             <Main />
             <div className="chat">
-              <div className="text">
-                <div id="LP_DIV_1614023441824"></div>
+              <div className="lp-chat-btn" id="LP_DIV_1614023441824">
                 <div className="icon transition-default">
                   <FontAwesomeIcon icon={faCommentDots} />
                 </div>
