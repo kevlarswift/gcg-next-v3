@@ -9,34 +9,40 @@ p,
 li {
   font-family: "Barlow", sans-serif;
 }
+
 h1 {
   font-size: 2.625rem;
   line-height: 1;
   font-weight: 800;
   padding-bottom: 1.5rem;
 }
+
 h2 {
   font-size: 2rem;
   line-height: 1.25;
   font-weight: 800;
   padding-bottom: 1.5rem;
 }
+
 h3 {
   font-size: 1.375rem;
   line-height: 1.25;
   font-weight: 700;
   padding-bottom: 1.5rem;
 }
+
 h4 {
   font-size: 1.25rem;
   line-height: 1.375;
   font-weight: 700;
 }
+
 h5 {
   font-size: 1.125rem;
   line-height: 1.25;
   font-weight: 700;
 }
+
 p,
 li {
   font-size: 1rem;
@@ -46,19 +52,23 @@ li {
   padding-bottom: 14px;
   */
 }
+
 ul {
   list-style: disc;
   list-style-position: inside;
   padding-left: 0;
 }
+
 a {
   color: #00376e;
   text-decoration: underline;
 }
+
 a:hover,
 a:focus {
   color: #e1251b;
 }
+
 .transition-default {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,18 +79,23 @@ a:focus {
   h1 {
     font-size: 4.5rem;
   }
+
   h2 {
     font-size: 2.625rem;
   }
+
   h3 {
     font-size: 1.75rem;
   }
+
   h4 {
     font-size: 1.6rem;
   }
+
   h5 {
     font-size: 1.5rem;
   }
+
   p,
   li {
     font-size: 1.25rem;
@@ -97,11 +112,14 @@ a:focus {
     grid-template-columns: repeat(2, minmax(0, 2fr));
   }
 }
+
 @media (min-width: 768px) {
+
   p,
   li {
     font-size: 1.25rem;
   }
+
   a.btn-cta {
     padding: 14px 40px;
     font-size: 1.125rem;
@@ -113,9 +131,12 @@ a:focus {
   padding-top: 100px;
   background-color: #f3f3f3;
 }
+
 .container-inner {
-  padding: 40px 20px; /*w47px*/
+  padding: 40px 20px;
+  /*w47px*/
 }
+
 main.content {
   background-color: #f5f5f5;
   padding: 100px 0;
@@ -133,24 +154,29 @@ main.content {
   border: 1px solid #c5c5c5;
   border-radius: 0;
 }
+
 .accordion-item:first-of-type {
   border-top: 0;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
+
 .accordion-item:last-of-type {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   margin-bottom: 50px;
 }
+
 .accordion-button {
   font-size: 1.375rem;
   font-weight: 800;
 }
+
 .accordion-button:not(.collapsed) {
   color: #000;
   background-color: transparent;
 }
+
 h2.accordion-header {
   padding-bottom: 0;
   border-top: 1px solid #c5c5c5;
@@ -162,16 +188,19 @@ h2.accordion-header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   .rating-menu-wrapper {
     display: flex;
     align-items: center;
   }
+
   .divider {
     margin: 15px 20px;
     font-weight: 700;
     display: block;
   }
 }
+
 a.btn-cta {
   display: inline-block;
   color: #fff;
@@ -181,21 +210,20 @@ a.btn-cta {
   font-weight: 700;
   border: solid 2px #fff;
   padding: 12px 24px;
-  background-image: linear-gradient(
-    135deg,
-    rgba(225, 37, 27, 0.8) 0%,
-    rgba(225, 37, 27, 0.8) 39%,
-    rgba(225, 37, 27, 1) 40%,
-    rgba(225, 37, 27, 1) 55%,
-    rgba(225, 37, 27, 0.8) 56%,
-    rgba(225, 37, 27, 0.8) 100%
-  );
+  background-image: linear-gradient(135deg,
+      rgba(225, 37, 27, 0.8) 0%,
+      rgba(225, 37, 27, 0.8) 39%,
+      rgba(225, 37, 27, 1) 40%,
+      rgba(225, 37, 27, 1) 55%,
+      rgba(225, 37, 27, 0.8) 56%,
+      rgba(225, 37, 27, 0.8) 100%);
   background-size: 100% 100%;
   background-position: center;
   transition: background-size ease-in-out 0.33s;
   outline: 2px solid #072747;
   letter-spacing: 0.025em;
 }
+
 a:hover.btn-cta,
 a:focus.btn-cta {
   color: #000000;
@@ -203,10 +231,12 @@ a:focus.btn-cta {
   background-size: 200% 200%;
   transition: background-size ease-in-out 0.33s, background-color ease-in-out 0.33s;
 }
+
 @media (min-width: 768px) {
   .page-ctas {
     flex-direction: row;
   }
+
   a.btn-cta {
     font-size: 1.15rem;
     padding: 18px 36px;
@@ -218,6 +248,7 @@ a:focus.btn-cta {
   .inner {
     padding: 40px 47px 52px;
     font-family: "Barlow", sans-serif;
+
     h1 {
       font-weight: 800;
       font-size: 1.75rem;
@@ -228,16 +259,19 @@ a:focus.btn-cta {
       padding: 15px 0 18px;
       letter-spacing: 0.1rem;
     }
+
     p {
       text-align: center;
       color: #fff;
     }
   }
 }
+
 @media (min-width: 768px) {
   .banner {
     .inner {
       padding: 100px 47px 120px;
+
       h1 {
         font-size: 2.625rem;
         line-height: 1.25;
@@ -255,52 +289,63 @@ a:focus.btn-cta {
   background-color: #fff;
   border: 1px solid #c5c5c5;
 }
+
 .form-control,
 .input-group-text {
   border: 2px solid #000;
   border-radius: 0;
 }
+
 .form-group.required .form-label:after,
 .form-group.required .col-form-label:after {
   content: " *";
   color: red;
 }
+
 .input-group-text {
   border-left: none;
 }
+
 .form-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .form-array {
   background-color: #c5c5c5;
   padding: 1rem;
   margin: 0.75rem;
 }
+
 .form-step-progress {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 2rem;
+
   .item {
     font-size: 0.75rem;
     text-align: center;
     width: 100%;
     padding: 0 10px;
+
     .inner {
       display: flex;
       justify-content: center;
       padding-bottom: 6px;
     }
+
     .text {
       display: none;
     }
   }
+
   .item.active {
     font-weight: 700;
     color: green;
   }
+
   .circle {
     display: flex;
     justify-content: center;
@@ -311,15 +356,18 @@ a:focus.btn-cta {
     background: #00376e;
     color: #fff;
   }
+
   .active {
     text-decoration: underline;
     color: #00376e;
   }
+
   .btn.active {
     text-decoration: underline;
     color: #00376e;
   }
 }
+
 .form-select {
   border: 2px solid #000;
   border-radius: 0;
@@ -351,7 +399,70 @@ a:focus.btn-cta {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* CHAT NOW */
+.chat {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 100;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    height: 44px;
+    padding: 20px 10px 20px 20px;
+    background-color: #fff;
+    border: 3px solid #005cb9;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.15));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 75ms;
+    color: #005cb9;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      svg {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .btn:hover,
+  .btn:focus {
+    .text {
+      color: #e1251b;
+      border-color: #e1251b;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 75ms;
+      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    }
+    svg {
+      font-size: 1.5rem;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 75ms;
+    }
+  }
+  .btn:active {
+    .text {
+      background-color: #e1251b;
+      border-color: #fff;
+      color: #fff;
+      filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+    }
   }
 }
