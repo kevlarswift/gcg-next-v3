@@ -2,6 +2,7 @@ import ParagraphBody from "./ParagraphBody";
 import ParagraphBanner from "./ParagraphBanner";
 import ParagraphVideo from "./ParagraphVideo";
 import ParagraphImage from "./ParagraphImage";
+import ParagraphCTA from "./ParagraphCTA";
 
 export default function Paragraph({ content }) {
   let Component = ParagraphBody;
@@ -14,6 +15,9 @@ export default function Paragraph({ content }) {
   } 
   else if (content.type === "paragraph--image") {
     Component = ParagraphImage;
+  } 
+  else if (content.type === "paragraph--cta") {
+    Component = ParagraphCTA;
   } 
 
   return <Component content={content} />;
