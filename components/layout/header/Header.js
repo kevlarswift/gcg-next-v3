@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { Collapse } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,15 +8,10 @@ import {
   faSearch,
   faClose,
   faMapMarkerAlt,
-  faCommentDots,
 } from "@fortawesome/free-solid-svg-icons";
 import Motto from "./Motto";
 import Logo from "./Logo";
 import styles from "./Header.module.scss";
-import imgWhyJoin from "/public/images/header/why-join.png";
-import imgServe from "/public/images/header/careers.jpeg";
-import imgAbout from "/public/images/header/about.png";
-import imgJoining from "/public/images/header/joining.jpg";
 
 export default function Header({ menu, motto }) {
   const router = useRouter();
@@ -45,16 +39,7 @@ export default function Header({ menu, motto }) {
             </div>
             <span className={styles.iconText}>Navigate</span>
           </button>
-          {/**
-          <div className={styles.divider} />
-          <button onClick={() => router.push("/chat-now")} className={styles.mobileChat}>
-            <div className={styles.iconBorder}>
-              <FontAwesomeIcon icon={faCommentDots} />
-            </div>
-          </button>
-          */}
         </div>
-
         <Logo />
         <div className={styles.connectSearch}>
           <button className={styles.connect} onClick={() => router.push("/find-recruiter")}>
@@ -75,32 +60,19 @@ export default function Header({ menu, motto }) {
       <Collapse in={openMenu}>
         <div id="collapse-menu">
           <div className={styles.megaMenu}>
-
-            {/** WHY JOIN */}
+            
+            {/** Get Started */}
             <div className={styles.section}>
-              {/**
-              <div
-                className={styles.imageWrapper}
-                onClick={() => {
-                  handleOpenMenu();
-                  router.push("/why-join");
-                }}>
-                <div className={styles.image}>
-                  <Image src={imgWhyJoin} width={320} height={180} placeholder="blur" alt="Why Join" />
-                </div>
-              </div>
-              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
                     handleOpenMenu();
-                    router.push("/why-join");
+                    router.push("/get-started");
                   }}>
                   <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
-                  Why Join <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
+                  Get Started <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
-
               {menu[0].items.map((item) => {
                 return (
                   <div
@@ -116,20 +88,8 @@ export default function Header({ menu, motto }) {
               })}
             </div>
 
-            {/** SERVE */}
+            {/** CAREERS */}
             <div className={styles.section}>
-              {/**
-              <div
-                className={styles.imageWrapper}
-                onClick={() => {
-                  handleOpenMenu();
-                  router.push("/careers");
-                }}>
-                <div className={styles.image}>
-                  <Image src={imgServe} width={320} height={180} placeholder="blur" alt="Serve" />
-                </div>
-              </div>
-              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
@@ -155,30 +115,19 @@ export default function Header({ menu, motto }) {
               })}
             </div>
 
-            {/** ABOUT */}
+            {/** WHY JOIN */}
             <div className={styles.section}>
-              {/**
-              <div
-                className={styles.imageWrapper}
-                onClick={() => {
-                  handleOpenMenu();
-                  router.push("/about");
-                }}>
-                <div className={styles.image} >
-                  <Image src={imgAbout} width={320} height={180} placeholder="blur" alt="About" />
-                </div>
-              </div>
-              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
                     handleOpenMenu();
-                    router.push("/about");
+                    router.push("/why-join");
                   }}>
                   <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
-                  About <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
+                  Why Join <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
+
               {menu[2].items.map((item) => {
                 return (
                   <div
@@ -194,28 +143,16 @@ export default function Header({ menu, motto }) {
               })}
             </div>
 
-            {/** Joining */}
+            {/** ABOUT */}
             <div className={styles.section}>
-              {/**
-              <div
-                className={styles.imageWrapper}
-                onClick={() => {
-                  handleOpenMenu();
-                  router.push("/joining");
-                }}>
-                <div className={styles.image} >
-                  <Image src={imgJoining} width={320} height={180} placeholder="blur" alt="Joining" />
-                </div>
-              </div>
-              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
                     handleOpenMenu();
-                    router.push("/joining");
+                    router.push("/about");
                   }}>
                   <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
-                  Joining <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
+                  About <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </div>
               </div>
               {menu[3].items.map((item) => {
@@ -232,6 +169,7 @@ export default function Header({ menu, motto }) {
                 );
               })}
             </div>
+
           </div>
         </div>
       </Collapse>

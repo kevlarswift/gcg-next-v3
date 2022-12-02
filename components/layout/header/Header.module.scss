@@ -142,7 +142,6 @@
   text-align: center;
   font-family: "proxima-nova", sans-serif;
   .section {
-    margin-top: 10px;
     .imageWrapper {
       cursor: pointer;
       .image {
@@ -208,7 +207,7 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 4fr));
     gap: 1rem;
-    padding: 50px;
+    padding: 42px 50px 50px 50px;
     .section {
       .imageWrapper {
         .image {
