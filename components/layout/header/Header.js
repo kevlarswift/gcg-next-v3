@@ -54,7 +54,7 @@ export default function Header({ menu, motto }) {
           </button>
           */}
         </div>
-         
+
         <Logo />
         <div className={styles.connectSearch}>
           <button className={styles.connect} onClick={() => router.push("/find-recruiter")}>
@@ -75,9 +75,10 @@ export default function Header({ menu, motto }) {
       <Collapse in={openMenu}>
         <div id="collapse-menu">
           <div className={styles.megaMenu}>
-            
+
             {/** WHY JOIN */}
             <div className={styles.section}>
+              {/**
               <div
                 className={styles.imageWrapper}
                 onClick={() => {
@@ -88,6 +89,7 @@ export default function Header({ menu, motto }) {
                   <Image src={imgWhyJoin} width={320} height={180} placeholder="blur" alt="Why Join" />
                 </div>
               </div>
+              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
@@ -116,6 +118,7 @@ export default function Header({ menu, motto }) {
 
             {/** SERVE */}
             <div className={styles.section}>
+              {/**
               <div
                 className={styles.imageWrapper}
                 onClick={() => {
@@ -126,6 +129,7 @@ export default function Header({ menu, motto }) {
                   <Image src={imgServe} width={320} height={180} placeholder="blur" alt="Serve" />
                 </div>
               </div>
+              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
@@ -153,6 +157,7 @@ export default function Header({ menu, motto }) {
 
             {/** ABOUT */}
             <div className={styles.section}>
+              {/**
               <div
                 className={styles.imageWrapper}
                 onClick={() => {
@@ -163,6 +168,7 @@ export default function Header({ menu, motto }) {
                   <Image src={imgAbout} width={320} height={180} placeholder="blur" alt="About" />
                 </div>
               </div>
+              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
@@ -190,6 +196,7 @@ export default function Header({ menu, motto }) {
 
             {/** Joining */}
             <div className={styles.section}>
+              {/**
               <div
                 className={styles.imageWrapper}
                 onClick={() => {
@@ -200,7 +207,7 @@ export default function Header({ menu, motto }) {
                   <Image src={imgJoining} width={320} height={180} placeholder="blur" alt="Joining" />
                 </div>
               </div>
-
+              */}
               <div className={styles.subtitle}>
                 <div
                   onClick={() => {
