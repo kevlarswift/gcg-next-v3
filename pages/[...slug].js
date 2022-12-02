@@ -74,7 +74,7 @@ export async function getStaticProps(context) {
 
   if (type === "node--officer_program") {
     params = {
-      include: "field_banner",
+      include: "field_banner, field_paragraphs",
     };
   }
 

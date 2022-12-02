@@ -9,14 +9,14 @@ import styles from "./Recruiter.module.scss";
 export function NodeRecruiter({ node, ...props }) {
   return (
     <div {...props}>
-      <Banner 
-        title={node.title} 
+      <Banner
+        title={node.title}
         subtitle="U.S. Coast Guard Recruiting Office"
         bgImage={null}
         bgImageAlt={null}
         ctaLink={null}
         ctaText={null}
-        short={false} 
+        short={false}
       />
       <Container className="container-inner">
         <article className={`${styles.office} page-content`}>
@@ -77,7 +77,7 @@ export function NodeRecruiter({ node, ...props }) {
                   </a>
                 </p>
               ) : null}
-
+              {/**
               <p>
                 vCard:
                 <br />
@@ -86,6 +86,7 @@ export function NodeRecruiter({ node, ...props }) {
                   <FontAwesomeIcon icon={faAddressCard} />
                 </a>
               </p>
+ */}
             </div>
 
             <MapOfficeWrapper
