@@ -18,7 +18,6 @@ export default function Life({ youtube }) {
           <div>
             <LifeTitle title={youtube.field_title.processed} />
             <LifeSubtitle subtitle={youtube.body.processed} />
-
           </div>
         </div>
         <LifePlayer video={video} videos={videos} setVideo={setVideo} />

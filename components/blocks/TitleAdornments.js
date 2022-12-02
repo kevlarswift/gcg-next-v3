@@ -5,6 +5,7 @@ export default function TitleAdornments() {
     <div className={styles.titleAdornment}>
       <div className={styles.line} />
       <div className={`${styles.slash} ${styles.royal}`} />
+      <div className={`${styles.slash} ${styles.white}`} />
       <div className={`${styles.slash} ${styles.red}`} />
       <div className={styles.line} />
     </div>
