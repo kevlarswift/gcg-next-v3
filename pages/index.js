@@ -39,7 +39,7 @@ export async function getStaticProps(context) {
 
   /* YOUTUBE BLOCK */
   const youtubeParams = new DrupalJsonApiParams()
-  youtubeParams.addFields("paragraph--global_youtube", ["title", "id", "field_youtube_video"]);
+  youtubeParams.addFields("paragraph--global_youtube", ["field_title", "id", "field_youtube_video"]);
   youtubeParams.addInclude("field_youtube_videos");
   
   const youtube = await drupal.getResource("block_content--youtube", "d39486c6-e22e-4b96-9604-240fa2ef806e", {

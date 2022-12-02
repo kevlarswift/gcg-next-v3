@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Link from "next/link";
 import { Container, Form } from "react-bootstrap";
 import Body from "/components/Body"
 import Player from "../video/Player";
@@ -13,17 +12,19 @@ export default function Life({ youtube }) {
   const [video, setVideo] = useState(videos[0].field_youtube_video.input);
 
   return (
-    <Container className={styles.life}>
-      {/**<pre>{JSON.stringify(youtube, null, 2)}</pre>*/}
-      <div className={styles.inner}>
-        <div>
-          <LifeTitle title={youtube.field_title.processed} />
-          <LifeSubtitle subtitle={youtube.body.processed} />
+    <>
+      <Container className={styles.life}>
+        <div className={styles.inner}>
+          <div>
+            <LifeTitle title={youtube.field_title.processed} />
+            <LifeSubtitle subtitle={youtube.body.processed} />
+
+          </div>
         </div>
-      </div>
-      <LifePlayer video={video} videos={videos} setVideo={setVideo} />
-      <LifeAction />
-    </Container>
+        <LifePlayer video={video} videos={videos} setVideo={setVideo} />
+        <LifeAction />
+      </Container>
+    </>
   );
 }
 
@@ -81,7 +82,9 @@ export const LifePlayer = ({ video, videos, setVideo }) => {
     <div ref={ref}>
       <motion.div animate={animation}>
         <Player input={video} />
+
         <div className={styles.selector}>
+
           <Form>
             <Form.Group controlId="formVideoSelect">
               <Form.Select aria-label="Choose another Video" onChange={handleSelect}>
@@ -114,9 +117,7 @@ export const LifeAction = () => {
   return (
     <div ref={ref}>
       <motion.div className="ctas" animate={animation}>
-        <Link href="/stories">
-          <a className="btn-cta">Watch More Stories</a>
-        </Link>
+        <a className="btn-cta" href="https://www.youtube.com/channel/UCZ82FeGyWu0tM0_kBAttAhA">Watch More Stories</a>
       </motion.div>
     </div>
   );
