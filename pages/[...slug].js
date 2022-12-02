@@ -6,6 +6,7 @@ import { NodeBasicPage } from "/components/nodes/node--basic-page"
 import { NodeRate } from "/components/nodes/node--rate"
 import { NodeRecruiter } from "/components/nodes/node--recruiter"
 import { NodeOfficerCareer } from "/components/nodes/node--officer-career"
+import { NodeOfficerProgram } from "/components/nodes/node--officer-program"
 import { Layout } from "/components/layout"
 
 const RESOURCE_TYPES = [ 
@@ -14,7 +15,8 @@ const RESOURCE_TYPES = [
   "node--page", 
   "node--rate", 
   "node--recruiter", 
-  "node--officer_career"
+  "node--officer_career",
+  "node--officer_program"
 ]
 
 export default function NodePage({ resource, menus, rates, global, specials }) {
@@ -33,6 +35,7 @@ export default function NodePage({ resource, menus, rates, global, specials }) {
       {resource.type === "node--rate" && <NodeRate node={resource} rates={rates} />}
       {resource.type === "node--recruiter" && <NodeRecruiter node={resource} />}
       {resource.type === "node--officer_career" && <NodeOfficerCareer node={resource} />}
+      {resource.type === "node--officer_program" && <NodeOfficerProgram node={resource} />}
     </Layout>
   )
 }
@@ -57,7 +60,7 @@ export async function getStaticProps(context) {
 
   let params = {}
   
-  if (type === "node--page" || type === "node--top" || type === "node--officer_program" || type === "node--officer_career") {
+  if (type === "node--page" || type === "node--top" || type === "node--officer_career") {
     params = {
       include: "field_banner, field_paragraphs, field_paragraphs.field_banner_bg, field_paragraphs.field_image",
     };
@@ -66,6 +69,12 @@ export async function getStaticProps(context) {
   if (type === "node--rate") {
     params = {
       include: "field_banner, field_paragraph_skills, field_paragraph_skills.field_rate_skill_icon",
+    };
+  }
+
+  if (type === "node--officer_program") {
+    params = {
+      include: "field_banner",
     };
   }
 
