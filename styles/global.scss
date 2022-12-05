@@ -21,14 +21,15 @@ h2 {
   font-size: 2rem;
   line-height: 1.25;
   font-weight: 800;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.375rem;
   line-height: 1.25;
   font-weight: 700;
-  padding-bottom: 1.5rem;
+  padding-top: .5rem;
+  padding-bottom: .1rem;
 }
 
 h4 {
@@ -130,10 +131,11 @@ a:focus {
 .page {
   padding-top: 100px;
   background-color: #f3f3f3;
+  background-image: url(/images/backgrounds/Topographic-Map-Pattern-7.png);
 }
 
 .container-inner {
-  padding: 20px 20px;
+  padding: 10px 20px;
   /*w47px*/
 }
 
@@ -211,12 +213,12 @@ a.btn-cta {
   border: solid 2px #fff;
   padding: 12px 24px;
   background-image: linear-gradient(135deg,
-      rgba(225, 37, 27, 0.8) 0%,
-      rgba(225, 37, 27, 0.8) 39%,
-      rgba(225, 37, 27, 1) 40%,
-      rgba(225, 37, 27, 1) 55%,
-      rgba(225, 37, 27, 0.8) 56%,
-      rgba(225, 37, 27, 0.8) 100%);
+      rgba(225, 37, 27,  1) 0%,
+      rgba(225, 37, 27, 1) 39%,
+      rgba(252,72, 72, 1) 40%,
+      rgba(252, 72, 72, 1) 55%,
+      rgba(225, 37, 27, 1) 56%,
+      rgba(225, 37, 27, 1) 100%);
   background-size: 100% 100%;
   background-position: center;
   transition: background-size ease-in-out 0.33s;
@@ -226,9 +228,10 @@ a.btn-cta {
 
 a:hover.btn-cta,
 a:focus.btn-cta {
-  color: #000000;
+  color: #ffffff;
+  outline: 2px solid #E1251B;
   text-decoration: underline;
-  background-size: 200% 200%;
+  background-size: 1000% 1000%;
   transition: background-size ease-in-out 0.33s, background-color ease-in-out 0.33s;
 }
 
