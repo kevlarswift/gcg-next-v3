@@ -65,11 +65,21 @@
     button:hover .iconText,
     button:focus .iconText {
       color: #e1251b;
+      text-shadow:0px 0px 30px #ffffff;
+      -moz-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      -webkit-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
     }
     button:hover .iconBorder,
     button:focus .iconBorder {
       color: #e1251b;
       border-color: #e1251b;
+      text-shadow:0px 0px 30px #ffffff;
+      -moz-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      -webkit-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
     }
     .menuChat {
       display: flex;
@@ -137,11 +147,12 @@
   overflow: scroll;
   display: block;
   background-color: #ffffff;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
   padding: 24px 36px 36px;
-  text-align: center;
+  text-align: left;
   font-family: "proxima-nova", sans-serif;
   .section {
+    padding-bottom: 20px;
     .imageWrapper {
       cursor: pointer;
       .image {
@@ -149,11 +160,15 @@
       }
     }
     .subtitle {
-      font-size: 1.375rem;
+      font-size: 1.5rem;
       line-height: 1.625;
       letter-spacing: -0.025em;
       font-weight: 700;
       text-decoration: none;
+      color: #005cb9;
+      margin-bottom: 6px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #ebebeb;
       a {
         color: #072747;
         text-decoration: none;
@@ -176,7 +191,7 @@
     .subpageLink {
       display: block;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.5;
       text-decoration: none;
     }
@@ -206,8 +221,8 @@
     height: auto;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 4fr));
-    gap: 1rem;
-    padding: 42px 50px 50px 50px;
+    gap: 4rem;
+    padding: 42px 50px 50px 80px;
     .section {
       .imageWrapper {
         .image {
@@ -231,7 +246,10 @@
   .megaMenu {
     .section {
       .subtitle {
-        font-size: 1.625rem;
+        color: #005cb9;
+        font-size: 1.65rem;
+        margin-bottom: 8px;
+        padding-bottom: 2px;
       }
     }
   }

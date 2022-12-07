@@ -63,10 +63,9 @@ export default function Benefits(benefits) {
   return (
     <div ref={ref}>
       <motion.div className={styles.benefits} animate={animation}>
-        <BackgroundImage src="/images/backgrounds/benefits.webp" alt="" />
         <Container className={styles.inner}>
           <TitleAdornments />
-          <h3>Great reasons to join</h3>
+          <h2>Great reasons to join</h2><br />
           <div className={styles.grid}>
             <Slider {...settings}>
               {benefitsShuffled.map((benefit, index) => {

@@ -69,8 +69,7 @@ export default function Header({ menu, motto }) {
                     handleOpenMenu();
                     router.push("/get-started");
                   }}>
-                  <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
-                  Get Started <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
+                  Get Started <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                 </div>
               </div>
               {menu[0].items.map((item) => {
@@ -96,8 +95,7 @@ export default function Header({ menu, motto }) {
                     handleOpenMenu();
                     router.push("/careers");
                   }}>
-                  <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
-                  Careers <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
+                  Careers <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                 </div>
               </div>
               {menu[1].items.map((item) => {
@@ -123,8 +121,7 @@ export default function Header({ menu, motto }) {
                     handleOpenMenu();
                     router.push("/why-join");
                   }}>
-                  <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
-                  Why Join <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
+                  Why Join <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                 </div>
               </div>
 
@@ -151,8 +148,7 @@ export default function Header({ menu, motto }) {
                     handleOpenMenu();
                     router.push("/about");
                   }}>
-                  <FontAwesomeIcon icon={faArrowRight} className={`${styles.icon} ${styles.white}`} />
-                  About <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
+                  About <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                 </div>
               </div>
               {menu[3].items.map((item) => {

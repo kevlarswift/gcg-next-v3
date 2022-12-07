@@ -29,18 +29,34 @@
             text-transform: uppercase;
             padding-bottom: 0.5rem;
           }
+          h2:before {
+            content: "";
+            display: block;
+            margin: 0;
+            width: 0px;
+            padding-top: 0px;
+            border-top: 0px;
+          }
           p {
             margin-bottom: 1.25rem;
             a {
               text-transform: uppercase;
-              font-weight: 500;
+              font-weight: 700;
               border: 2px solid #e1251b;
               background-color: #fff;
               color: #005bc0;
               font-family: "proxima-nova", sans-serif;
               text-decoration: none;
               font-size: 1.125rem;
-              padding: 1rem;
+              padding: .8rem 1.2rem;
+            }
+            a:hover {
+              background-color: #005bc0;
+              color: #fff;
+              -moz-transition: all 0.2s ease-in;
+              -o-transition: all 0.2s ease-in;
+              -webkit-transition: all 0.2s ease-in;
+              transition: all 0.2s ease-in;
             }
           }
           .linkWrapper {
@@ -66,13 +82,13 @@
 @media (min-width: 768px) {
   .subpageBanner {
     .inner {
-      padding: 100px 0;
+      padding: 140px 0;
       .box {
         justify-content: start;
         .border {
-          width: 70%;
+          width: 60%;
           .bg {
-            padding: 40px 40px;
+            padding: 30px 50px 20px;
           }
           h2 {
             padding-bottom: 2rem;

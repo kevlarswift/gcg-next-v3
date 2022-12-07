@@ -12,7 +12,7 @@ export default function FindRecruiterPage({ node, recruiters, menus, global }) {
   {
     node.field_banner?.image_style_uri?.banner
       ? (bgImageSrc = `${node.field_banner.image_style_uri.banner}`)
-      : (bgImageSrc = "/images/backgrounds/waves.webp");
+      : (bgImageSrc = "/images/backgrounds/waves3.webp");
   }
 
   return (

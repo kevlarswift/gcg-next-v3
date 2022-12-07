@@ -12,7 +12,7 @@ export default function EligibilityRequirementsPage({ node, menus, global, progr
   {
     node.field_banner?.image_style_uri?.banner
       ? (bgImageSrc = `${node.field_banner.image_style_uri.banner}`)
-      : (bgImageSrc = "/images/backgrounds/waves.webp");
+      : (bgImageSrc = "/images/backgrounds/Eligibility.webp");
   }
 
   return (

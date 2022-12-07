@@ -1,5 +1,7 @@
 .banner {
   background-color: #00376e;
+  background-image: url("/images/backgrounds/waves3.webp");
+  background-size: cover;
   position: relative;
   color: #ffffff;
   text-align: center;
@@ -30,8 +32,8 @@
     .text {
       margin: 0 auto;
       h1 {
-        font-size: 1.75rem;
-        line-height: 1;
+        font-size: 2.25rem;
+        line-height: 1em;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -44,14 +46,15 @@
 @media (min-width: 768px) {
   .banner {
     .inner {
-      padding: 100px 47px 120px;
+      padding: 160px 47px 120px;
       &.short {
         padding: 40px 47px;
       }
       .text {
         h1 {
-          font-size: 2.625rem;
-          line-height: 1.25;
+          font-size: 3.5rem;
+          letter-spacing: -.01rem;
+          line-height: 1em;
           padding-bottom: 34px;
         }
       }

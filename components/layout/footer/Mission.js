@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./Mission.module.scss";
 import Body from "/components/Body";
-import imgLogo from "/public/images/footer/logo.svg";
+import imgLogo from "/public/images/header/logo-uscg.svg";
 
 export default function Mission({ mission }) {
   return (

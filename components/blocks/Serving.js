@@ -13,7 +13,7 @@ export default function Serving({ serving }) {
 
   return (
     <div className={styles.serving}>
-      <BackgroundImage src="/images/backgrounds/waves.webp" alt="" />
+      <BackgroundImage src="/images/backgrounds/waves2.webp" alt="" style="width: 100%;" />
       <Container className={styles.inner}>
         <TitleAdornments />
         <ServingTitle title={`<h2>${serving.field_title.processed}</h2>`} />

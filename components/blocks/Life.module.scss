@@ -5,13 +5,12 @@
     display: flex;
     justify-content: center;
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.275rem;
       line-height: 1.17;
       font-weight: 800;
-      color: #005cb9;
     }
     p {
-      font-size: 1.25rem;
+      font-size: .9rem;
       line-height: 1.4;
       margin: 15px 0 55px;
     }
@@ -36,9 +35,15 @@
   .life {
     padding: 100px 32px 120px;
     .inner {
+      p {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        margin: 15px 0 40px;
+      }
       h3 {
-        font-size: 2rem;
-        line-height: 1.25;
+        font-size: 2.225rem;
+        line-height: 1.2em;
+        padding-bottom: 1rem;
       }
     }
   }

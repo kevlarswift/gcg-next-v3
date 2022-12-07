@@ -59,7 +59,7 @@
         text-align: center;
       }
       .hero {
-        padding-bottom: 20px;
+        padding-bottom: 10px;
       }
       .activeReserve {
         display: flex;
@@ -125,6 +125,10 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            padding: 0;
+            div {
+              padding: 0;
+            }
           }
           .divider {
             display: none;
@@ -135,6 +139,7 @@
         }
         .details {
           text-align: left;
+          color: #005cb9;
         }
       }
     }

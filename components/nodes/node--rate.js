@@ -36,7 +36,7 @@ export function NodeRate({ node, rates, ...props }) {
           short={false}
         />
         <div className={styles.bannerLower}>
-          <BackgroundImage src="/images/backgrounds/waves.webp" alt={""} />
+          <BackgroundImage src="/images/backgrounds/waves3.webp" alt={""} />
           <Container className={styles.bannerLowerInner}>
             <div className={styles.bannerContent}>
               <div className={styles.bannerVideo}>

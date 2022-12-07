@@ -1,10 +1,29 @@
 .benefits {
   position: relative;
   background-color: #013d77;
+  background-image: url("/images/backgrounds/benefits.webp");
+  background-size: cover;
   color: #fff;
   .inner {
     padding: 60px 20px;
     z-index: 10;
+    h2 {
+      margin: 15px 0;
+      font-size: 1.75rem;
+      line-height: 1;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.1rem;
+    }
+    h2:before {
+      content: "";
+      display: block;
+      margin: 0;
+      width: 0px;
+      padding-top: 0px;
+      border-top: 0px;
+    }
     h3 {
       text-align: center;
       text-transform: uppercase;
@@ -94,6 +113,11 @@
   .benefits {
     .inner {
       padding: 100px 40px;
+      h2 {
+        font-size: 2.625rem;
+        line-height: 1.25;
+        margin-bottom: 34px;
+      }
       .grid {
         grid-template-columns: repeat(3, minmax(0, 3fr));
         .benefit {
