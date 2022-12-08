@@ -28,7 +28,11 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
 
   const [message, setMessage] = useState("");
   const [codedMessage, setCodedMessage] = useState("");
-  const handleSubmit = () => {
+
+
+  const handleSubmit = async(event) => {
+    
+    event.preventDefault()
     
     // FORMAT MESSAGE 
     let formMessage = '<?xml version="1.0" encoding="utf-16" standalone="yes"?>';
@@ -58,16 +62,29 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
     formMessage += "</NewLead></NewLeads>";
     setMessage(formMessage);
     
-
     // ENCRYPT MESSAGE
     const key = CryptoJS.enc.Hex.parse(process.env.NEXT_PUBLIC_DAH_KEY);
     const iv = CryptoJS.enc.Hex.parse(process.env.NEXT_PUBLIC_DAH_IV);
     const encrypted = CryptoJS.AES.encrypt(formMessage, key, { iv: iv, mode: CryptoJS.mode.CBC });
-    setCodedMessage(encrypted.toString())
-    // SUBMIT MESSAGE
+    const wrappedXML = '<?xml version="1.0"?><LeadData><InitialContact>' + encrypted.toString() + '</InitialContact></LeadData>';
+    setCodedMessage(wrappedXML);
 
-    // ON SUCCESSFUL SUBMISSION, REDIRECT TO FORM CONFIRMATION
+    // SUBMIT MESSAGE
+    const endpoint = process.env.NEXT_PUBLIC_LEADS_ENDPOINT;
     
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/xml',
+      },
+      body: wrappedXML,
+    }
+
+    const response = await fetch(endpoint, options);
+    
+    const result = await response.json()
+    setCodedMessage(result.data)
+    alert(`Is this your full name: ${result.data}`)
   };
 
   return (
@@ -169,7 +186,7 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
           </Button>
         </div>
       </div>
-      
+      <p>Coded Message</p>
       <pre>{codedMessage}</pre>
     </div>
   );
