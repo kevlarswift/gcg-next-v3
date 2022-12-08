@@ -10,6 +10,21 @@ li {
   font-family: "IBM Plex Sans", "proxima-nova", "Barlow", sans-serif;
 }
 
+body {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
 h1 {
   font-family: "proxima-nova", sans-serif;
   font-size: 2.625rem;
@@ -141,7 +156,7 @@ a:focus {
 
   a.btn-cta {
     padding: 14px 40px;
-    font-size: 1.125rem;
+    font-size: 1.15rem;
   }
 }
 
@@ -153,7 +168,7 @@ a:focus {
 }
 
 .container-inner {
-  padding: 20px 20px 40px;
+  padding: 10px 20px;
   /*w47px*/
 }
 
@@ -173,7 +188,7 @@ main.content {
   }
 
   .container-inner {
-    padding: 15px 20px;
+    padding: 30px 20px;
   }
 
   .container-inner div:first {
@@ -254,7 +269,7 @@ a.btn-cta {
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 700;
-  border: solid 2px #fff;
+  border: solid 2px #E1251B;
   padding: 12px 24px;
   background-image: linear-gradient(135deg,
       rgba(225, 37, 27,  1) 0%,
@@ -273,10 +288,22 @@ a.btn-cta {
 a:hover.btn-cta,
 a:focus.btn-cta {
   color: #ffffff;
+  border: 2px solid #fff;
   outline: 2px solid #E1251B;
-  text-decoration: underline;
+  text-decoration: none;
   background-size: 1000% 1000%;
   transition: background-size ease-in-out 0.33s, background-color ease-in-out 0.33s;
+  box-shadow: 0 0px 15px rgba(0, 0, 0, .3);
+}
+
+a:active.btn-cta {
+  -webkit-transform: translateY(3px);
+	transform: translateY(3px);
+  box-shadow: 0 0px 3px rgba(0, 0, 0, .8);
+}
+.video-button {
+  display: block;
+  padding-top: 20px;
 }
 
 @media (min-width: 768px) {
@@ -286,7 +313,7 @@ a:focus.btn-cta {
 
   a.btn-cta {
     font-size: 1.15rem;
-    padding: 18px 36px;
+    padding: 14px 36px;
   }
 }
 
