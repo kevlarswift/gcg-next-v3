@@ -51,7 +51,7 @@ export const CreditsDHS = () => {
   return (
     <div ref={ref}>
       <motion.div className={styles.dhs} animate={animation}>
-        <Image src={imgDHS} alt="Department of Homeland Security logo" width={200} height={60} placeholder={'blur'} />
+        <Image src={imgDHS} alt="Department of Homeland Security logo" width={150} height={45} placeholder={'blur'} />
       </motion.div>
     </div>
   );

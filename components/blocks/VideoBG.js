@@ -13,7 +13,8 @@ export default function VideoBG() {
           <h1>
             Make an
             <br />
-            <span className={styles.emphasis}>Impact</span>
+            <span className={styles.emphasis}>Impact</span><br />
+            <div className="video-button"><a className="btn-cta" href="/#this-is-uscg">Get Started Now</a></div>
           </h1>
         </div>
       </div>

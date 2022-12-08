@@ -26,6 +26,9 @@
   }
   .inner {
     padding: 40px 47px 52px;
+    p {
+      font-size: 115%;
+    }
     &.short {
       padding: 30px 47px 20px;
     }
@@ -47,6 +50,9 @@
   .banner {
     .inner {
       padding: 160px 47px 120px;
+      p {
+        font-size: 140%;
+      }
       &.short {
         padding: 40px 47px;
       }
