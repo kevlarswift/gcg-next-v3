@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import Banner from "/components/blocks/banner";
 import Paragraph from "/components/paragraphs/Paragraph";
 
@@ -13,10 +14,12 @@ export function NodeTop({ node, ...props }) {
         ctaText={null}
         short={false}
       />
-      {node.field_paragraphs &&
-        node.field_paragraphs.map((paragraph) => {
-          return <Paragraph content={paragraph} key={paragraph.id} />;
-        })}
+      <Container className="content-wrapper">
+        {node.field_paragraphs &&
+          node.field_paragraphs.map((paragraph) => {
+            return <Paragraph content={paragraph} key={paragraph.id} />;
+          })}
+      </Container>
     </article>
   );
 }

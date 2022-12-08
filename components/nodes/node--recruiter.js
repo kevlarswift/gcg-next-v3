@@ -18,7 +18,7 @@ export function NodeRecruiter({ node, ...props }) {
         ctaText={null}
         short={false}
       />
-      <Container className="container-inner">
+      <Container className="content-wrapper">
         <article className={`${styles.office} page-content`}>
           <div className={styles.grid}>
             <div className={styles.card}>

@@ -22,7 +22,7 @@ export function NodeRate({ node, rates, ...props }) {
   }
   */
   const skills = node.field_paragraph_skills;
-  
+
   return (
     <>
       <div className={styles.rating} {...props}>
@@ -54,71 +54,69 @@ export function NodeRate({ node, rates, ...props }) {
           </Container>
         </div>
 
-        <main className="content">
-          <Container>
-            <Accordion defaultActiveKey="0">
-              {node.field_rate_are_you?.processed ? (
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>Are You...</Accordion.Header>
-                  <Accordion.Body>
-                    <div dangerouslySetInnerHTML={{ __html: node.field_rate_are_you?.processed }} />
-                  </Accordion.Body>
-                </Accordion.Item>
-              ) : null}
+        <Container className="content-wrapper">
+          <Accordion defaultActiveKey="0">
+            {node.field_rate_are_you?.processed ? (
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>Are You...</Accordion.Header>
+                <Accordion.Body>
+                  <div dangerouslySetInnerHTML={{ __html: node.field_rate_are_you?.processed }} />
+                </Accordion.Body>
+              </Accordion.Item>
+            ) : null}
 
-              {node.field_paragraph_skills.length > 0 ? (
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>Skills You&apos;ll Learn</Accordion.Header>
-                  <Accordion.Body>
-                    {skills.map((skill, index) => {
-                      return (
-                        <div className={styles.skill} key={index}>
-                          {skill.field_rate_skill_icon && (
-                            <div className={styles.icon}>
-                              <Image
-                                src={process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + skill.field_rate_skill_icon.uri.url}
-                                width={32}
-                                height={32}
-                                alt={""}
-                              />
-                            </div>
-                          )}
-                          <div className={styles.title}>{skill.field_title}</div>
-                        </div>
-                      );
-                    })}
-                  </Accordion.Body>
-                </Accordion.Item>
-              ) : null}
+            {node.field_paragraph_skills.length > 0 ? (
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>Skills You&apos;ll Learn</Accordion.Header>
+                <Accordion.Body>
+                  {skills.map((skill, index) => {
+                    return (
+                      <div className={styles.skill} key={index}>
+                        {skill.field_rate_skill_icon && (
+                          <div className={styles.icon}>
+                            <Image
+                              src={process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + skill.field_rate_skill_icon.uri.url}
+                              width={32}
+                              height={32}
+                              alt={""}
+                            />
+                          </div>
+                        )}
+                        <div className={styles.title}>{skill.field_title}</div>
+                      </div>
+                    );
+                  })}
+                </Accordion.Body>
+              </Accordion.Item>
+            ) : null}
 
-              {node.field_rate_training?.processed ? (
-                <Accordion.Item eventKey="2">
-                  <Accordion.Header>Training You&apos;ll Get</Accordion.Header>
-                  <Accordion.Body>
-                    <div dangerouslySetInnerHTML={{ __html: node.field_rate_training?.processed }} />
-                  </Accordion.Body>
-                </Accordion.Item>
-              ) : null}
+            {node.field_rate_training?.processed ? (
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>Training You&apos;ll Get</Accordion.Header>
+                <Accordion.Body>
+                  <div dangerouslySetInnerHTML={{ __html: node.field_rate_training?.processed }} />
+                </Accordion.Body>
+              </Accordion.Item>
+            ) : null}
 
-              {node.field_rate_careers?.processed ? (
-                <Accordion.Item eventKey="4">
-                  <Accordion.Header>Related Civilian Jobs</Accordion.Header>
-                  <Accordion.Body>
-                    <div dangerouslySetInnerHTML={{ __html: node.field_rate_careers?.processed }} />
-                  </Accordion.Body>
-                </Accordion.Item>
-              ) : null}
-            </Accordion>
+            {node.field_rate_careers?.processed ? (
+              <Accordion.Item eventKey="4">
+                <Accordion.Header>Related Civilian Jobs</Accordion.Header>
+                <Accordion.Body>
+                  <div dangerouslySetInnerHTML={{ __html: node.field_rate_careers?.processed }} />
+                </Accordion.Body>
+              </Accordion.Item>
+            ) : null}
+          </Accordion>
 
-            <div className="page-ctas">
-              <EnlistedRatingsMenu data={rates} />
-              <span className="divider">OR</span>
-              <Link href="/find-recruiter">
-                <a className="btn-cta">Find a Recruiter</a>
-              </Link>
-            </div>
-          </Container>
-        </main>
+          <div className="page-ctas">
+            <EnlistedRatingsMenu data={rates} />
+            <span className="divider">OR</span>
+            <Link href="/find-recruiter">
+              <a className="btn-cta">Find a Recruiter</a>
+            </Link>
+          </div>
+        </Container>
       </div>
     </>
   );

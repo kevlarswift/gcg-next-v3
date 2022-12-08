@@ -12,7 +12,7 @@ export function NodeOfficerProgram({ node }) {
         bgImageAlt={node.field_banner?.resourceIdObjMeta?.alt}
       />
       <article>
-        <Container className="container-inner">
+        <Container className="content-wrapper">
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph, idx) => {
               return <Paragraph content={paragraph} key={idx} />;
