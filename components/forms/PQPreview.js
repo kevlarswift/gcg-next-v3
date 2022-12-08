@@ -76,6 +76,7 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
       method: 'POST',
       headers: {
         'Content-Type': 'application/xml',
+        'Accept': 'application/xml'
       },
       body: wrappedXML,
     }
