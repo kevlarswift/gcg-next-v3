@@ -5,7 +5,7 @@ import { Layout } from "/components/layout";
 import Banner from "/components/blocks/banner";
 import Paragraph from "/components/paragraphs/Paragraph";
 import EligibilityRequirements from "/components/forms/EligibilityRequirements";
-import HeightWeight from "/components/forms/HeightWeight";
+//import HeightWeight from "/components/forms/HeightWeight";
 
 export default function EligibilityRequirementsPage({ node, menus, global, programs }) {
   let bgImageSrc = null;
@@ -25,7 +25,7 @@ export default function EligibilityRequirementsPage({ node, menus, global, progr
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
         <Container className="container-inner">
           <EligibilityRequirements programs={programs} />
-          <HeightWeight />
+          {/** <HeightWeight /> */}
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {
               return <Paragraph content={paragraph} key={paragraph.id} />;
