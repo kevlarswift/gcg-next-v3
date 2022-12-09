@@ -34,10 +34,10 @@ export default function ParagraphVideo({ content }) {
               </div>
               <div className={styles.image}>
                 <Image
-                  src={content.field_image?.image_style_uri?.large}
+                  src={content.field_image?.image_style_uri?.large_4x3}
                   alt={content.field_image?.resourceIdObjMeta?.alt}
                   width={480}
-                  height={480}
+                  height={360}
                 />
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function ParagraphVideo({ content }) {
                   src={content.field_image?.image_style_uri?.large}
                   alt={content.field_image?.resourceIdObjMeta?.alt}
                   width={480}
-                  height={480}
+                  height={360}
                 />
               </div>
               <div className={styles.inner}>
