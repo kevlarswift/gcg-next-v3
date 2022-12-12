@@ -7,7 +7,7 @@ import Banner from "/components/blocks/banner";
 import Paragraph from "/components/paragraphs/Paragraph";
 import FindRecruiter from "/components/recruiters/FindRecruiter";
 
-export default function FindRecruiterPage({ node, recruiters, menus, global }) {
+export default function ConnectPage({ node, recruiters, menus, global }) {
   let bgImageSrc = null;
   {
     node.field_banner?.image_style_uri?.banner
@@ -23,14 +23,13 @@ export default function FindRecruiterPage({ node, recruiters, menus, global }) {
       </Head>
       <Layout menus={menus} global={global}> 
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} short={true} />
-        <Container className="container-inner">
+        <Container className="content-wrapper">
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {
               return <Paragraph content={paragraph} key={paragraph.id} />;
             })
           }
           <FindRecruiter nodes={recruiters} />
-          {/**<pre>{JSON.stringify(recruiters, null, 2)}</pre>*/}
         </Container>
       </Layout>
     </>

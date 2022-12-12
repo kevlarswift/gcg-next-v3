@@ -16,11 +16,11 @@ export default function LandingPage({ menus, global }) {
         <Banner
           title="Make a Difference on Land, Sea, or in the Air"
           subtitle="Nearly 42,000 men and women are actively serving in the Coast Guard to defend America's borders and protect the maritime environment."
-          ctaLink="/find-recruiter"
-          ctaText="Find a Recruiter"
+          ctaLink="/connect"
+          ctaText="Connect"
         />
         <article className={styles.landing}>
-          <Container className="container-inner">
+          <Container className="content-wrapper">
             <div className={styles.layout}>
               <div className={styles.content}>
                 <h2>Advance Through Training</h2>

@@ -42,7 +42,7 @@ export default function Header({ menu, motto }) {
         </div>
         <Logo />
         <div className={styles.connectSearch}>
-          <button className={styles.connect} onClick={() => router.push("/find-recruiter")}>
+          <button className={styles.connect} onClick={() => router.push("/connect")}>
             <div className={styles.iconBorder}>
               <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth />
             </div>

@@ -23,7 +23,7 @@ export default function EligibilityRequirementsPage({ node, menus, global, progr
       </Head>
       <Layout menus={menus} global={global}>
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
-        <Container className="container-inner">
+        <Container className="content-wrapper">
           <EligibilityRequirements programs={programs} />
           {/** <HeightWeight /> */}
           {node.field_paragraphs &&

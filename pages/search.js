@@ -43,7 +43,7 @@ export default function SearchPage({ menus, global }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
-        <Container className="container-inner">
+        <Container className="content-wrapper">
           <article>
             <form onSubmit={handleSubmit} className="mb-4">
               <div>

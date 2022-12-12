@@ -22,7 +22,7 @@ export default function ProspectQuestionnairePage({ node, menus, global }) {
       </Head>
       <Layout menus={menus} global={global}>
         <Banner title={node.title} subtitle={node.field_subtitle} bgImage={bgImageSrc} />
-        <Container className="container-inner">
+        <Container className="content-wrapper">
           {node.field_paragraphs &&
             node.field_paragraphs.map((paragraph) => {
               return <Paragraph content={paragraph} key={paragraph.id} />;

@@ -97,13 +97,15 @@ export function NodeRecruiter({ node, ...props }) {
           </div>
 
           <div className="page-ctas">
-            <Link href="/find-recruiter">
-              <a className="btn-cta">Find a Recruiter</a>
+            <Link href="/connect">
+              <a className="btn-cta">Connect</a>
             </Link>
+            {/**
             <span className="divider">OR</span>
             <Link href="/chat-now">
               <a className="btn-cta">Chat Now</a>
             </Link>
+             */}
           </div>
         </article>
       </Container>

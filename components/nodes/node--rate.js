@@ -112,8 +112,8 @@ export function NodeRate({ node, rates, ...props }) {
           <div className="page-ctas">
             <EnlistedRatingsMenu data={rates} />
             <span className="divider">OR</span>
-            <Link href="/find-recruiter">
-              <a className="btn-cta">Find a Recruiter</a>
+            <Link href="/connect">
+              <a className="btn-cta">Connect</a>
             </Link>
           </div>
         </Container>
