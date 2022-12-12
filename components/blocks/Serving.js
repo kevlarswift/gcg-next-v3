@@ -16,9 +16,9 @@ export default function Serving({ serving }) {
       <BackgroundImage src="/images/backgrounds/waves2.webp" alt="" style="width: 100%;" />
       <Container className={styles.inner}>
         <TitleAdornments />
-        <ServingTitle title={`<h2>${serving.field_title.processed}</h2>`} />
+        <ServingTitle title={serving.field_title.processed} />
         <ServingSubtitle subtitle={serving.body.processed} />
-        {/**<pre style={{ color: 'white' }}>{JSON.stringify(serving.field_serving_links, null, 2)}</pre*/}
+        {/** */}
         <div className={styles.grid}>
           {serving.field_serving_links.map((serving_link, idx) => (
             <Link href={serving_link.field_serving_link.uri.replace("internal:", "")} key={idx}>
@@ -48,7 +48,7 @@ export const ServingTitle = ({ title }) => {
   }, [animation, inView]);
   return (
     <div ref={ref}>
-      <motion.div animate={animation}><Body value={title} /></motion.div>
+      <motion.div animate={animation}><h2>{title}</h2></motion.div>
     </div>
   );
 };
