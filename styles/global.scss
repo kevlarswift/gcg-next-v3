@@ -318,6 +318,29 @@ a:active.btn-cta {
 	transform: translateY(3px);
   box-shadow: 0 0px 3px rgba(0, 0, 0, .8);
 }
+
+a.btn-cta2 {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  position: relative;
+  padding: 12px 30px 12px;
+  overflow: hidden;
+  color: #072747;
+  text-align: center;
+  border: #E1251B 2px solid;
+  -webkit-transition: .33s color ease-out,.33s border-color ease-out;
+  transition: .33s color ease-out,.33s border-color ease-out;
+}
+
+a:hover.btn-cta2, a:focus.cta-btn2 {
+  color: #fff;
+  border-color: #072747;
+  background-color: #E1251B;
+}
+
 .video-button {
   display: block;
   padding-top: 20px;

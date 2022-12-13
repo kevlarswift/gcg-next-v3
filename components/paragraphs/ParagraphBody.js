@@ -27,7 +27,7 @@ export default function ParagraphBody({ content }) {
             <div className="page-ctas">
               {content.field_cta_link.map((cta_link, idx) => (
                 <Link href={cta_link.uri?.replace("internal:", "")} key={idx}>
-                  <a className="btn-cta">{cta_link.title}</a>
+                  <a className="btn-cta2">{cta_link.title}</a>
                 </Link>
               ))}
             </div>
