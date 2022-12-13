@@ -1,7 +1,7 @@
 // Mobile breakpoint 
 .ctas {
   display: flex;
-  justify-content:space-between;
+  justify-content:flex-start;
   align-items: center;
 
   .cta {
@@ -12,6 +12,7 @@
     font-weight: 700;
     position: relative;
     padding: 12px 30px 12px;
+    margin-right: 25px;
     overflow: hidden;
     color: #072747;
     text-align: center;
