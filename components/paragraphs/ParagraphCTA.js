@@ -29,7 +29,7 @@ export default function ParagraphCTA({ content }) {
           {content.field_cta_link && (
             <div className="page-ctas">
               {content.field_cta_link.map((cta_link, idx) => (
-                <Link href={cta_link?.uri?.replace("internal:", "")}>
+                <Link href={cta_link?.uri?.replace("internal:", "")} key={idx}>
                   <a className="btn-cta">{cta_link?.title}</a>
                 </Link>
               ))}
