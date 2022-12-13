@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Container } from "react-bootstrap";
+import Link from "next/link";
 import Body from "/components/Body";
 
 export default function ParagraphBody({ content }) {
@@ -22,6 +23,15 @@ export default function ParagraphBody({ content }) {
         <motion.div animate={animation}>
           {content.field_title && <h2>{content.field_title}</h2>}
           {content.field_body?.processed && <Body value={content.field_body.processed} />}
+          {content.field_cta_link?.length > 0 && (
+            <div className="page-ctas">
+              {content.field_cta_link.map((cta_link, idx) => (
+                <Link href={cta_link.uri?.replace("internal:", "")} key={idx}>
+                  <a className="btn-cta">{cta_link.title}</a>
+                </Link>
+              ))}
+            </div>
+          )}
         </motion.div>
       </Container>
     </div>

@@ -22,6 +22,7 @@ export default function ParagraphCTA({ content }) {
         <motion.div animate={animation}>
           {content.field_cta_intro && (
             <div className="text-center">
+              {content.field_title && <h2>{content.field_title}</h2>}
               <Body value={content.field_cta_intro.processed} />
             </div>
           )}
