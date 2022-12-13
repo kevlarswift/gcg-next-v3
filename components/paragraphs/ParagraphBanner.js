@@ -9,11 +9,11 @@ export default function SubpageBanner({ content }) {
   return (
     <div className={styles.subpageBanner}>
       <div className={styles.bgImage}>
-        <Image 
-          src={content.field_banner_bg?.image_style_uri?.banner} 
+        <Image
+          src={content.field_banner_bg?.image_style_uri?.banner}
           alt={content.field_banner_bg?.resourceIdObjMeta?.alt}
-          layout="fill" 
-          objectFit="cover"  
+          layout="fill"
+          objectFit="cover"
         />
       </div>
       <Container className={styles.inner}>
@@ -24,13 +24,16 @@ export default function SubpageBanner({ content }) {
               <div className={styles.text}>
                 <h2>{content.field_title}</h2>
                 {!!content.field_subtitle ? <p>{content.field_subtitle}</p> : null}
-                {!!content.field_cta_link ? (
+                {content.field_cta_link?.length > 0 && (
                   <p>
-                    <Link href={content.field_cta_link.uri.replace("internal:", "")}>
-                      {content.field_cta_link.title}
-                    </Link>
+                    {content.field_cta_link.map((cta_link, idx) => (
+                      <Link href={cta_link.uri?.replace("internal:", "")} key={idx}>
+                        <a className="btn-cta2">{cta_link.title}</a>
+                      </Link>
+                    ))}
                   </p>
-                ) : null}
+                )}
+                
               </div>
             </div>
           </div>
