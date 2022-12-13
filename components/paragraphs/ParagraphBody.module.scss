@@ -1,0 +1,41 @@
+// Mobile breakpoint 
+.ctas {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
+  .cta {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    position: relative;
+    padding: 12px 30px 12px;
+    overflow: hidden;
+    color: #072747;
+    text-align: center;
+    border: #E1251B 2px solid;
+    -webkit-transition: .33s color ease-out, .33s border-color ease-out;
+    transition: .33s color ease-out, .33s border-color ease-out;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      border-color: #072747;
+      background-color: #E1251B;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  // Larger breakpoint styles go here
+}
+
+@media (min-width: 992px) {
+  // Larger breakpoint styles go here
+}
+
+@media (min-width: 1200px) {
+  // Larger breakpoint styles go here
+}
