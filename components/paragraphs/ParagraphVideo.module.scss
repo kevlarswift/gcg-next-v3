@@ -1,7 +1,7 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .wrapper {

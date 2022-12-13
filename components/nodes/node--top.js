@@ -14,12 +14,10 @@ export function NodeTop({ node, ...props }) {
         ctaText={null}
         short={false}
       />
-      <Container className="content-wrapper">
         {node.field_paragraphs &&
           node.field_paragraphs.map((paragraph) => {
             return <Paragraph content={paragraph} key={paragraph.id} />;
           })}
-      </Container>
     </article>
   );
 }

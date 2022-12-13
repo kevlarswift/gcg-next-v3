@@ -1,16 +1,22 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
 @media (min-width: 768px) {
   .wrapper {
     grid-template-columns: repeat(2, minmax(0, 2fr));
-    gap: 0 2rem;
+    gap: 0 4rem;
+    margin-bottom: 2rem;
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
     .inner {
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
     }
   }
 }

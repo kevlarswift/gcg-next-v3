@@ -161,6 +161,7 @@ a:focus {
 }
 
 /********** PAGE **********/
+
 .page {
   padding-top: 100px;
   background-color: #f3f3f3;
@@ -168,15 +169,11 @@ a:focus {
 }
 
 .content-wrapper {
-  padding: 50px 0;
-}
-.container-inner {
-  padding: 10px 20px;
-  /*w47px*/
+  padding: 20px 0 40px;
 }
 
-.container-inner div {
-  padding: 4px 0px;
+.container-inner {
+  padding: 10px 20px;
 }
 
 main.content {
@@ -185,26 +182,40 @@ main.content {
   padding: 100px 0;
 }
 
+.callout-box {
+  float: right;
+  margin: 0px 0 20px 20px;
+  width: 18rem;
+  padding: 30px 40px;
+  text-align: center;
+  border: 5px solid #fff;
+  outline: 2px solid #E1251B;
+  background-color: #00376e;
+  color: #fff;
+}
+.callout-box .inner {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 130%;
+}
+
 @media (min-width: 768px) {
   .page {
     padding-top: 120px;
   }
 
+  .content-wrapper {
+    padding: 50px 0 70px;
+  }
+
   .container-inner {
-    padding: 30px 20px;
+    padding: 20px 20px;
   }
-
-  .container-inner div:first {
-    padding-top: 60px;
-  }
-
-  .container-inner .my-4 div, .container-inner .mb-3 div {
-    padding: 2px 20px;
-  }
-
 }
 
 /********** PAGE: ACCORDION **********/
+
 .accordion-item {
   margin-bottom: 24px;
   border: 1px solid #c5c5c5;
@@ -317,6 +328,7 @@ a:active.btn-cta {
   a.btn-cta {
     font-size: 1.15rem;
     padding: 14px 36px;
+    margin-top: 15px;
   }
 }
 
