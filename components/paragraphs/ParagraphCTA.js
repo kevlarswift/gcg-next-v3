@@ -28,9 +28,11 @@ export default function ParagraphCTA({ content }) {
           )}
           {content.field_cta_link && (
             <div className="page-ctas">
-              <Link href={content.field_cta_link?.uri.replace("internal:", "")}>
-                <a className="btn-cta">{content.field_cta_link?.title}</a>
-              </Link>
+              {content.field_cta_link.map((cta_link, idx) => (
+                <Link href={cta_link?.uri?.replace("internal:", "")}>
+                  <a className="btn-cta">{cta_link?.title}</a>
+                </Link>
+              ))}
             </div>
           )}
         </motion.div>

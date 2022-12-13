@@ -45,7 +45,7 @@ export default function ParagraphVideo({ content }) {
             <div className={styles.wrapper}>
               <div className={styles.image}>
                 <Image
-                  src={content.field_image?.image_style_uri?.large}
+                  src={content.field_image?.image_style_uri?.large_4x3}
                   alt={content.field_image?.resourceIdObjMeta?.alt}
                   width={480}
                   height={360}
