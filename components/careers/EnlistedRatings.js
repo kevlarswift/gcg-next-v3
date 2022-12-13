@@ -55,7 +55,7 @@ export default function EnlistedRatings({ data }) {
           </Form>
         </div>
       </div>
-
+      <div className="spacer"></div>
       <div className={styles.buttons}>
         <div className={styles.btnRow}>
           <AnimatePresence>
