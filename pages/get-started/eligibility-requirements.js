@@ -46,10 +46,10 @@ export async function getStaticProps(context) {
   });
 
   // Fetch Programs
-  const programs = await drupal.getResourceCollection("node--officer_program", {
+  const programs = await drupal.getResourceCollection("node--eligibility_requirements", {
     params: {
       filter: { "status]": 1 },
-      "fields[node--officer_program]":
+      "fields[node--eligibility_requirements]":
         "title,field_req_age,field_er_age,field_er_citizenship,field_er_dependents,field_er_education,field_er_military,field_er_gpa,field_er_medical,field_er_program,field_er_score",
       sort: "title",
     },
