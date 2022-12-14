@@ -23,25 +23,25 @@ export default function ParagraphVideo({ content }) {
       <Container className="container-inner">
         <motion.div animate={animation}>
           {content.field_alignment ? (
-            <div className={styles.wrapper}>
-              <div className={styles.inner}>
-                <div>
-                  {content.field_title && <h2>{content.field_title}</h2>}
+            <div>
+              {content.field_title && <h2>{content.field_title}</h2>}
+              <div className={styles.wrapper}>
+                <div className={styles.inner}>
                   {content.field_body?.processed && <Body value={content.field_body.processed} />}
                 </div>
-              </div>
-              <div className={styles.video}>
-                <Player input={content.field_video?.input} />
+                <div className={styles.video}>
+                  <Player input={content.field_video?.input} />
+                </div>
               </div>
             </div>
           ) : (
-            <div className={styles.wrapper}>
-              <div className={styles.video}>
-                <Player input={content.field_video?.input} />
-              </div>
-              <div className={styles.inner}>
-                <div>
-                  {content.field_title && <h2>{content.field_title}</h2>}
+            <div>
+              {content.field_title && <h2>{content.field_title}</h2>}
+              <div className={styles.wrapper}>
+                <div className={styles.video}>
+                  <Player input={content.field_video?.input} />
+                </div>
+                <div className={styles.inner}>
                   {content.field_body?.processed && <Body value={content.field_body.processed} />}
                 </div>
               </div>
