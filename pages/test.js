@@ -2,20 +2,13 @@ export default function TestPage() {
   async function handleSubmit(event) {
     event.preventDefault()
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/webform_rest/submit`,
-      {
-        method: "POST",
-        body: JSON.stringify({
-          webform_id: "test",
-          name: event.target.name.value,
-          email: event.target.email.value,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    const response = await fetch(`/api/contact`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: event.target.name.value,
+        email: event.target.email.value,
+      }),
+    })
 
     if (response.ok) {
       console.log('ok')
