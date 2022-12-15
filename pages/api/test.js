@@ -1,6 +1,6 @@
 import { drupal } from "/lib/drupal"
 
-export default async function handler(request, response) {
+export default async function handler( request, response ) {
   
   try {
     if (request.method === "POST") {
