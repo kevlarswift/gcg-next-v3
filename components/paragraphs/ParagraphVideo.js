@@ -22,21 +22,20 @@ export default function ParagraphVideo({ content }) {
     <div ref={ref}>
       <Container className="container-inner">
         <motion.div animate={animation}>
-          
-            
-          
-            <div>
-              {content.field_title && <h2>{content.field_title}</h2>}
-              <div className={styles.wrapper} style={{ direction: content.field_alignment ? 'rtl': 'ltr'}}>
-                <div className={styles.video}>
-                  <Player input={content.field_video?.input} />
-                </div>
-                <div className={styles.inner} style={{ direction:'ltr'}}>
+          <div>
+            {content.field_title && <h2>{content.field_title}</h2>}
+            <div className={styles.wrapper} style={{ direction: content.field_alignment ? 'rtl' : 'ltr' }}>
+              <div className={styles.video}>
+                <Player input={content.field_video?.input} />
+              </div>
+              <div className={styles.inner} style={{ direction: 'ltr' }}>
+                <div>
                   {content.field_body?.processed && <Body value={content.field_body.processed} />}
                 </div>
               </div>
             </div>
-          
+          </div>
+
         </motion.div>
       </Container>
     </div>
