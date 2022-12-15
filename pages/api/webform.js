@@ -1,9 +1,9 @@
-export default function WebformPage() {
-  async function handleSubmit(event) {
-    event.preventDefault()
-
-    const response = await fetch(`api/webform`,
-      {
+export default async function handler( request, response ) {
+  try {
+    if (request.method === "POST") {
+      const url = "https://www.stage-cms.gocoastguard.com/webform_rest/submit"
+      // Submit to Drupal.
+      const result = await fetch(url.toString(), {
         method: "POST",
         body: JSON.stringify({
           webform_id: "prospect-questionnaire",
@@ -61,25 +61,15 @@ export default function WebformPage() {
         headers: {
           "Content-Type": "application/json",
         },
+      })
+
+      if (!result.ok) {
+        throw new Error()
       }
-    )
 
-    if (response.ok) {
-      // Show success.
-      console.log('ok');
-    } else {
-      console.log('not ok');
+      response.status(200).end()
     }
-
-    // Handle error.
+  } catch (error) {
+    return response.status(400).json(error.message)
   }
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <p>Implement your form here</p>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  )
 }
