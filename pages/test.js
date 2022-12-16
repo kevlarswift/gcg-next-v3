@@ -100,6 +100,7 @@ export default function TestPage({ menus, global }) {
         firearms: 'Y',
         beliefs: 'Y',
         afraid: 'Y',
+        swimming_confidence: '2',
         boy_scouts: 1,
         girl_scouts: 0,
         sea_scouts: 0,
