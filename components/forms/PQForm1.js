@@ -90,7 +90,7 @@ export default function PQForm1({ initialValues, validationSchema, formOptions, 
               {values.country === "US" ? (
                 <React.Fragment>
                   <TextInput type="text" name="street" label="Street" instructions="No PO Box" required={true} />
-                  <TextInput type="text" name="City" label="City" required={true} />
+                  <TextInput type="text" name="city" label="City" required={true} />
                   <Select name="state" label="State" options={formOptions.states} required={true} />
                   <TextInput type="text" name="zip" label="Zip" required={true} />
                   <TextInput type="text" name="county" label="County" required={true} />
