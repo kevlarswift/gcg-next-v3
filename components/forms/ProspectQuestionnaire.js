@@ -15,7 +15,7 @@ export default function ProspectQuestionnaire() {
   // Submit to Next.js API endpoint
   const handleSubmit = async (event) => {
     event.preventDefault()
-    
+    console.log(formValues2.ssn)
     const response = await fetch(`/api/test`, {
       method: "POST",
       body: JSON.stringify({
@@ -30,31 +30,31 @@ export default function ProspectQuestionnaire() {
         street: formValues1.street,
         city: formValues1.city,
         state: formValues1.state,
-        zip: '78705',
-        county: 'Travis',
-        email: 'keansmith@gmail.com',
+        zip: formValues1.zip,
+        county: formValues1.county,
+        email: formValues1.email,
         phone_home: '(123) 456-7890',
-        media_id: 'ADVR',
-        program_of_interest: 'ENL',
-        component: 'FT',
-        citizenship: 'USNB',
+        media_id: formValues1.media_id,
+        program_of_interest: formValues1.program_of_interest,
+        component: formValues1.component,
+        citizenship: formValues2.citizenship,
         ssn: '123456789',
         ethnicity: 'true',
-        race: 2,
-        race_2: 3,
+        race: formValues2.race,
+        race_2: formValues2.race_2,
         dob: '2000-01-01',
-        gender: '1',
-        birth_country: 'US',
-        birth_city: 'Austin',
-        birth_state: 'TX',
-        birth_county: 'Travis',
-        marital_status: '4',
-        dependents: '3',
+        gender: formValues2.gender,
+        birth_country: formValues2.birth_country,
+        birth_city: formValues2.birth_city,
+        birth_state: formValues2.birth_state,
+        birth_county: formValues2.birth_county,
+        marital_status: formValues2.marital_status,
+        dependents: formValues2.dependents,
         height: '06-00',
-        weight: 211,
-        hair_color: 'black',
-        eye_color: 'brown',
-        education_level: 'BADG',
+        weight: formValues2.weight,
+        hair_color: formValues2.hair_color,
+        eye_color: formValues2.eye_color,
+        education_level: formValues2.education_level,
         community_activity_1: 'Tennis',
         community_activity_2: 'Table Tennis',
         gpa: 56,
@@ -126,7 +126,7 @@ export default function ProspectQuestionnaire() {
     if (response.ok) {
       console.log(response)
     } else {
-    // Failure
+      // Failure
       console.log(response)
     }
   }
@@ -894,6 +894,9 @@ export default function ProspectQuestionnaire() {
 
   return (
     <Container id="pq" className="container-inner">
+      <form onSubmit={handleSubmit}>
+        <button type="submit">Submit</button>
+      </form>
       <PQProgress stepTitles={stepTitles} currentStep={currentStep} moveStep={moveStep} />
       <div id="pq-form">{steps[currentStep]}</div>
     </Container>
