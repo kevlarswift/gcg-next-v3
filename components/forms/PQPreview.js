@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Table, Button } from "react-bootstrap";
-import CryptoJS from "crypto-js";
+//import CryptoJS from "crypto-js";
 
 const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, formManager4Array, moveStep }) => {
   
@@ -31,9 +31,128 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
 
 
   const handleSubmit = async(event) => {
-    
     event.preventDefault()
     
+    const response = await fetch(`/api/test`, {
+      method: "POST",
+      body: JSON.stringify({
+        terms_privacy: true,
+        terms_paperwork: true,
+        name_first: 'Andrew',
+        name_middle: 'X',
+        name_last: 'Y',
+        name_suffix: 'Jr',
+        name_maiden: 'Boogie',
+        country: 'US',
+        street: '503 W 33rd',
+        city: 'Austin',
+        state: 'TX',
+        zip: '78705',
+        county: 'Travis',
+        email: 'keansmith@gmail.com',
+        phone_home: '(123) 456-7890',
+        media_id: 'ADVR',
+        program_of_interest: 'ENL',
+        component: 'FT',
+        citizenship: 'USNB',
+        ssn: '123456789',
+        ethnicity: 'true',
+        race: 2,
+        race_2: 3,
+        dob: '2000-01-01',
+        gender: '1',
+        birth_country: 'US',
+        birth_city: 'Austin',
+        birth_state: 'TX',
+        birth_county: 'Travis',
+        marital_status: '4',
+        dependents: '3',
+        height: '06-00',
+        weight: 211,
+        hair_color: 'black',
+        eye_color: 'brown',
+        education_level: 'BADG',
+        community_activity_1: 'Tennis',
+        community_activity_2: 'Table Tennis',
+        gpa: 56,
+        degree_type: 'AIS',
+        current_education_status: 'IS',
+        current_employment_status: 'FT',
+        credits: 103,
+        years_education: 24,
+        drivers_license_number: 'TX2333',
+        drivers_license_state: 'TX',
+        drivers_license_expiration: '2030-01-01',
+        selective_service_number: 'd83494j9',
+        recruiter: 'Y',
+        recruiter_details: 'Lorem ipsum',
+        service: 'Y',
+        branch: 'ARMY',
+        service_component: 'PT',
+        pay_grade: 'e1',
+        rate_mos_job: 'AET',
+        service_type: 0,
+        discharged_separation_date: '2020-01-01',
+        time_years: 20,
+        time_months: 10,
+        time_days: 22,
+        discharge_type: 'HD',
+        re_code: 'RE-1A',
+        anticipated_separation_date: '2023-10-31',
+        serving_years: 12,
+        serving_months: 9,
+        serving_days: 20,
+        rejected_military: 'Y',
+        rejected_details: 'Lorem Ipsum',
+        asvab: 'Y',
+        asvab_when: 'Y',
+        asvab_score: 80,
+        asvab_where: 'Cincinnati',
+        asvab_branch: 'AR',
+        crime: 'Y',
+        crime_description: 'Lorem Ipsum',
+        legal: 'Y',
+        legal_description: 'Lorem Ipsum',
+        drugs: 'Y',
+        drugs_description: 'Lorem Ipsum',
+        drugs_times: 30,
+        drugs_last_date: '1999-01-01',
+        tattoos: 'Y',
+        tattoos_description: 'Lorem Ipsum',
+        overdue: 'Y',
+        declared_bankruptcy: 'Y',
+        child_support: 'Y',
+        child_support_amount: 2250,
+        firearms: 'Y',
+        beliefs: 'Y',
+        afraid: 'Y',
+        swimming_confidence: '2',
+        boy_scouts: 1,
+        girl_scouts: 0,
+        sea_scouts: 0,
+        police_explorers: 1,
+        sea_explorers: 0,
+        civil_air_patrol: 1,
+        naval_sea_cadet_corps: 0,
+        coast_guard_auxiliary: 1,
+        rotc_jrotc: 0,
+        acknowledgement: 1,
+      }),
+    })
+
+    // Successful transmission
+    if (response.ok) {
+      console.log("ok")
+      console.log(response)
+      // Redirect to '/prospect-questionnaire/confirmation'
+    
+    } else {
+      console.log(response)
+      // Redirect to '/prospect-questionnaire/error
+    }
+
+    
+    /*
     // FORMAT MESSAGE 
     let formMessage = '<?xml version="1.0" encoding="utf-16" standalone="yes"?>';
     formMessage += "<NewLeads><NewLead>";
@@ -68,7 +187,7 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
     const encrypted = CryptoJS.AES.encrypt(formMessage, key, { iv: iv, mode: CryptoJS.mode.CBC });
     const wrappedXML = '<?xml version="1.0"?><LeadData><InitialContact>' + encrypted.toString() + '</InitialContact></LeadData>';
     setCodedMessage(wrappedXML);
-
+   
     // SUBMIT MESSAGE
     const endpoint = process.env.NEXT_PUBLIC_LEADS_ENDPOINT;
     
@@ -86,6 +205,7 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
     const result = await response.json()
     setCodedMessage(result.data)
     alert(`Is this your full name: ${result.data}`)
+     */
   };
 
   return (
