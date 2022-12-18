@@ -22,14 +22,14 @@ export default function ProspectQuestionnaire() {
         terms_privacy: true,
         terms_paperwork: true,
         name_first: formValues1.name_first,
-        name_middle: formValues2.name_middle,
+        name_middle: formValues1.name_middle,
         name_last: formValues1.name_last,
-        name_suffix: '',
-        name_maiden: '',
-        country: 'US',
-        street: '503 W 33rd',
-        city: 'Austin',
-        state: 'TX',
+        name_suffix: formValues1.name_suffix,
+        name_maiden: formValues1.name_maiden,
+        country: formValues1.country,
+        street: formValues1.street,
+        city: formValues1.city,
+        state: formValues1.state,
         zip: '78705',
         county: 'Travis',
         email: 'keansmith@gmail.com',
@@ -122,6 +122,13 @@ export default function ProspectQuestionnaire() {
         acknowledgement: 1,
       }),
     })
+    // Success
+    if (response.ok) {
+      console.log(response)
+    } else {
+    // Failure
+      console.log(response)
+    }
   }
 
   const [formValues1, setFormValues1] = useState({
