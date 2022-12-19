@@ -140,7 +140,7 @@ export default function ProspectQuestionnaire() {
   }
 
   const [formValues1, setFormValues1] = useState({
-    terms_privacy: false,
+    terms_privacy: true,
     terms_paperwork: true,
     name_first: "Andrew",
     name_middle: "Kean",

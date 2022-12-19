@@ -1,11 +1,20 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, useField } from "formik";
 import { Button, Row, Col } from "react-bootstrap";
 import MaskedInput from "react-input-mask";
 import TextError from "./components/TextError";
 import TextInput from "./components/TextInput";
 import Select from "./components/Select";
-import Body from "/components/Body";
+import Autocomplete from "./components/Autocomplete"
+import { Typeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
+import majors from '/data/majors';
+const users = [
+  { id: 1, user: "ann" },
+  { id: 2, user: "rudi" },
+  { id: 3, user: "rudolph" },
+  { id: 3, user: "3meterstoolong" }
+];
 
 export default function PQForm2({ initialValues, validationSchema, formOptions, updateData, moveStep }) {
   const onSubmit = (values) => {
@@ -132,7 +141,8 @@ export default function PQForm2({ initialValues, validationSchema, formOptions, 
               <TextInput type="text" name="community_activity_1" label="Community Activity #1" instructions="Clubs, sports, or organizations in which you were involved." />
               <TextInput type="text" name="community_activity_2" label="Community Activity #2" />
               <Select name="degree_type" label="Degree Type" options={formOptions.degree_types} instructions="If applicable (earned or in progress), select the highest" />
-              <TextInput type="text" name="major" label="Major" />
+              {/**<TextInput type="text" name="major" label="Major" />*/}
+              <Autocomplete name="major" label="Major" labelKey="major" options={majors} required={false} />
               <TextInput type="number" name="gpa" label="GPA" required={true} instructions="Enter your GPA on a 0-99 scale." />
               <Select name="current_education_status" label="Current Education Status" options={formOptions.current_education_statuses} required={true} />
               <Select name="current_employment_status" label="Current Employment Status" options={formOptions.current_employment_statuses} required={true} />

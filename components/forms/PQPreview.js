@@ -21,7 +21,7 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
             return "Can't find label";
           }
         } else {
-          console.log("Missing item: ", item)
+          console.log("Missing item: ")
         }
       default:
         return field.field;

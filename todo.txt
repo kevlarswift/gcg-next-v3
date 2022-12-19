@@ -5,6 +5,7 @@ PQ:
 - Autocomplete High School
 - Autocomplete College
 - Redirect to Error or Confirmation
+- Empty values conditionally
 
 HOME
 - Change buttons on Home Page Carousel
@@ -12,7 +13,7 @@ HOME
 - Backup image (like Find a Recruiter)
 
 CHAT NOW
-- Style Button
+- Move button styles to LP
 
 ACCESSIBILITY 
 - top menu
