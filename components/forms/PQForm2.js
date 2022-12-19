@@ -6,15 +6,9 @@ import TextError from "./components/TextError";
 import TextInput from "./components/TextInput";
 import Select from "./components/Select";
 import Autocomplete from "./components/Autocomplete"
-import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
+import colleges from '/data/colleges';
 import majors from '/data/majors';
-const users = [
-  { id: 1, user: "ann" },
-  { id: 2, user: "rudi" },
-  { id: 3, user: "rudolph" },
-  { id: 3, user: "3meterstoolong" }
-];
 
 export default function PQForm2({ initialValues, validationSchema, formOptions, updateData, moveStep }) {
   const onSubmit = (values) => {
@@ -123,8 +117,8 @@ export default function PQForm2({ initialValues, validationSchema, formOptions, 
               <TextInput type="text" name="high_school" label="High School" instructions="Last attended" />
               <TextInput type="text" name="community_activity_1" label="Community Activity #1" instructions="Clubs, sports, or organizations in which you were involved." />
               <TextInput type="text" name="community_activity_2" label="Community Activity #2" />
+              <Autocomplete name="college" label="College" options={colleges} required={false} />
               <Select name="degree_type" label="Degree Type" options={formOptions.degree_types} instructions="If applicable (earned or in progress), select the highest" />
-              {/**<TextInput type="text" name="major" label="Major" />*/}
               <Autocomplete name="major" label="Major" options={majors} required={false} />
               <TextInput type="number" name="gpa" label="GPA" required={true} instructions="Enter your GPA on a 0-99 scale." />
               <Select name="current_education_status" label="Current Education Status" options={formOptions.current_education_statuses} required={true} />

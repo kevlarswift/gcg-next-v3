@@ -1,9 +1,7 @@
 import React from "react";
 import { useField } from "formik";
 import { Typeahead } from "react-bootstrap-typeahead";
-import TextError from "./TextError";
-import { Row, Col } from "react-bootstrap"
-import { Form } from "react-bootstrap";
+import { Form, Row, Col } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
@@ -21,7 +19,7 @@ export default function Autocomplete(props) {
             name={props.name}
             multiple={false}
             onChange={(selected) => {
-              const value = selected.length > 0 ? selected[0].major : "";
+              const value = selected.length > 0 ? selected[0].id : "";
               helper.setValue(value);
             }}
             onInputChange={(text) => helper.setValue(text)}
