@@ -1,3 +1,14 @@
+PQ: 
+- Debts
+- Violations
+- explanations
+- Autocomplete High School
+- Autocomplete College
+- Redirect to Error or Confirmation
+
+HOME
+- Change buttons on Home Page Carousel
+
 - Backup image (like Find a Recruiter)
 
 CHAT NOW
@@ -18,3 +29,7 @@ MISC
 - basic page and special page cta field (or move to paragraphs)
 - check all ctas
 - Meta Tags
+
+Project Management
+- Build out Schedule
+- Add more Chat leads for testing
