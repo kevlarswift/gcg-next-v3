@@ -89,26 +89,9 @@ export default function PQForm2({ initialValues, validationSchema, formOptions, 
 
             <fieldset className="fieldset">
               <legend>Additional Details</legend>
-              <Select
-                name="marital_status"
-                label="Marital Status"
-                options={formOptions.marital_statuses}
-                required={true}
-              />
-              <Select
-                name="dependents"
-                label="Dependents"
-                options={formOptions.dependents}
-                instructions="Number of children legally dependant on you for support."
-                required={true}
-              />
-              <Select
-                name="height"
-                label="Height"
-                options={formOptions.heights}
-                instructions="Number of children legally dependant on you for support."
-                required={true}
-              />
+              <Select name="marital_status" label="Marital Status" options={formOptions.marital_statuses} required={true} />
+              <Select name="dependents" label="Dependents" options={formOptions.dependents} instructions="Number of children legally dependant on you for support." required={true} />
+              <Select name="height" label="Height" options={formOptions.heights} required={true} instructions="Number of children legally dependant on you for support." />
               <Row className="form-group mb-3 required">
                 <label className="col-form-label col-sm-3" htmlFor="weight">
                   Weight
@@ -142,7 +125,7 @@ export default function PQForm2({ initialValues, validationSchema, formOptions, 
               <TextInput type="text" name="community_activity_2" label="Community Activity #2" />
               <Select name="degree_type" label="Degree Type" options={formOptions.degree_types} instructions="If applicable (earned or in progress), select the highest" />
               {/**<TextInput type="text" name="major" label="Major" />*/}
-              <Autocomplete name="major" label="Major" labelKey="major" options={majors} required={false} />
+              <Autocomplete name="major" label="Major" options={majors} required={false} />
               <TextInput type="number" name="gpa" label="GPA" required={true} instructions="Enter your GPA on a 0-99 scale." />
               <Select name="current_education_status" label="Current Education Status" options={formOptions.current_education_statuses} required={true} />
               <Select name="current_employment_status" label="Current Employment Status" options={formOptions.current_employment_statuses} required={true} />

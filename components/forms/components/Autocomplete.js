@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, useField, useFormikContext, } from "formik";
+import { useField } from "formik";
 import { Typeahead } from "react-bootstrap-typeahead";
 import TextError from "./TextError";
 import { Row, Col } from "react-bootstrap"
@@ -18,9 +18,10 @@ export default function Autocomplete(props) {
         <Col sm={9}>
           <Typeahead
             id={props.name}
+            name={props.name}
             multiple={false}
             onChange={(selected) => {
-              const value = selected.length > 0 ? selected[0].user : "";
+              const value = selected.length > 0 ? selected[0].major : "";
               helper.setValue(value);
             }}
             onInputChange={(text) => helper.setValue(text)}

@@ -279,7 +279,7 @@ export default function ProspectQuestionnaire() {
     gpa: 75,
     college: "",
     degree_type: "AD",
-    major: "",
+    major: "ASPS",
     current_education_status: "NI",
     current_employment_status: "FT",
     credits: 60,
