@@ -127,18 +127,8 @@ export default function PQForm2({ initialValues, validationSchema, formOptions, 
 
             <fieldset className="fieldset">
               <legend>Education</legend>
-              <Select
-                name="education_level"
-                label="Education Level"
-                options={formOptions.education_levels}
-                required={true}
-              />
-              <TextInput
-                type="text"
-                name="high_school"
-                label="High School"
-                instructions="Last attended"
-              />
+              <Select name="education_level" label="Education Level" options={formOptions.education_levels} required={true} />
+              <TextInput type="text" name="high_school" label="High School" instructions="Last attended" />
               <TextInput type="text" name="community_activity_1" label="Community Activity #1" instructions="Clubs, sports, or organizations in which you were involved." />
               <TextInput type="text" name="community_activity_2" label="Community Activity #2" />
               <Select name="degree_type" label="Degree Type" options={formOptions.degree_types} instructions="If applicable (earned or in progress), select the highest" />
@@ -147,25 +137,14 @@ export default function PQForm2({ initialValues, validationSchema, formOptions, 
               <Select name="current_education_status" label="Current Education Status" options={formOptions.current_education_statuses} required={true} />
               <Select name="current_employment_status" label="Current Employment Status" options={formOptions.current_employment_statuses} required={true} />
               <TextInput type="number" name="credits" label="Number of College Credits" />
-              <TextInput
-                type="number"
-                name="years_education"
-                label="Total Years Education"
-                instructions="including high school"
-                required={true}
-              />
+              <TextInput type="number" name="years_education" label="Total Years Education" instructions="including high school" required={true} />
             </fieldset>
 
             <fieldset className="fieldset">
               <legend>Driver&apos;s License</legend>
               <TextInput type="text" name="drivers_license_number" label="Driver's License Number" />
               <Select name="drivers_license_state" label="Driver's License State" options={formOptions.states} />
-              <TextInput
-                type="date"
-                name="drivers_license_expiration"
-                label="Driver's License Expiration"
-                required={true}
-              />
+              <TextInput type="date" name="drivers_license_expiration" label="Driver's License Expiration" required={true} />
               <Row className="form-group mb-3">
                 <label className="col-form-label col-sm-3" htmlFor="selective_service_number">
                   Selective Service Number

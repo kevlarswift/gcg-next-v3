@@ -332,11 +332,11 @@ export default function ProspectQuestionnaire() {
     education_level: Yup.string().required().label("Education Level"),
     community_activity_1: Yup.string().max(150).label("Community Activity #1"),
     community_activity_2: Yup.string().max(150).label("Community Activity #2"),
-    /* high_school: '', */
+    high_school: Yup.string().max(100).label("High School"),
     gpa: Yup.number().min(0).max(99).required().label("GPA"),
-    /* college: '', */
+    college: Yup.string().max(100).label("College"),
     degree_type: Yup.string().label("Degree Type"),
-    /* major: '', */
+    major: Yup.string().max(100).label("Major"),
     current_education_status: Yup.string().required().label("Current Education Status"),
     current_employment_status: Yup.string().required().label("Current Employment Status"),
     credits: Yup.number().min(0).max(200).label("College Credits"),
