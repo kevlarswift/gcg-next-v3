@@ -15,14 +15,13 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
       case "select":
         if (field.field) {
           let item = field.options.find((o) => o.value === field.field);
-          //console.log(item)
           if (item?.label) {
             return item.label;
           } else {
             return "Can't find label";
           }
         } else {
-          return "";
+          console.log("Missing item: ", item)
         }
       default:
         return field.field;
