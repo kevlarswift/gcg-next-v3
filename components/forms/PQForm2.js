@@ -149,7 +149,7 @@ export default function PQForm2({ initialValues, validationSchema, formOptions, 
               <TextInput
                 type="number"
                 name="gpa"
-                label="Community Activity #1"
+                label="GPA"
                 instructions="Enter your GPA on a 0-99 scale."
                 required={true}
               />

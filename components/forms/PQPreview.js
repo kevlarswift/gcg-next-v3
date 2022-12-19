@@ -1,21 +1,26 @@
 import { Table, Button } from "react-bootstrap";
 
 const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, formManager4Array, moveStep, handleSubmit }) => {
-  
+
   const transformFieldValue = (field) => {
     switch (field.type) {
       case "text":
         return field.field;
       case "boolean":
         if (field.field) {
-          return "True";
+          return true;
         } else {
-          return "False";
+          return false;
         }
       case "select":
         if (field.field) {
           let item = field.options.find((o) => o.value === field.field);
-          return item.label;
+          console.log(item)
+          if (item?.label) {
+            return item.label;
+          } else {
+            return "Can't find label";
+          }
         } else {
           return "";
         }
@@ -23,7 +28,7 @@ const PQPreview = ({ formManager1, formManager2, formManager3, formManager4, for
         return field.field;
     }
   };
-  
+
   return (
     <div>
       <h2>Review your Data</h2>
