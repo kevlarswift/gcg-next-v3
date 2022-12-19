@@ -927,6 +927,15 @@
     { "value": "RE-4N", "label": "RE-4N" },
     { "value": "RE-4R", "label": "RE-4R" }
   ],
+  "asvab_branches": [
+    { "value": "AF", "label": "Air Force" },
+    { "value": "AR", "label": "Army" },
+    { "value": "CG", "label": "Coast Guard " },
+    { "value": "MR", "label": "Marines" },
+    { "value": "NG", "label": "National Guard" },
+    { "value": "NV", "label": "Navy" },
+    { "value": "NA", "label": "N/A" }
+  ],
   "discharge_types": [
     { "value": "HD", "label": "Honorable Discharge" },
     { "value": "GD", "label": "General Discharge" },

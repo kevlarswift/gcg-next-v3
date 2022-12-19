@@ -92,7 +92,7 @@ export default function PQForm3({ initialValues, validationSchema, formOptions, 
                     <div className="input-group">
                       <Field type="number" id="time_months" name="time_months" className="form-control" />
                       <div className="input-group-append">
-                        <span classNam="input-group-text" id="basic-addon1">
+                        <span className="input-group-text" id="basic-addon1">
                           months
                         </span>
                       </div>
@@ -204,7 +204,7 @@ export default function PQForm3({ initialValues, validationSchema, formOptions, 
               />
               {values.asvab === "Y" ? (
                 <React.Fragment>
-                  <Select name="asvab_branch" label="Branch for?" options={formOptions.branches} />
+                  <Select name="asvab_branch" label="Branch for?" options={formOptions.asvab_branches} />
                   <TextInput type="date" name="asvab_when" label="Expiration Date" />
                   <TextInput type="number" name="asvab_score" label="Score" />
                   <TextArea name="asvab_where" label="Name of School/MET Site/MEPS" />
