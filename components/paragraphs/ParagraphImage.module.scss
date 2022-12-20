@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   margin-bottom: 2rem;
+  .image { background-color: red; }
 }
 @media (min-width: 768px) {
   .wrapper {
