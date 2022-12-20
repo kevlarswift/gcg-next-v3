@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import BackgroundImage from "/components/BackgroundImage.js";
+//import BackgroundImage from "/components/BackgroundImage.js";
 import { shuffle } from "lodash";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -12,11 +12,11 @@ import { Container } from "react-bootstrap";
 import styles from "./Benefits.module.scss";
 
 function SampleNextArrow({ className, style, onClick }) {
-  return <div className={className} style={{ ...style }} onClick={onClick} />;
+  return <div className={styles['slick-next']} style={{ ...style }} onClick={onClick} />;
 }
 
 function SamplePrevArrow({ className, style, onClick }) {
-  return <div className={className} style={{ ...style }} onClick={onClick} />;
+  return <div className={styles['slick-prev']} style={{ ...style }} onClick={onClick} />;
 }
 
 export default function Benefits(benefits) {
