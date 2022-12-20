@@ -21,7 +21,6 @@ export default function ParagraphVideo({ content }) {
 
   return (
     <div ref={ref}>
-      {/**<pre>{JSON.stringify(content, null, 2)}</pre>*/}
       <Container className="container-inner">
         <motion.div animate={animation}>
           {content.field_alignment ? (
