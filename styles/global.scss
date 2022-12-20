@@ -170,6 +170,12 @@ a:focus {
 .content-wrapper {
   padding: 20px 0 40px;
 }
+.content-wrapper-top {
+  padding-top: 20px;
+}
+.content-wrapper-bottom {
+  padding-bottom: 40px;
+}
 .container-inner {
   padding: 10px 20px;
   /*w47px*/
@@ -215,6 +221,12 @@ main.content {
 
   .content-wrapper {
     padding: 50px 0 70px;
+  }
+  .content-wrapper-top {
+    padding-top: 50px;
+  }
+  .content-wrapper-bottom {
+    padding-bottom: 70px;
   }
 }
 

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Container } from "react-bootstrap";
 import TitleAdornments from "/components/blocks/TitleAdornments";
 import styles from "./ParagraphBanner.module.scss";
 
@@ -16,7 +15,7 @@ export default function SubpageBanner({ content }) {
           objectFit="cover"
         />
       </div>
-      <Container className={styles.inner}>
+      <div className={styles.inner}>
         <div className={styles.box}>
           <div className={styles.border}>
             <div className={styles.bg}>
@@ -32,13 +31,12 @@ export default function SubpageBanner({ content }) {
                       </Link>
                     ))}
                   </p>
-                )}
-                
+                )}   
               </div>
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

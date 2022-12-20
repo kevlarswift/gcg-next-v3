@@ -1,8 +1,20 @@
-import { Container } from "react-bootstrap";
 import Banner from "/components/blocks/banner";
 import Paragraph from "/components/paragraphs/Paragraph";
 
 export function NodeBasicPage({ node, ...props }) {
+  
+  let styleTop = <div />;
+  let styleBottom = <div />;
+  if (node.field_paragraphs?.length > 0) {
+    const numParagraphs = node.field_paragraphs.length - 1;
+    if (node.field_paragraphs[0].type !== 'paragraph--banner') {
+      styleTop = <div className="content-wrapper-top" />
+    }
+    if (node.field_paragraphs[numParagraphs].type !== 'paragraph--banner') {
+      styleBottom = <div className="content-wrapper-bottom" />
+    }
+  }
+
   return (
     <article {...props}>
       <Banner
@@ -14,13 +26,13 @@ export function NodeBasicPage({ node, ...props }) {
         short={false}
         bgImageAlt={node.field_banner?.resourceIdObjMeta?.alt}
       />
-      <Container className="content-wrapper">
-        {node.field_paragraphs &&
-          node.field_paragraphs.map((paragraph, idx) => {
-            return <Paragraph content={paragraph} key={idx} />;
-          })
-        }
-      </Container>
+      {styleTop}
+      {node.field_paragraphs &&
+        node.field_paragraphs.map((paragraph, idx) => {
+          return <Paragraph content={paragraph} key={idx} />;
+        })
+      }
+      {styleBottom}
     </article>
   )
 }
