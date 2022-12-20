@@ -18,7 +18,6 @@ export default function Serving({ serving }) {
         <TitleAdornments />
         <ServingTitle title={serving.field_title.processed} />
         <ServingSubtitle subtitle={serving.body.processed} />
-        {/** */}
         <div className={styles.grid}>
           {serving.field_serving_links.map((serving_link, idx) => (
             <Link href={serving_link.field_serving_link.uri.replace("internal:", "")} key={idx}>

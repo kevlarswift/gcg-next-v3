@@ -9,11 +9,11 @@ PQ:
 
 HOME
 - Change buttons on Home Page Carousel
-- Get Started square image not working
+X - Get Started square image not working
 
 TOP 
-Make banner images full width
-Make non banner images have correct spacing
+X Make banner images full width
+X Make non banner images have correct spacing
 
 On alternating images, the images should be 100% width
 Callout box in CMS.
