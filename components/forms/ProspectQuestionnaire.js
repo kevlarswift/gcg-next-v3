@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from 'next/router';
 import * as Yup from "yup";
 import scrollTo from "gatsby-plugin-smoothscroll";
 import formOptions from "./ProspectQuestionnaireData.json";
@@ -11,11 +12,12 @@ import PQPreview from "./PQPreview";
 import { Container } from "react-bootstrap";
 
 export default function ProspectQuestionnaire() {
+  
+  const router = useRouter();
 
   // Submit to Next.js API endpoint
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(formValues1.phone_home)
     const response = await fetch(`/api/test`, {
       method: "POST",
       body: JSON.stringify({
@@ -132,7 +134,8 @@ export default function ProspectQuestionnaire() {
     })
     // Success
     if (response.ok) {
-      console.log(response)
+      console.log(response);
+      router.push('/prospect-questionnaire/confirmation');
     } else {
       // Failure
       console.log(response)
