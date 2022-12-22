@@ -2,6 +2,7 @@ import ParagraphBody from "./ParagraphBody";
 import ParagraphBanner from "./ParagraphBanner";
 import ParagraphVideo from "./ParagraphVideo";
 import ParagraphImage from "./ParagraphImage";
+import ParagraphCallout from "./ParagraphCallout";
 import ParagraphCTA from "./ParagraphCTA";
 
 export default function Paragraph({ content }) {
@@ -18,6 +19,9 @@ export default function Paragraph({ content }) {
   } 
   else if (content.type === "paragraph--cta") {
     Component = ParagraphCTA;
+  }
+  else if (content.type === "paragraph--callout") {
+    Component = ParagraphCallout;
   } 
 
   return <Component content={content} />;
