@@ -132,12 +132,11 @@ export default function ProspectQuestionnaire() {
         acknowledgement: formValues4.acknowledgement,
       }),
     })
-    // Success
-    if (response.ok) {
-      console.log(response);
+    if (response.ok) {  
       router.push('/prospect-questionnaire/confirmation');
+      console.log(response);
     } else {
-      // Failure
+      router.push('/prospect-questionnaire/error');
       console.log(response)
     }
   }

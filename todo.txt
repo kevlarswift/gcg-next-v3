@@ -42,3 +42,22 @@ MISC
 Project Management
 - Build out Schedule
 - Add more Chat leads for testing
+
+
+other todos
+MODERNIZED SITE
+- Officer Applications page references an Officer Application Guide (can't find it)
+- 508 Tests
+- Test PQ -> Preprod
+- Adjust Chat Now button in LP
+- Migrate Landing Pages
+- Test GTM TA
+- GA Events
+- vCard images
+
+Dev todo:
+Point Start your Adventure to Shortened Form
+508 Accessibility Check
+Parallax scrolling
+Smaller PQ with minimum questions
+Are unpublished pages being hidden on the Next.js site?
