@@ -2,8 +2,12 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   margin-bottom: 2rem;
+  .image {
+    margin-bottom: 1rem;
+    direction: ltr;
+  }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .wrapper {
     grid-template-columns: repeat(2, minmax(0, 2fr));
     gap: 0 2rem;
@@ -11,6 +15,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      direction: ltr;
     }
   }
 }

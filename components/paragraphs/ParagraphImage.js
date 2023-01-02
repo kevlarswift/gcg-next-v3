@@ -23,14 +23,9 @@ export default function ParagraphVideo({ content }) {
     <div ref={ref}>
       <Container className="container-inner">
         <motion.div animate={animation}>
-          {content.field_alignment ? (
-            <div className={styles.wrapper}>
-              <div className={styles.inner}>
-                <div>
-                  {content.field_title && <h2>{content.field_title}</h2>}
-                  {content.field_body?.processed && <Body value={content.field_body.processed} />}
-                </div>
-              </div>
+          <div>
+            {content.field_title && <h2>{content.field_title}</h2>}
+            <div className={styles.wrapper} style={{ direction: content.field_alignment ? 'rtl' : 'ltr' }}>
               <div className={styles.image}>
                 <Image
                   src={content.field_image?.image_style_uri?.xl_640x480}
@@ -39,25 +34,13 @@ export default function ParagraphVideo({ content }) {
                   height={480}
                 />
               </div>
-            </div>
-          ) : (
-            <div className={styles.wrapper}>
-              <div className={styles.image}>
-                <Image
-                  src={content.field_image?.image_style_uri?.xl_640x480}
-                  alt={content.field_image?.resourceIdObjMeta?.alt}
-                  width={640}
-                  height={480}
-                />
-              </div>
-              <div className={styles.inner}>
+              <div className={styles.inner} style={{ direction: 'ltr' }}>
                 <div>
-                  {content.field_title && <h2>{content.field_title}</h2>}
                   {content.field_body?.processed && <Body value={content.field_body.processed} />}
                 </div>
               </div>
             </div>
-          )}
+          </div>
         </motion.div>
       </Container>
     </div>
