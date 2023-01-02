@@ -1,9 +1,15 @@
 import { useEffect } from 'react'
 import Script from 'next/script'
-import { useRouter } from 'next/router'
+import { useRouter, Router } from 'next/router'
+import { syncDrupalPreviewRoutes } from "next-drupal"
+
 import { GTM_ID, pageview } from '../lib/gtm'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "/styles/global.scss";
+
+Router.events.on("routeChangeStart", function (path) {
+  syncDrupalPreviewRoutes(path)
+})
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
