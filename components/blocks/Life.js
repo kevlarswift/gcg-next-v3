@@ -16,7 +16,7 @@ export default function Life({ youtube }) {
       <Container className={styles.life}>
         <div className={styles.inner}>
           <div>
-            <LifeTitle title={youtube.field_title.processed} />
+            <LifeTitle title={youtube.field_block_title} />
             <LifeSubtitle subtitle={youtube.body.processed} />
           </div>
         </div>

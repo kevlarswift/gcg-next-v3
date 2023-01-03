@@ -16,7 +16,7 @@ export default function Serving({ serving }) {
       <BackgroundImage src="/images/backgrounds/waves2.webp" alt="" style="width: 100%;" />
       <Container className={styles.inner}>
         <TitleAdornments />
-        <ServingTitle title={serving.field_title.processed} />
+        <ServingTitle title={serving.field_block_title} />
         <ServingSubtitle subtitle={serving.body.processed} />
         <div className={styles.grid}>
           {serving.field_serving_links.map((serving_link, idx) => (

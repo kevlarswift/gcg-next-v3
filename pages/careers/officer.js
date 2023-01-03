@@ -39,7 +39,7 @@ export default function OfficerCareersPage({ node, officer_careers, menus, globa
 
 export async function getStaticProps(context) {
   // Fetch page content
-  const node = await drupal.getResource("node--special", "4b47ef91-d57b-4806-98c5-0eb9b1541518", {
+  const node = await drupal.getResource("node--special", "9d3967b3-5684-4ae6-bc5c-35ff0784f981", {
     params: {
       include: "field_paragraphs, field_banner",
     },
