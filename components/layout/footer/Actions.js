@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt, faFileCircleCheck, faInfoCircle, faListCheck } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faFileCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "react-bootstrap";
 import styles from "./Actions.module.scss";
 import Body from "/components/Body";
@@ -14,9 +14,8 @@ export default function Actions({ body }) {
       <StartAdventureTitle />
       <StartAdventureSubtitle subtitle={body} />
       <div className={styles.ctas}>
-        {/**<StartAdventureLink title="Chat Now" link="/chat-now" icon={faMapMarkerAlt} />*/}
-        <StartAdventureLink title="Find a Recruiter" link="/find-recruiter" icon={faMapMarkerAlt} />
-        <StartAdventureLink title="Request Information" link="/joining/prospect-questionnaire" icon={faFileCircleCheck} />
+        <StartAdventureLink title="Find a Recruiter" link="/connect" icon={faMapMarkerAlt} />
+        <StartAdventureLink title="Request Information" link="/prospect-questionnaire" icon={faFileCircleCheck} />
       </div>
     </Container>
   );
@@ -31,7 +30,7 @@ export const StartAdventureTitle = () => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
@@ -54,7 +53,7 @@ export const StartAdventureSubtitle = ({ subtitle }) => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
@@ -74,7 +73,7 @@ export const StartAdventureLink = ({ title, link, icon }) => {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [animation,inView]);
+  }, [animation, inView]);
 
   return (
     <div ref={ref}>
