@@ -5,7 +5,7 @@ import Link from "next/link";
 import * as Yup from "yup";
 
 export default function EligibilityRequirements({ programs }) {
-  
+
   const [allItems] = useState(programs);
   const [filteredItems, setFilteredItems] = useState([]);
 
@@ -22,7 +22,7 @@ export default function EligibilityRequirements({ programs }) {
   return (
     <div className="my-4" id="form-officer-program-eligibility-requirements">
       <h5>Select Officer Programs to see the Eligibility Requirements</h5>
-      <p className="small-text"><em>Refer to the <a href="https://media.defense.gov/2021/Aug/18/2002833714/-1/-1/0/CIM_1100_2G.PDF">Coast Guard Recruiting Manual, COMDTINST M1100.2 (series)</a> for more information about eligibility requirements.</em></p>
+      <p className="text-small"><em>Refer to the <a href="https://media.defense.gov/2021/Aug/18/2002833714/-1/-1/0/CIM_1100_2G.PDF">Coast Guard Recruiting Manual, COMDTINST M1100.2 (series)</a> for more information about eligibility requirements.</em></p>
       <fieldset className="fieldset" id="formEligibility">
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
           {({ errors }) => (
@@ -55,8 +55,6 @@ export default function EligibilityRequirements({ programs }) {
           )}
         </Formik>
       </fieldset>
-      {/** <pre>{JSON.stringify(programs, null, 2)}</pre> */}
-      
       {filteredItems.length > 0 ? (
         <div className="my-4" id="eligibility-table">
           <h5>Eligibility Requirements</h5>
@@ -65,7 +63,7 @@ export default function EligibilityRequirements({ programs }) {
               <thead>
                 <tr>
                   <th scope="col" width="15%">
-                    
+
                   </th>
                   {filteredItems.map((program, index) => {
                     return (
@@ -136,7 +134,7 @@ export default function EligibilityRequirements({ programs }) {
           </div>
         </div>
       ) : null}
-    
+
     </div>
   );
 }
