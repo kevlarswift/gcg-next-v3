@@ -43,15 +43,13 @@ export default function Header({ menu, motto }) {
         </div>
         <Logo />
         <div className={styles.connectSearch}>
-          {/**
           <button className={styles.connect} onClick={() => router.push("/connect")}>
             <div className={styles.iconBorder}>
               <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth />
             </div>
             <span className={styles.iconText}>Connect</span>
-          </button> 
+          </button>
           <div className={styles.divider} />
-          */}
           <button className={styles.search} onClick={handleShowSearch} aria-label="Search">
             <div className={styles.iconBorder}>
               <FontAwesomeIcon icon={faSearch} />
