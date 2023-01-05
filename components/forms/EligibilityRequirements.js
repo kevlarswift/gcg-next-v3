@@ -22,7 +22,7 @@ export default function EligibilityRequirements({ programs }) {
   return (
     <div className="my-4" id="form-officer-program-eligibility-requirements">
       <h5>Select Officer Programs to see the Eligibility Requirements</h5>
-      <small>Refer to the <a href="https://media.defense.gov/2021/Aug/18/2002833714/-1/-1/0/CIM_1100_2G.PDF">Coast Guard Recruiting Manual, COMDTINST M1100.2 (series)</a> for more information about eligibility requirements.</small>
+      <p className="small-text"><em>Refer to the <a href="https://media.defense.gov/2021/Aug/18/2002833714/-1/-1/0/CIM_1100_2G.PDF">Coast Guard Recruiting Manual, COMDTINST M1100.2 (series)</a> for more information about eligibility requirements.</em></p>
       <fieldset className="fieldset" id="formEligibility">
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
           {({ errors }) => (
