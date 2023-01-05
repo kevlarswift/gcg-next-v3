@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { Collapse } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -42,13 +43,15 @@ export default function Header({ menu, motto }) {
         </div>
         <Logo />
         <div className={styles.connectSearch}>
+          {/**
           <button className={styles.connect} onClick={() => router.push("/connect")}>
             <div className={styles.iconBorder}>
               <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth />
             </div>
             <span className={styles.iconText}>Connect</span>
-          </button>
+          </button> 
           <div className={styles.divider} />
+          */}
           <button className={styles.search} onClick={handleShowSearch} aria-label="Search">
             <div className={styles.iconBorder}>
               <FontAwesomeIcon icon={faSearch} />
@@ -60,112 +63,121 @@ export default function Header({ menu, motto }) {
       <Collapse in={openMenu}>
         <div id="collapse-menu">
           <div className={styles.megaMenu}>
-            
-            {/** Get Started */}
-            <div className={styles.section}>
-              <div className={styles.subtitle}>
-                <div
-                  onClick={() => {
-                    handleOpenMenu();
-                    router.push("/get-started");
-                  }}>
-                  Get Started <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
-                </div>
-              </div>
-              {menu[0].items.map((item) => {
-                return (
+            <div className={styles.upper}>
+
+              <ul>
+                <li className={styles.heading}>Help Center:</li>
+                <li>
+                  <Link href="/connect">
+                    <a>Find a Recruiter</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/prospect-questionnaire">
+                    <a>Request Information</a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.inner}>
+              <div className={styles.section}>
+                <div className={styles.subtitle}>
                   <div
-                    className={styles.subpageLink}
-                    key={item.id}
                     onClick={() => {
                       handleOpenMenu();
-                      router.push(item.url);
+                      router.push("/get-started");
                     }}>
-                    {item.title}
+                    Get Started <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                   </div>
-                );
-              })}
-            </div>
-
-            {/** CAREERS */}
-            <div className={styles.section}>
-              <div className={styles.subtitle}>
-                <div
-                  onClick={() => {
-                    handleOpenMenu();
-                    router.push("/careers");
-                  }}>
-                  Careers <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                 </div>
+                {menu[0].items.map((item) => {
+                  return (
+                    <div
+                      className={styles.subpageLink}
+                      key={item.id}
+                      onClick={() => {
+                        handleOpenMenu();
+                        router.push(item.url);
+                      }}>
+                      {item.title}
+                    </div>
+                  );
+                })}
               </div>
-              {menu[1].items.map((item) => {
-                return (
+              <div className={styles.section}>
+                <div className={styles.subtitle}>
                   <div
-                    className={styles.subpageLink}
-                    key={item.id}
                     onClick={() => {
                       handleOpenMenu();
-                      router.push(item.url);
+                      router.push("/careers");
                     }}>
-                    {item.title}
+                    Careers <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                   </div>
-                );
-              })}
-            </div>
-
-            {/** WHY JOIN */}
-            <div className={styles.section}>
-              <div className={styles.subtitle}>
-                <div
-                  onClick={() => {
-                    handleOpenMenu();
-                    router.push("/why-join");
-                  }}>
-                  Why Join <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                 </div>
+                {menu[1].items.map((item) => {
+                  return (
+                    <div
+                      className={styles.subpageLink}
+                      key={item.id}
+                      onClick={() => {
+                        handleOpenMenu();
+                        router.push(item.url);
+                      }}>
+                      {item.title}
+                    </div>
+                  );
+                })}
               </div>
-
-              {menu[2].items.map((item) => {
-                return (
+              <div className={styles.section}>
+                <div className={styles.subtitle}>
                   <div
-                    className={styles.subpageLink}
-                    key={item.id}
                     onClick={() => {
                       handleOpenMenu();
-                      router.push(item.url);
+                      router.push("/why-join");
                     }}>
-                    {item.title}
+                    Why Join <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                   </div>
-                );
-              })}
-            </div>
-
-            {/** ABOUT */}
-            <div className={styles.section}>
-              <div className={styles.subtitle}>
-                <div
-                  onClick={() => {
-                    handleOpenMenu();
-                    router.push("/about");
-                  }}>
-                  About <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                 </div>
+
+                {menu[2].items.map((item) => {
+                  return (
+                    <div
+                      className={styles.subpageLink}
+                      key={item.id}
+                      onClick={() => {
+                        handleOpenMenu();
+                        router.push(item.url);
+                      }}>
+                      {item.title}
+                    </div>
+                  );
+                })}
               </div>
-              {menu[3].items.map((item) => {
-                return (
+              <div className={styles.section}>
+                <div className={styles.subtitle}>
                   <div
-                    className={styles.subpageLink}
-                    key={item.id}
                     onClick={() => {
                       handleOpenMenu();
-                      router.push(item.url);
+                      router.push("/about");
                     }}>
-                    {item.title}
+                    About <FontAwesomeIcon icon={faArrowRight} size="2xs" className={styles.icon} />
                   </div>
-                );
-              })}
+                </div>
+                {menu[3].items.map((item) => {
+                  return (
+                    <div
+                      className={styles.subpageLink}
+                      key={item.id}
+                      onClick={() => {
+                        handleOpenMenu();
+                        router.push(item.url);
+                      }}>
+                      {item.title}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-
           </div>
         </div>
       </Collapse>
