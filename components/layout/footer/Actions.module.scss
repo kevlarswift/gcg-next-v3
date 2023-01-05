@@ -124,7 +124,7 @@
       padding: 40px 0;
     }
     .ctas {
-      grid-template-columns: repeat(3, minmax(0, 3fr));
+      grid-template-columns: repeat(2, minmax(0, 2fr));
       gap: 10px;
       .connect {
         a {
@@ -168,7 +168,7 @@
 @media (min-width: 992px) {
   .startAdventure {
     .ctas {
-      grid-template-columns: repeat(3, minmax(0, 3fr));
+      grid-template-columns: repeat(2, minmax(0, 2fr));
       gap: 30px;
       .connect {
         a {

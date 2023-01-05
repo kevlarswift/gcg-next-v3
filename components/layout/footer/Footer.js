@@ -1,4 +1,5 @@
 import Benefits from "./Benefits";
+import Actions from "./Actions";
 import Mission from "./Mission";
 import Social from "./Social";
 import Credits from "./Credits";
@@ -10,7 +11,7 @@ export default function Footer({
   benefitsTitle,
   benefitsBody,
   benefitsLink,
-
+  actionsBody,
   menus,
   author,
   mission
@@ -23,6 +24,7 @@ export default function Footer({
         link={benefitsLink.uri}
         linkText={benefitsLink.title}
       />
+      <Actions body={actionsBody} />
       <Mission
         mission={mission}
       />
