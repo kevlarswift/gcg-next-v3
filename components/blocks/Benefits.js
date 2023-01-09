@@ -5,38 +5,25 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-//import BackgroundImage from "/components/BackgroundImage.js";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TitleAdornments from "./TitleAdornments";
 import { Container } from "react-bootstrap";
 import styles from "./Benefits.module.scss";
 
-function SampleNextArrow({ className, style, onClick }) {
+function CustomNextArrow({ className, style, onClick }) {
   return <div className={styles['slick-next']} style={{ ...style }} onClick={onClick} />;
 }
 
-function SamplePrevArrow({ className, style, onClick }) {
+function CustomPrevArrow({ className, style, onClick }) {
   return <div className={styles['slick-prev']} style={{ ...style }} onClick={onClick} />;
 }
 
 export default function Benefits(benefits) {
+  
   // Animation
   const { ref, inView } = useInView({ threshold: 0.05 });
   const animation = useAnimation();
-  
-  // AutoPlay
-  const sliderRef = useRef(null);
-  const [autoPlay, setAutoPlay] = useState(true);
-  const handleAutoPlay = () => {  
-    if(autoPlay) {
-      sliderRef.current.slickPause();
-    } else {
-      sliderRef.current.slickPlay();
-    }
-    setAutoPlay(!autoPlay)
-  };
-
   useEffect(() => {
     if (inView) {
       animation.start({ opacity: 1, transition: { duration: 0.35 } });
@@ -45,16 +32,29 @@ export default function Benefits(benefits) {
     }
   }, [animation, inView]);
 
+  // AutoPlay
+  const sliderRef = useRef(null);
+  const [play, setPlay] = useState(true);
+  const handlePlay = () => {  
+    if(play) {
+      sliderRef.current.slickPause();
+    } else {
+      sliderRef.current.slickPlay();
+    }
+    setPlay(!play)
+  };
+
+  // Slider settings
   const settings = {
     infinite: true,
     speed: 750,
     cssEase: "ease",
     slidesToShow: 3,
     slidesToScroll: 3,
-    autoplay: autoPlay,
+    autoplay: play,
     autoplaySpeed: 2500,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
     responsive: [
       {
         breakpoint: 992,
@@ -86,9 +86,9 @@ export default function Benefits(benefits) {
               })}
             </Slider>
           </div>
-          <div className={styles.pause}>
-            <button onClick={handleAutoPlay} className={styles.btn}>
-              {autoPlay ? <FontAwesomeIcon icon={faPauseCircle}/> : <FontAwesomeIcon icon={faPlayCircle}/>}
+          <div className={styles.btnWrapper}>
+            <button onClick={handlePlay} className={styles.btn}>
+              { play ? <FontAwesomeIcon icon={faPauseCircle}/> : <FontAwesomeIcon icon={faPlayCircle}/> }
             </button>
           </div>
         </Container>
