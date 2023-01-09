@@ -1,10 +1,9 @@
+import { useEffect, useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 //import BackgroundImage from "/components/BackgroundImage.js";
-import { shuffle } from "lodash";
-import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TitleAdornments from "./TitleAdornments";
@@ -23,6 +22,18 @@ export default function Benefits(benefits) {
   // Animation
   const { ref, inView } = useInView({ threshold: 0.05 });
   const animation = useAnimation();
+  
+  // AutoPlay
+  const sliderRef = useRef(null);
+  const [autoPlay, setAutoPlay] = useState(true);
+  const handleAutoPlay = () => {  
+    if(autoPlay) {
+      sliderRef.current.slickPause();
+    } else {
+      sliderRef.current.slickPlay();
+    }
+    setAutoPlay(!autoPlay)
+  };
 
   useEffect(() => {
     if (inView) {
@@ -35,9 +46,10 @@ export default function Benefits(benefits) {
   const settings = {
     infinite: true,
     speed: 750,
+    cssEase: "ease",
     slidesToShow: 3,
     slidesToScroll: 3,
-    autoplay: true,
+    autoplay: autoPlay,
     autoplaySpeed: 2500,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -58,8 +70,7 @@ export default function Benefits(benefits) {
       },
     ],
   };
-  const benefitsShuffled = shuffle(benefits.benefits);
-
+  
   return (
     <div ref={ref}>
       <motion.div className={styles.benefits} animate={animation}>
@@ -67,16 +78,13 @@ export default function Benefits(benefits) {
           <TitleAdornments />
           <h2>Great reasons to join</h2><br />
           <div className={styles.grid}>
-            <Slider {...settings}>
-              {benefitsShuffled.map((benefit, index) => {
-                let iconImage = benefit?.field_icon?.uri?.url;
-                if (iconImage) {
-                  iconImage = process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + iconImage
-                }
-                return <Benefit title={benefit.title} icon={iconImage} alt={benefit.field_icon_alt} key={index} />;
+            <Slider ref={sliderRef} {...settings}>
+              {benefits.benefits.map((benefit, index) => {
+                return <Benefit title={benefit.title} icon={process.env.NEXT_PUBLIC_DRUPAL_BASE_URL + benefit?.field_icon?.uri?.url} alt={benefit.field_icon_alt} key={index} />;
               })}
             </Slider>
           </div>
+          <button onClick={handleAutoPlay}>{autoPlay? "Pause" : "Play"}</button>
         </Container>
       </motion.div>
     </div>

@@ -6,18 +6,9 @@ PQ:
 - Autocomplete College
 - Redirect to Error or Confirmation
 - Empty values conditionally
-
-HOME
-- Change buttons on Home Page Carousel
-X - Get Started square image not working
+- TESTING
 
 TOP 
-X Make banner images full width
-X Make non banner images have correct spacing
-
-On alternating images, the images should be 100% width
-Callout box in CMS.
-
 - Backup image (like Find a Recruiter)
 
 CHAT NOW
@@ -25,6 +16,7 @@ CHAT NOW
 
 ACCESSIBILITY 
 - top menu
+- 508 Accessibility Check
 
 SCROLLING
 - Parallax scrolling
@@ -34,30 +26,19 @@ SEARCH
 - https://www.chapterthree.com/blog/search-api-excerpts-nextjs
 
 MISC
-- All tags
-- basic page and special page cta field (or move to paragraphs)
-- check all ctas
 - Meta Tags
 
 Project Management
 - Build out Schedule
 - Add more Chat leads for testing
 
-
-other todos
-MODERNIZED SITE
-- Officer Applications page references an Officer Application Guide (can't find it)
-- 508 Tests
-- Test PQ -> Preprod
-- Adjust Chat Now button in LP
 - Migrate Landing Pages
 - Test GTM TA
 - GA Events
-- vCard images
 
 Dev todo:
 Point Start your Adventure to Shortened Form
-508 Accessibility Check
+
 Parallax scrolling
 Smaller PQ with minimum questions
 Are unpublished pages being hidden on the Next.js site?

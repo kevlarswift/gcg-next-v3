@@ -1,5 +1,6 @@
 import { DrupalJsonApiParams } from "drupal-jsonapi-params"
 import { drupal } from "/lib/drupal";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import { Layout } from "/components/layout";
 import VideoBG from "/components/blocks/VideoBG";
@@ -8,7 +9,12 @@ import Life from "/components/blocks/Life";
 import Benefits from "/components/blocks/Benefits";
 
 export default function IndexPage({ menus, global, benefits, youtube, serving }) {
-  
+  const [randomBenefits, setRandomBenefits] = useState([]);
+  useEffect(() => {
+    const randomizeBenefits = [...benefits].sort(() => 0.5 - Math.random());
+    setRandomBenefits(randomizeBenefits);
+}, []);
+
   return (
     <>
       <Head>
@@ -19,7 +25,7 @@ export default function IndexPage({ menus, global, benefits, youtube, serving })
         <VideoBG />
         <Serving serving={serving} />
         <Life youtube={youtube} />
-        <Benefits benefits={benefits} />
+        <Benefits benefits={randomBenefits} />
       </Layout>
     </>
   );
@@ -31,7 +37,7 @@ export async function getStaticProps(context) {
   const benefitsParams = new DrupalJsonApiParams()
   benefitsParams.addFields("node--benefit", ["title", "id", "field_icon", "field_icon_alt"]);
   benefitsParams.addInclude("field_icon");
-  
+
   const benefits = await drupal.getResourceCollection("node--benefit", {
     params: benefitsParams.getQueryObject()
   });
@@ -40,7 +46,7 @@ export async function getStaticProps(context) {
   const youtubeParams = new DrupalJsonApiParams()
   youtubeParams.addFields("paragraph--global_youtube", ["field_title", "id", "field_youtube_video"]);
   youtubeParams.addInclude("field_youtube_videos");
-  
+
   const youtube = await drupal.getResource("block_content--youtube", "d39486c6-e22e-4b96-9604-240fa2ef806e", {
     params: youtubeParams.getQueryObject()
   });
@@ -49,11 +55,11 @@ export async function getStaticProps(context) {
   const servingParams = new DrupalJsonApiParams()
   servingParams.addFields("paragraph--serving_card", ["id", "field_serving_link", "field_serving_image"]);
   servingParams.addInclude("field_serving_links, field_serving_links.field_serving_image");
-  
+
   const serving = await drupal.getResource("block_content--serving", "9bc8fbd8-fafc-49b7-9ceb-af7d6ad817cf", {
     params: servingParams.getQueryObject()
   })
-  
+
 
   return {
     props: {
