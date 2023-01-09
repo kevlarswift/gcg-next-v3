@@ -84,7 +84,7 @@ export default function Benefits(benefits) {
               })}
             </Slider>
           </div>
-          <button onClick={handleAutoPlay}>{autoPlay? "Pause" : "Play"}</button>
+          <div className={styles.pause}><button onClick={handleAutoPlay}>{autoPlay? "Pause" : "Play"}</button></div>
         </Container>
       </motion.div>
     </div>

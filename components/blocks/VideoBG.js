@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./VideoBG.module.scss";
 
 export default function VideoBG() {
