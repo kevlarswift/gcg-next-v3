@@ -20,7 +20,7 @@ function CustomPrevArrow({ className, style, onClick }) {
 }
 
 export default function Benefits(benefits) {
-  
+
   // Animation
   const { ref, inView } = useInView({ threshold: 0.05 });
   const animation = useAnimation();
@@ -35,8 +35,8 @@ export default function Benefits(benefits) {
   // AutoPlay
   const sliderRef = useRef(null);
   const [play, setPlay] = useState(true);
-  const handlePlay = () => {  
-    if(play) {
+  const handlePlay = () => {
+    if (play) {
       sliderRef.current.slickPause();
     } else {
       sliderRef.current.slickPlay();
@@ -72,7 +72,7 @@ export default function Benefits(benefits) {
       },
     ],
   };
-  
+
   return (
     <div ref={ref}>
       <motion.div className={styles.benefits} animate={animation}>
@@ -86,9 +86,10 @@ export default function Benefits(benefits) {
               })}
             </Slider>
           </div>
-          <div className={styles.btnWrapper}>
+          
+          <div className={styles.pauseWrapper}>
             <button onClick={handlePlay} className={styles.btn}>
-              { play ? <FontAwesomeIcon icon={faPauseCircle}/> : <FontAwesomeIcon icon={faPlayCircle}/> }
+              {play ? <FontAwesomeIcon icon={faPauseCircle} /> : <FontAwesomeIcon icon={faPlayCircle} />}
             </button>
           </div>
         </Container>
