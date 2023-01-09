@@ -18,13 +18,14 @@ export default function Serving({ serving }) {
         <TitleAdornments />
         <ServingTitle title={serving.field_block_title} />
         <ServingSubtitle subtitle={serving.body.processed} />
+        {/**<pre>{JSON.stringify(serving, null, 2)}</pre>*/}
         <div className={styles.grid}>
           {serving.field_serving_links.map((serving_link, idx) => (
             <Link href={serving_link.field_serving_link.uri.replace("internal:", "")} key={idx}>
               <a className={styles.item}>
                 <div className={styles.itemInner}>
                   <div className={styles.btn}>{serving_link.field_serving_link.title}</div>
-                  <Image src={serving_link.field_serving_image.image_style_uri.large} layout="fill" objectFit="cover" />
+                  <Image src={serving_link.field_serving_image.image_style_uri.large} layout="fill" objectFit="cover" alt={serving_link.field_serving_image.resourceIdObjMeta.alt} />
                 </div>
               </a>
             </Link>
