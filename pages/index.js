@@ -3,7 +3,6 @@ import { drupal } from "/lib/drupal";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import { Layout } from "/components/layout";
-//import VideoBG from "/components/blocks/VideoBG";
 import VideoBackground from "/components/blocks/VideoBackground";
 import Serving from "/components/blocks/Serving";
 import Life from "/components/blocks/Life";
@@ -23,7 +22,6 @@ export default function IndexPage({ menus, global, benefits, youtube, serving })
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Layout menus={menus} global={global}>
-        {/**<VideoBG />*/}
         <VideoBackground url="/video/videoBG.mp4" />
         <Serving serving={serving} />
         <Life youtube={youtube} />
