@@ -91,9 +91,23 @@
       }
     }
   }
+
   .pause {
     text-align: center;
+    .btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: inherit;
+      color: white;
+      font-size: 1.2125rem;
+      &:hover {
+        color: #e1251b;
+      }
+
+    }
   }
+
   .btnWrapper {
     display: flex;
     justify-content: center;

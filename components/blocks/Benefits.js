@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPauseCircle, faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -84,7 +86,11 @@ export default function Benefits(benefits) {
               })}
             </Slider>
           </div>
-          <div className={styles.pause}><button onClick={handleAutoPlay}>{autoPlay? "Pause" : "Play"}</button></div>
+          <div className={styles.pause}>
+            <button onClick={handleAutoPlay} className={styles.btn}>
+              {autoPlay ? <FontAwesomeIcon icon={faPauseCircle}/> : <FontAwesomeIcon icon={faPlayCircle}/>}
+            </button>
+          </div>
         </Container>
       </motion.div>
     </div>
