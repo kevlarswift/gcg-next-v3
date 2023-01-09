@@ -14,7 +14,7 @@ export default function ParagraphCTA({ content }) {
     } else {
       animation.start({ opacity: 0, y: 20, transition: { duration: 0.5 } });
     }
-  }, [inView]);
+  }, [inView, animation]);
 
   return (
     <div ref={ref}>

@@ -13,7 +13,7 @@ export default function IndexPage({ menus, global, benefits, youtube, serving })
   useEffect(() => {
     const randomizeBenefits = [...benefits].sort(() => 0.5 - Math.random());
     setRandomBenefits(randomizeBenefits);
-}, []);
+}, [benefits]);
 
   return (
     <>
